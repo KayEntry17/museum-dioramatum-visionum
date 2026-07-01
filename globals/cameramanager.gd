@@ -4,6 +4,7 @@ var maincam
 var fpsmode:bool=true
 var mousemove
 var prevmouse
+var rotinterpolation:bool=true
 var Sensitivity:float=1
 # Called when the node enters the scene tree for the first time.
 func theserthedroids(cam):
