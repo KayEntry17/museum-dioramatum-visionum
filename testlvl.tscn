@@ -17,6 +17,12 @@ sky_material = SubResource("ProceduralSkyMaterial_jt5j1")
 [sub_resource type="Environment" id="Environment_dlc0y"]
 background_mode = 2
 sky = SubResource("Sky_yiyty")
+ssao_intensity = 6.8
+ssao_power = 2.121321
+ssao_detail = 2.4
+ssao_horizon = 0.0
+ssao_sharpness = 0.0
+ssao_light_affect = 0.2
 glow_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dlc0y"]
@@ -38,6 +44,8 @@ data = PackedVector3Array(-10, -0.5, -10.5, -9.2858, -0.5, -9.09, -9.2858, -0.5,
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yiyty"]
 dof_blur_far_enabled = true
+dof_blur_far_distance = 0.5
+dof_blur_far_transition = 6.0
 dof_blur_amount = 0.0
 
 [node name="Node3D" type="Node3D" unique_id=585545488]

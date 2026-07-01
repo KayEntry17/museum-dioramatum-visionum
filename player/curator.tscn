@@ -17,6 +17,7 @@ Sensitivity = 0.3
 shape = SubResource("CapsuleShape3D_6uffy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1462376985]
+visible = false
 gi_mode = 2
 mesh = SubResource("CapsuleMesh_umt7f")
 
