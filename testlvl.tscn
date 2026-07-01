@@ -68,6 +68,7 @@ shape = SubResource("ConcavePolygonShape3D_jt5j1")
 
 [node name="VoxelGI" type="VoxelGI" parent="." unique_id=1040351654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52890015, 5, 0.64224243)
+subdiv = 2
 size = Vector3(22.473572, 30, 22.516052)
 data = ExtResource("1_jt5j1")
 

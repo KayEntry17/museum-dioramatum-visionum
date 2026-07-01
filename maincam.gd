@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		if attributes.dof_blur_amount==0:
 			dedof=false
 		else:
-			attributes.dof_blur_amount=move_toward(attributes.dof_blur_amount,0,0.1/1.7*delta)
+			attributes.dof_blur_amount=move_toward(attributes.dof_blur_amount,0,0.2/1.7*delta)
 	if Cam.targetcam==null:
 		if Cam.targetcam!=null:
 			targetcam=Cam.targetcam

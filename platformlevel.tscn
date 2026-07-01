@@ -6,27 +6,35 @@
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_og5as"]
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.5
+dof_blur_amount = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
 size = Vector3(2.458374, 2.9693604, 2.675354)
 
 [node name="platformlevel" type="Area3D" unique_id=1768093041 node_paths=PackedStringArray("selfcam")]
 script = ExtResource("1_jgbpc")
-selfcam = NodePath("camcontroller/Camera3D")
+selfcam = NodePath("camcontroller/camcontroller/Camera3D")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23389411, 0)
 use_collision = true
+collision_layer = 65
+collision_mask = 65
 radius = 1.0
 height = 0.42
 sides = 20
 
 [node name="camcontroller" type="Node3D" parent="." unique_id=758807615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 script = ExtResource("2_og5as")
 rotspeed = 3.0
 
-[node name="Camera3D" type="Camera3D" parent="camcontroller" unique_id=533309219]
-transform = Transform3D(0.99995553, -0.0029910728, 0.008939356, 0, 0.94832367, 0.31730464, -0.009426475, -0.31729054, 0.94828147, 0, 0.798, 2.076)
+[node name="camcontroller" type="SpringArm3D" parent="camcontroller" unique_id=57085880]
+collision_mask = 64
+spring_length = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="camcontroller/camcontroller" unique_id=1087537245]
+transform = Transform3D(0.99995553, -0.0029910728, 0.008939356, 0, 0.94832367, 0.31730464, -0.009426475, -0.31729054, 0.94828147, 0, 0, 0)
 attributes = SubResource("CameraAttributesPractical_og5as")
 fov = 44.5
 
