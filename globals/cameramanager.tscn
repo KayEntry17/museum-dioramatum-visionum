@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfp4sgkf8jyiw"]
+
+[ext_resource type="Script" uid="uid://cl5yobo1ply6q" path="res://globals/cameramanager.gd" id="1_1el8t"]
+
+[node name="Node" type="Node" unique_id=1686200750]
+script = ExtResource("1_1el8t")

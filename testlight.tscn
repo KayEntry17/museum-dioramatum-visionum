@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://pt7crencsrtm"]
 
 [ext_resource type="LightmapGIData" uid="uid://b8kojjpd8e3y2" path="res://testlight.lmbake" id="1_t82jy"]
-[ext_resource type="VoxelGIData" uid="uid://dprdth72o7fnj" path="res://lighttest/testmus.VoxelGI_data.res" id="2_hi4ql"]
+[ext_resource type="VoxelGIData" uid="uid://c8khnb11jlp3t" path="res://lighttest/testlight.VoxelGI_data.res" id="2_hi4ql"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_owqht"]
 lightmap_size_hint = Vector2i(1066, 1074)
@@ -47,124 +47,17 @@ directional = true
 generate_probes_subdiv = 3
 light_data = ExtResource("1_t82jy")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1521325696]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21415854, 0, 0.58999634)
-visible = false
-size = Vector3(20, 1, 21)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D2" unique_id=929521226]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21415854, 0.4631102, -0.58999634)
-radius = 0.326
-sides = 20
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D2" unique_id=2139805737]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21415854, 1.5721486, -0.58999634)
-radius = 1.0
-height = 0.312
-sides = 20
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSGBox3D2" unique_id=2040944478]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -4.462465, 13.418058, -0.58999634)
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="CSGBox3D2" unique_id=1556076828]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.785841, 4.303, -9.589996)
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="CSGBox3D2" unique_id=1653272900]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -4.462465, 13.418058, -9.589996)
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D17" type="CSGBox3D" parent="CSGBox3D2" unique_id=798449323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.785841, 4.303, -5.0899963)
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D18" type="CSGBox3D" parent="CSGBox3D2" unique_id=1715599084]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -4.462465, 13.418058, -5.0899963)
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D19" type="CSGBox3D" parent="CSGBox3D2" unique_id=77574278]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.785841, 4.303, 4.9864836)
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D20" type="CSGBox3D" parent="CSGBox3D2" unique_id=158463860]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -4.462465, 13.418058, 4.9864836)
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D21" type="CSGBox3D" parent="CSGBox3D2" unique_id=746603811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.785841, 4.303, 9.486484)
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D22" type="CSGBox3D" parent="CSGBox3D2" unique_id=128018066]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, -4.462465, 13.418058, 9.486484)
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D2" unique_id=315300705]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.785841, 4.303, -0.58999634)
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D2" unique_id=1019669716]
-transform = Transform3D(-0.70710677, -0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.890782, 13.418058, -0.58999634)
-flip_faces = true
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D2" unique_id=1622046666]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.214159, 4.303, -9.589996)
-flip_faces = true
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D2" unique_id=1365962989]
-transform = Transform3D(-0.70710677, -0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.890782, 13.418058, -9.589996)
-flip_faces = true
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D2" unique_id=2043272219]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.214159, 4.303, -5.0899963)
-flip_faces = true
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D2" unique_id=2073886150]
-transform = Transform3D(-0.70710677, -0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.890782, 13.418058, -5.0899963)
-flip_faces = true
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGBox3D2" unique_id=28149695]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.214159, 4.303, 4.9864836)
-flip_faces = true
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSGBox3D2" unique_id=1717600237]
-transform = Transform3D(-0.70710677, -0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.890782, 13.418058, 4.9864836)
-flip_faces = true
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGBox3D2" unique_id=1236833635]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.214159, 4.303, 9.486484)
-flip_faces = true
-size = Vector3(1, 10, 1)
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="CSGBox3D2" unique_id=1395207697]
-transform = Transform3D(-0.70710677, -0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.890782, 13.418058, 9.486484)
-flip_faces = true
-size = Vector3(1, 14.235, 1)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D2" unique_id=692284891]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.214159, 4.303, -0.58999634)
-flip_faces = true
-size = Vector3(1, 10, 1)
-
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1486303366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21415854, 0, 0.58999634)
 mesh = SubResource("ArrayMesh_owqht")
-
-[node name="VoxelGI" type="VoxelGI" parent="." unique_id=334058056]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43951416, 8.831909, 0.77630615)
-subdiv = 2
-size = Vector3(20.838745, 20.827393, 21.552612)
-data = ExtResource("2_hi4ql")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=452502507]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2110272588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21415854, 0, 0.58999634)
 shape = SubResource("ConcavePolygonShape3D_iedhh")
+
+[node name="VoxelGI" type="VoxelGI" parent="." unique_id=2332411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12512207, 4.932678, 0.56918335)
+size = Vector3(22.840576, 29.865356, 21.836487)
+data = ExtResource("2_hi4ql")
