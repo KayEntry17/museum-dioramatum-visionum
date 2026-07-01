@@ -6,15 +6,6 @@ extends CharacterBody3D
 @export var slip: float=5
 @export var Sensitivity:float=1.0
 var canjump:bool
-func _ready() -> void:
-	Cam.theserthetargets($falsecamx/falsecamy)
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion: 
-		var mousemovek=Vector2(event.relative.x*Sensitivity*0.05,event.relative.y*Sensitivity*0.05)
-		$falsecamx.rotate(Vector3(0,-1.0,0), mousemovek.x)
-		$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), mousemovek.y)
-		$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
-		#print(str(mousemovek)+"oaijdsoajsdioaks")
 func _process(delta: float) -> void:
 	if Cam.fpsmode:
 		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED 
@@ -29,18 +20,11 @@ func _process(delta: float) -> void:
 	$falsecamx.rotate(Vector3(0,-1.0,0), caminpdir.x*camspeed*delta)
 	$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), caminpdir.y*camspeed*delta)
 	$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
-	#print(inpdir)
+	print(inpdir)
 	inpdir=inpdir.rotated(-$falsecamx.rotation.y)
-	#print($falsecamx.rotation)
-	if Input.is_action_just_pressed("interact"):
-		var arealist=$falsecamx/falsecamy/Area3D.get_overlapping_areas()
-		
-		if arealist!=[]:
-			for i in range(arealist.size()):
-				if arealist[i].has_method("interact"):
-					arealist[i].interact()
-					
-					break
+	print($falsecamx.rotation)
+	
+			
 	if inpdir==Vector2(0,0):
 		velocity.x=move_toward(velocity.x,0,slip*delta*speed)
 		velocity.z=move_toward(velocity.z,0,slip*delta*speed)

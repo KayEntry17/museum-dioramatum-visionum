@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://romkbskeeycl"]
+
+[ext_resource type="Script" uid="uid://cxgyt88jberx3" path="res://core/platformlevel.gd" id="1_jgbpc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
+size = Vector3(2.458374, 2.9693604, 2.675354)
+
+[node name="platformlevel" type="Area3D" unique_id=1768093041]
+script = ExtResource("1_jgbpc")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23389411, 0)
+use_collision = true
+radius = 1.0
+height = 0.42
+sides = 20
+
+[node name="Node3D" type="Node3D" parent="." unique_id=758807615]
+
+[node name="Camera3D" type="Node3D" parent="Node3D" unique_id=2090528303]
+transform = Transform3D(1, 0, 0, 0, 0.94832367, 0.31730464, 0, -0.31730464, 0.94832367, 0, 1.2878866, 2.4807012)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066223145, 0.16729736, -0.08950806)
+shape = SubResource("BoxShape3D_umt7f")

@@ -1,16 +1,13 @@
-[gd_scene format=3 uid="uid://bca5cm0b5np8n"]
+[gd_scene format=3 uid="uid://dnctmrhaywitb"]
 
-[ext_resource type="Script" uid="uid://c6kksxp8vdg7s" path="res://player/curplayer.gd" id="1_givxw"]
+[ext_resource type="Script" uid="uid://dogpnbhoxitk3" path="res://player/standee.gd" id="1_m142c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6uffy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_umt7f"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
-size = Vector3(2.5830994, 1.8305664, 1)
-
 [node name="Node3D" type="CharacterBody3D" unique_id=906936805]
-script = ExtResource("1_givxw")
+script = ExtResource("1_m142c")
 Sensitivity = 0.3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37437317]
@@ -25,9 +22,3 @@ physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85845244, 0)
 
 [node name="falsecamy" type="Node3D" parent="falsecamx" unique_id=491760430]
-
-[node name="Area3D" type="Area3D" parent="falsecamx/falsecamy" unique_id=1174179800]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="falsecamx/falsecamy/Area3D" unique_id=354766505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2924652, -0.4152832, 0)
-shape = SubResource("BoxShape3D_umt7f")
