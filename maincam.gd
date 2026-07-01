@@ -18,7 +18,9 @@ func _process(delta: float) -> void:
 		targetcam=Cam.targetcam
 	if Cam.fpsmode:
 		self.global_position=targetcam.global_position
-		self.global_rotation=targetcam.global_rotation
+		#self.global_rotation=targetcam.global_rotation
+		self.global_rotation.x=lerp_angle(self.global_rotation.x,targetcam.global_rotation.x,10*delta)
+		self.global_rotation.y=lerp_angle(self.global_rotation.y,targetcam.global_rotation.y,10*delta)
 	else:
 		self.global_position=lerp(self.global_position,targetcam.global_position,2*delta)
-	
+	 

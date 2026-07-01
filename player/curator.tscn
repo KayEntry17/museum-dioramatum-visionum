@@ -13,9 +13,11 @@ script = ExtResource("1_givxw")
 shape = SubResource("CapsuleShape3D_6uffy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1462376985]
-visible = false
 gi_mode = 2
 mesh = SubResource("CapsuleMesh_umt7f")
 
-[node name="falsecam" type="Node3D" parent="." unique_id=510507284]
+[node name="falsecamx" type="Node3D" parent="." unique_id=510507284]
+physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85845244, 0)
+
+[node name="falsecamy" type="Node3D" parent="falsecamx" unique_id=491760430]

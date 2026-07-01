@@ -3,14 +3,16 @@ extends CharacterBody3D
 @export var inuse:bool=true
 @export var jumpspeed:float =5
 @export var slip: float=5
-var Sensitivity:float=1
+var Sensitivity:float=1.0
 var canjump:bool
 func _ready() -> void:
-	Cam.theserthetargets($falsecam)
+	Cam.theserthetargets($falsecamx/falsecamy)
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion: 
-		var mousemovek=Vector2(event.relative.x*Sensitivity,event.relative.y*Sensitivity)
-		$CollisionShape3D/MeshInstance3D.rotate(Vector3(1,0,0), mousemovek.x)
+		var mousemovek=Vector2(event.relative.x*Sensitivity*0.05,event.relative.y*Sensitivity*0.05)
+		$falsecamx.rotate(Vector3(0,-1.0,0), mousemovek.x)
+		$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), mousemovek.y)
+		$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
 		print(str(mousemovek)+"oaijdsoajsdioaks")
 func _process(delta: float) -> void:
 	if Cam.fpsmode:

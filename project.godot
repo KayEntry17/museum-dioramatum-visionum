@@ -21,6 +21,7 @@ Cam="*uid://cl5yobo1ply6q"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -30,7 +31,9 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 
+common/physics_jitter_fix=0.0
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 

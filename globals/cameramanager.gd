@@ -10,7 +10,7 @@ func theserthedroids(cam):
 	maincam=cam
 func theserthetargets(cam):
 	targetcam=cam
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion: 
-		var mousemovek=Vector2(event.relative.x*Sensitivity,event.relative.y*Sensitivity)
-		print(mousemovek)
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is InputEventMouseMotion: 
+		#var mousemovek=Vector2(event.relative.x*Sensitivity,event.relative.y*Sensitivity)
+		#print(mousemovek)
