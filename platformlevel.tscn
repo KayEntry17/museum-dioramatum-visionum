@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://romkbskeeycl"]
 
 [ext_resource type="Script" uid="uid://cxgyt88jberx3" path="res://core/platformlevel.gd" id="1_jgbpc"]
+[ext_resource type="Script" uid="uid://ctlbxu5cr8e2l" path="res://camdioramacontroller.gd" id="2_og5as"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
 size = Vector3(2.458374, 2.9693604, 2.675354)
 
-[node name="platformlevel" type="Area3D" unique_id=1768093041]
+[node name="platformlevel" type="Area3D" unique_id=1768093041 node_paths=PackedStringArray("selfcam")]
 script = ExtResource("1_jgbpc")
+selfcam = NodePath("camcontroller/Camera3D")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23389411, 0)
@@ -15,10 +17,12 @@ radius = 1.0
 height = 0.42
 sides = 20
 
-[node name="Node3D" type="Node3D" parent="." unique_id=758807615]
+[node name="camcontroller" type="Node3D" parent="." unique_id=758807615]
+script = ExtResource("2_og5as")
+rotspeed = 3.0
 
-[node name="Camera3D" type="Node3D" parent="Node3D" unique_id=2090528303]
-transform = Transform3D(1, 0, 0, 0, 0.94832367, 0.31730464, 0, -0.31730464, 0.94832367, 0, 1.2878866, 2.4807012)
+[node name="Camera3D" type="Camera3D" parent="camcontroller" unique_id=533309219]
+transform = Transform3D(0.99995553, -0.0029910728, 0.008939356, 0, 0.94832367, 0.31730464, -0.009426475, -0.31729054, 0.94828147, 0, 1.2878866, 2.4807012)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066223145, 0.16729736, -0.08950806)

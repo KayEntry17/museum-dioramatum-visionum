@@ -69,7 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7259922, 1.3425312, -4.5691
 [node name="Camera3D" type="Camera3D" parent="." unique_id=895743599]
 physics_interpolation_mode = 1
 transform = Transform3D(-0.99813485, 0, -0.061048523, 0, 1, 0, 0.061048523, 0, -0.99813485, 0, 6.928772, -18.108139)
+top_level = true
 attributes = SubResource("CameraAttributesPractical_yiyty")
+current = true
 fov = 90.0
 script = ExtResource("3_yiyty")
 

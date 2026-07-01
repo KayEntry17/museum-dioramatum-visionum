@@ -8,12 +8,15 @@ extends CharacterBody3D
 var canjump:bool
 func _ready() -> void:
 	Cam.theserthetargets($falsecamx/falsecamy)
+	print(Cam.targetcam)
+	Cam.fpsmode=true
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion: 
-		var mousemovek=Vector2(event.relative.x*Sensitivity*0.05,event.relative.y*Sensitivity*0.05)
-		$falsecamx.rotate(Vector3(0,-1.0,0), mousemovek.x)
-		$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), mousemovek.y)
-		$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
+	if Cam.fpsmode:
+		if event is InputEventMouseMotion: 
+			var mousemovek=Vector2(event.relative.x*Sensitivity*0.05,event.relative.y*Sensitivity*0.05)
+			$falsecamx.rotate(Vector3(0,-1.0,0), mousemovek.x)
+			$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), mousemovek.y)
+			$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
 		#print(str(mousemovek)+"oaijdsoajsdioaks")
 func _process(delta: float) -> void:
 	if Cam.fpsmode:
@@ -26,13 +29,14 @@ func _process(delta: float) -> void:
 		
 	var inpdir=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	var caminpdir=Input.get_vector("camera_left","camera_right","camera_up","camera_down")
-	$falsecamx.rotate(Vector3(0,-1.0,0), caminpdir.x*camspeed*delta)
-	$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), caminpdir.y*camspeed*delta)
-	$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
+	if Cam.fpsmode:
+		$falsecamx.rotate(Vector3(0,-1.0,0), caminpdir.x*camspeed*delta)
+		$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), caminpdir.y*camspeed*delta)
+		$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
 	#print(inpdir)
 	inpdir=inpdir.rotated(-$falsecamx.rotation.y)
 	#print($falsecamx.rotation)
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and Cam.fpsmode:
 		var arealist=$falsecamx/falsecamy/Area3D.get_overlapping_areas()
 		
 		if arealist!=[]:
@@ -50,6 +54,6 @@ func _process(delta: float) -> void:
 	#print(velocity)
 	if canjump and Input.is_action_just_pressed("ui_accept"):
 		velocity.y=jumpspeed
-		
-	move_and_slide()
+	if Cam.fpsmode:	
+		move_and_slide()
 	
