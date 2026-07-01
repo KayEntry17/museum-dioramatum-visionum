@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var Sensitivity:float=1.0
 var canjump:bool
 func _ready() -> void:
+	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED 
 	Cam.theserthetargets($falsecamx/falsecamy)
 	print(Cam.targetcam)
 	Cam.fpsmode=true
@@ -19,10 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
 		#print(str(mousemovek)+"oaijdsoajsdioaks")
 func _process(delta: float) -> void:
-	if Cam.fpsmode:
-		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED 
-	else:
-		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+
+	
 	canjump=is_on_floor()
 	if not is_on_floor():
 		velocity += get_gravity() * delta

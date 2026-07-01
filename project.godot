@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Cam="*uid://cl5yobo1ply6q"
+Mouss="*uid://cjcspu2oibtfb"
 
 [display]
 

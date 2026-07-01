@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 			#print(Cam.maincam.attributes.dof_blur_amount)
 			var tweenx = get_tree().create_tween()
 			Cam.maincam.dedof=true
+			Mouss.deactivate()
 			await get_tree().create_timer(1.7).timeout
 			Cam.fpsmode=true
 			
@@ -36,7 +37,7 @@ func interact():
 		var tween = get_tree().create_tween()
 		tween.tween_property(Cam.maincam, "attributes.dof_blur_amount",selfcam.attributes.dof_blur_amount, 1.3)
 		
-		
+		Mouss.activate()
 		fpscam=Cam.targetcam
 		Cam.targetcam=selfcam
 		Cam.fpsmode=false
