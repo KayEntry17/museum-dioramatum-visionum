@@ -17,6 +17,7 @@ metadata/_snap_enabled = true
 
 [node name="Node2D" type="Node2D" unique_id=1937236989]
 script = ExtResource("1_gmg86")
+mousespeed = 200
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=673771845]
 scale = Vector2(0.3, 0.3)

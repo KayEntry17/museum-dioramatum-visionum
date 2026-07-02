@@ -17,12 +17,14 @@ sky_material = SubResource("ProceduralSkyMaterial_jt5j1")
 [sub_resource type="Environment" id="Environment_dlc0y"]
 background_mode = 2
 sky = SubResource("Sky_yiyty")
-ssao_intensity = 6.8
-ssao_power = 2.121321
-ssao_detail = 2.4
-ssao_horizon = 0.0
-ssao_sharpness = 0.0
-ssao_light_affect = 0.2
+ssao_enabled = true
+ssao_radius = 0.47
+ssao_intensity = 4.3
+ssao_power = 1.6076595
+ssao_detail = 2.58
+ssao_horizon = 0.08
+ssao_light_affect = 0.06
+ssao_ao_channel_affect = 0.09
 glow_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dlc0y"]
@@ -84,7 +86,7 @@ current = true
 fov = 90.0
 script = ExtResource("3_g3f60")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1873395362]
+[node name="collider" type="CSGBox3D" parent="." unique_id=1873395362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013664246, 7.53335, 0.584198)
 transparency = 1.0
 gi_mode = 0

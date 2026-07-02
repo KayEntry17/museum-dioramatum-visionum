@@ -9,6 +9,21 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func shoot_ray(mask):
+	var mouse_pos = Mouss.mousepos
+	var ray_lenght = 1000
+	var from = project_ray_origin(mouse_pos)
+	var to = from + project_ray_normal(mouse_pos) * ray_lenght
+	var space = get_world_3d().direct_space_state
+	var ray_query = PhysicsRayQueryParameters3D.new()
+	ray_query.collision_mask = mask
+	
+	ray_query.from = from
+	ray_query.to = to
+	var raycast_results = space.intersect_ray(ray_query)
+	print(raycast_results)
+	return raycast_results
 func _process(delta: float) -> void:
 	#print(attributes.dof_blur_amount)
 	#print(targetcam)
@@ -50,3 +65,4 @@ func _process(delta: float) -> void:
 				self.global_rotation=targetcam.global_rotation
 			#self.global_transform=targetcam.global_transform
 	 		
+	
