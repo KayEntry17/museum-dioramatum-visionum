@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		velocity.x=speed*inpdir.x
 		velocity.z=speed*inpdir.y	
 	#print(velocity)
-	if canjump and Input.is_action_just_pressed("ui_accept"):
+	if canjump and Input.is_action_just_pressed("ui_accept") and Cam.fpsmode:
 		velocity.y=jumpspeed
 	if Cam.fpsmode:	
 		move_and_slide()

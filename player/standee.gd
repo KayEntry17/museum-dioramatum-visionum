@@ -31,7 +31,7 @@ func jump():
 	sinceonground=1000
 	velocity.y=jumpspeed
 func _process(delta: float) -> void:
-	print(sincejump)
+	#print(sincejump)
 	sincejump-=delta
 	if enablemovement:
 		
@@ -47,7 +47,10 @@ func _process(delta: float) -> void:
 			
 		
 		var inpdir=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+		#print(inpdir)
+		
 		inpdir=inpdir.rotated(-Cam.maincam.global_rotation.y)
+		
 		#print(Cam.maincam.global_position.angle_to(global_position))
 		#print(inpdir)
 				

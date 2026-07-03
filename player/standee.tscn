@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dogpnbhoxitk3" path="res://player/standee.gd" id="1_m142c"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6uffy"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qta2s"]
+height = 0.24789062
 radius = 0.07
-height = 0.31966797
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umt7f"]
 albedo_color = Color(0, 0, 0, 1)
@@ -190,8 +190,8 @@ jumpbuffer = 0.2
 coyotetime = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37437317]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15502073, 0)
-shape = SubResource("CapsuleShape3D_6uffy")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11896604, 0)
+shape = SubResource("CylinderShape3D_qta2s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=584006145]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999964, 0, 0, 0, 1.0000001, 0, 0, 0)
