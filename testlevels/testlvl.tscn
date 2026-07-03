@@ -236,7 +236,7 @@ size = Vector3(64.55, 20.73, 40.863)
 data = ExtResource("1_pf1db")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("2_qta2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7259922, 1.3425312, -4.569152)
+transform = Transform3D(-0.99995965, 0, 0.008982386, 0, 1, 0, -0.008982386, 0, -0.99995965, 1.7259922, 1.3425312, -4.569152)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=895743599]
 physics_interpolation_mode = 1

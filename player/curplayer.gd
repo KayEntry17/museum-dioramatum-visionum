@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		$falsecamx/falsecamy.rotate(Vector3(-1.0,0.0,0), caminpdir.y*camspeed*delta)
 		$falsecamx/falsecamy.rotation_degrees.x=clamp($falsecamx/falsecamy.rotation_degrees.x, -55.0, 55.0)
 	#print(inpdir)
-	inpdir=inpdir.rotated(-$falsecamx.rotation.y)
+	inpdir=inpdir.rotated(-$falsecamx.global_rotation.y)
 	#print($falsecamx.rotation)
 	if Input.is_action_just_pressed("interact") and Cam.fpsmode:
 		var arealist=$falsecamx/falsecamy/Area3D.get_overlapping_areas()

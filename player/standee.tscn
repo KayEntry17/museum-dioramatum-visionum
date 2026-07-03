@@ -186,6 +186,8 @@ _data = {
 [node name="Node3D" type="CharacterBody3D" unique_id=906936805]
 script = ExtResource("1_m142c")
 enablemovement = true
+jumpbuffer = 0.2
+coyotetime = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37437317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15502073, 0)
