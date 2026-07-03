@@ -1,12 +1,12 @@
 extends Area3D
 var fpscam
 var active=false
-
+@export var camcontroller:Node3D
 @export var selfcam:Node3D
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+#func _ready() -> void:
+	#interact()
+@export var player:Node3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 		#print(selfcam.fov)
 		if Input.is_action_just_pressed("exitdiorama"):
 			Cam.targetcam=fpscam
+			player.leave()
 			#print(fpscam)
 			active=false
 			var tweenb = get_tree().create_tween().set_trans(Tween.TRANS_QUART)
@@ -32,6 +33,8 @@ func _process(delta: float) -> void:
 func interact():
 	if !active:
 		print("la la la")
+		player.launch()
+		camcontroller.begin()
 		var tweenx = get_tree().create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		tweenx.tween_property(Cam.maincam, "fov",selfcam.fov, 1.0)
 		var tween = get_tree().create_tween()

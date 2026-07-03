@@ -2,8 +2,13 @@ extends Node3D
 @export var rotspeed:float=7
 var mouseposprev
 # Called when the node enters the scene tree for the first time.
+@export var selfcam:Node3D
 var mousemoving:=false
-
+func begin():
+	var mcpos=Vector2(Cam.maincam.global_position.x-global_position.x,Cam.maincam.global_position.z-global_position.z).angle()
+	self.global_rotation.y=-(mcpos- PI / 2)
+	print(global_rotation_degrees)
+	print($camcontroller.rotation_degrees)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
