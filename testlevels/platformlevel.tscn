@@ -4,18 +4,6 @@
 [ext_resource type="Script" uid="uid://ctlbxu5cr8e2l" path="res://core/camdioramacontroller.gd" id="2_nqy25"]
 [ext_resource type="PackedScene" uid="uid://dnctmrhaywitb" path="res://player/standee.tscn" id="3_nqy25"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_24qdx"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_nqy25"]
-sky_material = SubResource("ProceduralSkyMaterial_24qdx")
-
-[sub_resource type="Environment" id="Environment_y7ny0"]
-background_mode = 2
-sky = SubResource("Sky_nqy25")
-glow_enabled = true
-
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_og5as"]
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.5
@@ -29,13 +17,6 @@ script = ExtResource("1_24qdx")
 camcontroller = NodePath("camcontroller")
 selfcam = NodePath("camcontroller/camcontroller/Camera3D")
 player = NodePath("Node3D")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1201174545]
-environment = SubResource("Environment_y7ny0")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1355044464]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23389411, 0)
@@ -59,9 +40,6 @@ spring_length = 2.0
 transform = Transform3D(0.99995553, -0.0029910728, 0.008939356, 0, 0.94832367, 0.31730464, -0.009426475, -0.31729054, 0.94828147, 0, 0, 0)
 attributes = SubResource("CameraAttributesPractical_og5as")
 fov = 44.5
-
-[node name="CSGBox3D" type="CSGBox3D" parent="camcontroller/camcontroller/Camera3D" unique_id=1104036927]
-size = Vector3(0.1, 0.1, 0.1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066223145, 0.16729736, -0.08950806)

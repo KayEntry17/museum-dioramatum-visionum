@@ -7,9 +7,9 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jt5j1"]
 sky_top_color = Color(1, 1, 1, 1)
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_bottom_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
-ground_horizon_color = Color(0.6627451, 0.67058825, 0.6862745, 1)
+sky_horizon_color = Color(0.76078475, 0.7670211, 0.779489, 1)
+ground_bottom_color = Color(0.6665683, 0.66656893, 0.6665685, 1)
+ground_horizon_color = Color(0.7607843, 0.76862746, 0.78039217, 1)
 
 [sub_resource type="Sky" id="Sky_yiyty"]
 sky_material = SubResource("ProceduralSkyMaterial_jt5j1")
@@ -25,7 +25,12 @@ ssao_detail = 2.58
 ssao_horizon = 0.08
 ssao_light_affect = 0.06
 ssao_ao_channel_affect = 0.09
-glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 1.0
+fog_depth_curve = 0.8122524
+fog_depth_end = 53.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dlc0y"]
 lightmap_size_hint = Vector2i(1066, 1074)
@@ -68,10 +73,166 @@ mesh = SubResource("ArrayMesh_dlc0y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D/StaticBody3D" unique_id=738068324]
 shape = SubResource("ConcavePolygonShape3D_jt5j1")
 
+[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1972117877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.209393, 0, 0.58999634)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D3" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2100710418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.007267, 0, 0)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D4" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1543059435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.01203, 0, 0)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D5" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=738557501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.995234, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D6" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1558425630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D7" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2033495854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.007267, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D8" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1012743950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.01203, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D9" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2125953540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.995234, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D10" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2045697361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D11" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1302087340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.007267, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D12" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1158619046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.01203, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D25" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=567196217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.995234, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D26" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=574391744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D27" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2093207473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.007267, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D28" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1314236860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.01203, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D29" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=159814138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.995234, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D30" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=142225706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D31" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1214300500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.007267, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D13" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=516643508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.48723, 0, 0)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D14" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=577552856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.48723, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D15" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=462852047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.48723, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D33" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=473110187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.48723, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D34" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1654341884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.48723, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D16" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=322450825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.773216, 0, 0)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D17" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=832126778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.773216, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D18" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1716097924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.773216, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D37" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1222942079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.773216, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D38" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1739313451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.773216, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D32" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=861250439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.01203, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D35" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=400026633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32642746, 0, 0)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D36" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=547714216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.321663, 0, 0)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D39" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1101227584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32642746, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D40" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1137494643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.321663, 0, 19.10567)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D43" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1838573096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32642746, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D44" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=963599024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.321663, 0, 37.957355)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D59" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1001694628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32642746, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D60" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2141989223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.321663, 0, -38.198017)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D63" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=1802699720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32642746, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
+[node name="CSGBakedMeshInstance3D64" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=2050730187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.321663, 0, -19.092346)
+mesh = SubResource("ArrayMesh_dlc0y")
+
 [node name="VoxelGI" type="VoxelGI" parent="." unique_id=1040351654]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52890015, 5, 0.64224243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.43, -1.546)
 subdiv = 2
-size = Vector3(22.473572, 30, 22.516052)
+size = Vector3(64.55, 20.73, 40.863)
 data = ExtResource("1_pf1db")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("2_qta2s")]
@@ -89,6 +250,7 @@ script = ExtResource("3_g3f60")
 [node name="collider" type="CSGBox3D" parent="." unique_id=1873395362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013664246, 7.53335, 0.584198)
 transparency = 1.0
+cast_shadow = 0
 gi_mode = 0
 use_collision = true
 flip_faces = true
