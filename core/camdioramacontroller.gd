@@ -19,17 +19,22 @@ func _process(delta: float) -> void:
 		$camcontroller.rotation_degrees.x=clamp($camcontroller.rotation_degrees.x, -35.0, 20.0)
 		if  Mouss.active and Input.is_action_just_pressed("mouseclick"):
 			var raycast=Cam.maincam.shoot_ray(1 << (7 - 1))
-			if raycast=={}:
+			if !raycast=={}:
 				mouseposprev=Mouss.mousepos
 				mousemoving=true
+		
 		if  Mouss.active and Input.is_action_pressed("mouseclick") and mousemoving:
 			
 			var mousemoved=mouseposprev-Mouss.mousepos
 			mouseposprev=Mouss.mousepos
-			mousemoved*=0.1*Mouss.mouseproportion
+			mousemoved*=0.1
 			$camcontroller.rotate(Vector3(-1.0,0.0,0),mousemoved.y*rotspeed*0.5*delta)
 			self.rotation.y+=mousemoved.x*delta*rotspeed
 			$camcontroller.rotation_degrees.x=clamp($camcontroller.rotation_degrees.x, -35.0, 20.0)
 		else:
 			mousemoving=false
 	else:mousemoving=false
+	if mousemoving:
+		Mouss.inuse=true
+	else:
+		Mouss.inuse=false

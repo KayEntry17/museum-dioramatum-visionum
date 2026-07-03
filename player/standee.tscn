@@ -3,22 +3,31 @@
 [ext_resource type="Script" uid="uid://dogpnbhoxitk3" path="res://player/standee.gd" id="1_m142c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6uffy"]
+radius = 0.07
+height = 0.32
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_umt7f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umt7f"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m142c"]
+material = SubResource("StandardMaterial3D_umt7f")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_24qdx"]
+size = Vector3(0.12, 0.24, 0.01)
 
 [node name="Node3D" type="CharacterBody3D" unique_id=906936805]
 script = ExtResource("1_m142c")
-Sensitivity = 0.3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37437317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15485471, 0)
 shape = SubResource("CapsuleShape3D_6uffy")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1462376985]
-gi_mode = 2
-mesh = SubResource("CapsuleMesh_umt7f")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=584006145]
+mesh = SubResource("CylinderMesh_m142c")
 
-[node name="falsecamx" type="Node3D" parent="." unique_id=510507284]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85845244, 0)
-
-[node name="falsecamy" type="Node3D" parent="falsecamx" unique_id=491760430]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1616392567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12528582, 0)
+mesh = SubResource("BoxMesh_24qdx")
