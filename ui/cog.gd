@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 		heightoffset=lerp(heightoffset,5.5,lerpspeed*delta)
 		$MeshInstance3D.scale=lerp($MeshInstance3D.scale,Vector3(1.2,1.2,1.2),lerpspeed*delta)
 		$MeshInstance3D.get_surface_override_material(0).albedo_color=lerp($MeshInstance3D.get_surface_override_material(0).albedo_color,albedo,lerpspeed*delta)
-
+		self.global_rotation.y=lerp_angle(self.global_rotation.y,Cam.maincam.global_rotation.y+PI/2,4*delta)
 	else:
 		rotspeed=lerp(rotspeed,0.7,lerpspeed*delta)
 		heightoffset=lerp(heightoffset,3.0,lerpspeed*delta)
@@ -42,7 +42,8 @@ func _process(delta: float) -> void:
 		$MeshInstance3D/Sprite3D2.modulate=lerp($MeshInstance3D/Sprite3D2.modulate,Color(0.0, 0.0, 0.0, 1.0),lerpspeed*delta*1.5)
 		$MeshInstance3D.scale=lerp($MeshInstance3D.scale,Vector3(1.0,1.0,1.0),lerpspeed*delta)
 		$MeshInstance3D.get_surface_override_material(0).albedo_color=lerp($MeshInstance3D.get_surface_override_material(0).albedo_color,Color(1.0, 1.0, 1.0, 1.0),lerpspeed*delta)
-	self.rotation.y+=0.8*delta
+		self.rotation.y+=0.8*delta
+		#self.rotation.y+=int(self.rotation_degrees.y)%360-int(self.rotation_degrees.y)
 	$MeshInstance3D.position.y=(sin(time))*rotspeed+heightoffset
 	
 	#print(90)

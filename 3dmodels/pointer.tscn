@@ -8,19 +8,19 @@ resource_local_to_scene = true
 albedo_color = Color(0.9999999, 0.9999999, 0.9999999, 1)
 
 [node name="pointer" type="Node3D" unique_id=87834326]
-transform = Transform3D(0.899669, 0, 0.4365725, 0, 1, 0, -0.4365725, 0, 0.899669, 0, 0, 0)
+transform = Transform3D(-0.9993838, 0, 0.03509807, 0, 1, 0, -0.03509807, 0, -0.9993838, 0, 0, 0)
 script = ExtResource("1_nptfy")
 lerpspeed = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1227229996]
-transform = Transform3D(-0.2926471, -0.95622075, 4.1797737e-08, 0, -4.37114e-08, -1.0000002, 0.95622075, -0.2926471, 1.2792011e-08, -0.83500016, 2.4063342, -0.23000003)
+transform = Transform3D(-0.2926471, -0.95622075, 4.1797737e-08, 0, -4.37114e-08, -1.0000002, 0.95622075, -0.2926471, 1.2792011e-08, -0.83500016, 3.5191739, -0.23000003)
 mesh = ExtResource("1_ksiq8")
 surface_material_override/0 = SubResource("StandardMaterial3D_nptfy")
 
 [node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D" unique_id=1991049057]
 transform = Transform3D(0.28500003, -1.53265e-16, 2.9802322e-08, -2.9802322e-08, -1.2457748e-08, 0.28500003, 4.440892e-16, -0.28500003, -1.2457747e-08, -0.0050000474, -1.0192, 0.01999998)
-modulate = Color(6.3943647e-28, 6.3943647e-28, 6.3943647e-28, 1)
+modulate = Color(4e-45, 4e-45, 4e-45, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=898057040]
 transform = Transform3D(0.285, 0, 0, 0, -1.2457746e-08, 0.285, 0, -0.285, -1.2457746e-08, -0.005, -0.68, 0.02)
-modulate = Color(6.3943647e-28, 6.3943647e-28, 6.3943647e-28, 1)
+modulate = Color(4e-45, 4e-45, 4e-45, 1)

@@ -1,6 +1,7 @@
 extends Node3D
 @export var roomset: Array[Node3D]
 var curroom:int=0
+var albedo:=Color("575757")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Cam.fpsmode=false
@@ -18,4 +19,5 @@ func swap(roomnumb):
 	roomset[curroom].chosen=false
 	roomset[roomnumb].chosen=true
 	curroom=roomnumb
+	albedo=roomset[curroom].color
 	#print(curroom)

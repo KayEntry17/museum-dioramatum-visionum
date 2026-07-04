@@ -1,6 +1,6 @@
 extends Camera3D
 var targetcam
-@export var movespeed:float=10
+@export var movespeed:float=4
 @export var rotspeed:float=5
 var dedof:bool=false
 # Called when the node enters the scene tree for the first time.
@@ -52,9 +52,9 @@ func _process(delta: float) -> void:
 			else:
 				self.global_rotation=targetcam.global_rotation
 		else:
-			self.global_position.x=lerp(self.global_position.x,targetcam.global_position.x,4*delta)
-			self.global_position.y=lerp(self.global_position.y,targetcam.global_position.y,4*delta)
-			self.global_position.z=lerp(self.global_position.z,targetcam.global_position.z,4*delta)
+			self.global_position.x=lerp(self.global_position.x,targetcam.global_position.x,movespeed*delta)
+			self.global_position.y=lerp(self.global_position.y,targetcam.global_position.y,movespeed*delta)
+			self.global_position.z=lerp(self.global_position.z,targetcam.global_position.z,movespeed*delta)
 			#print("hjoasdjof"+str(self.global_position))
 			#print(targetcam.global_position)
 			#self.global_rotation=targetcam.global_rotation
