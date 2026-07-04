@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bt4qigtofrrgs" path="res://ui/menumap.gd" id="1_awnty"]
 [ext_resource type="Script" uid="uid://blfhkjt6l82ks" path="res://ui/mainmenu.gd" id="1_yli8f"]
+[ext_resource type="Script" uid="uid://btx47cjqbe8bb" path="res://ui/sub_viewport.gd" id="2_foao3"]
 [ext_resource type="Material" uid="uid://ctkkdwuo4pbal" path="res://materials/basic_white.tres" id="2_yli8f"]
 [ext_resource type="ArrayMesh" uid="uid://cgpksqpjhnr72" path="res://3dmodels/cogmesh.res" id="3_foao3"]
 [ext_resource type="VoxelGIData" uid="uid://bq2ybb8pcgh37" path="res://lightbakes/menumap.VoxelGI_data.res" id="4_0djjy"]
@@ -19,6 +20,7 @@
 [ext_resource type="Script" uid="uid://dl6rwj33gag42" path="res://ui/cog2.gd" id="16_q4phu"]
 [ext_resource type="VoxelGIData" uid="uid://dm7dnn64lpaug" path="res://lightbakes/menumapi.VoxelGI2_data.res" id="17_iojko"]
 [ext_resource type="Script" uid="uid://dlqyjv38i3a4p" path="res://core/maincam.gd" id="18_fysxj"]
+[ext_resource type="PackedScene" uid="uid://cnsemeb4y4sxv" path="res://ui/buttonb.tscn" id="21_0djjy"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_umt7f"]
 viewport_path = NodePath("SubViewport")
@@ -127,7 +129,7 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvcj8"]
 render_priority = 2
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r2hj7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0djjy"]
 viewport_path = NodePath("../../SubViewport")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kvcj8"]
@@ -227,6 +229,7 @@ stretch_mode = 5
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1666565804]
 size = Vector2i(2560, 1440)
+script = ExtResource("2_foao3")
 
 [node name="Node3D" type="Node3D" parent="SubViewport" unique_id=1762458911 node_paths=PackedStringArray("roomset")]
 script = ExtResource("1_awnty")
@@ -313,7 +316,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0, 0.016666412, 1)
 
 [node name="pointer7" parent="SubViewport/Node3D/outside" unique_id=485143446 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, 1.5570095, 0.157, 52.004528)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, 1.5570095, 0.157, 52.004528)
 albedo = Color(1, 0, 0.016666412, 1)
 texture = ExtResource("7_v6c8f")
 
@@ -329,7 +332,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iw0sq")
 script = ExtResource("5_8fvur")
 
 [node name="pointer8" parent="SubViewport/Node3D/beyond" unique_id=1514895900 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, -0.03399059, 0.15, -10.773794)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, -0.03399059, 0.15, -10.773794)
 texture = ExtResource("9_56mna")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewport/Node3D/beyond" unique_id=1693729931]
@@ -346,7 +349,7 @@ color = Color(0.5484812, 0.47792011, 1, 1)
 animationspeed = 2.5
 
 [node name="pointer8" parent="SubViewport/Node3D/credits" unique_id=270714153 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, -0.019414902, 0.155, -0.102375865)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, -0.019414902, 0.155, -0.102375865)
 lerpspeed = 2.0
 albedo = Color(0.5484812, 0.47792011, 1, 1)
 texture = ExtResource("10_ritla")
@@ -364,9 +367,9 @@ script = ExtResource("5_8fvur")
 color = Color(0, 0.63433564, 0.44012588, 1)
 
 [node name="pointer" parent="SubViewport/Node3D/settings" unique_id=87834326 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.070924155, 0, -0.1870021, 0, 0.2, 0, 0.1870021, 0, 0.070924155, -0.10633373, 0.17617929, -0.18267095)
+transform = Transform3D(-0.15788822, 0, -0.12276535, 0, 0.2, 0, 0.12276535, 0, -0.15788822, -0.10633373, 0.17617929, -0.18267095)
 albedo = Color(0, 0.63433564, 0.44012588, 1)
-texture = SubResource("ViewportTexture_r2hj7")
+texture = SubResource("ViewportTexture_0djjy")
 
 [node name="Camera3D4" type="Camera3D" parent="SubViewport/Node3D/settings" unique_id=339734597]
 transform = Transform3D(0.77162457, 0.4575564, -0.4418571, 0, 0.6946584, 0.7193398, 0.63607824, -0.55506027, 0.5360155, -1.7854774, 2.902, 1.257421)
@@ -381,7 +384,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 
 [node name="pointer5" parent="SubViewport/Node3D/spiraling" unique_id=1013876082 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092417, 0, -0.18700214, 0, 0.2, 0, 0.18700214, 0, 0.07092417, -0.3346901, 0.15, -0.2185235)
+transform = Transform3D(-0.15788826, 0, -0.12276538, 0, 0.2, 0, 0.12276538, 0, -0.15788826, -0.3346901, 0.15, -0.2185235)
 albedo = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 texture = ExtResource("11_docr2")
 
@@ -398,7 +401,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0.7166667, 0, 1)
 
 [node name="pointer3" parent="SubViewport/Node3D/lefte2" unique_id=126364325 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, -0.26291132, 0.15, -0.0036673546)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, -0.26291132, 0.15, -0.0036673546)
 albedo = Color(1, 0.7166667, 0, 1)
 texture = ExtResource("12_cqbrr")
 
@@ -415,7 +418,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 
 [node name="pointer6" parent="SubViewport/Node3D/centered" unique_id=862589641 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, -0.721318, 0.15, -0.21219301)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, -0.721318, 0.15, -0.21219301)
 albedo = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 texture = ExtResource("13_phq6h")
 
@@ -432,7 +435,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.81960785, 0.4, 0, 1)
 
 [node name="pointer4" parent="SubViewport/Node3D/righte" unique_id=610274695 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, -0.43301868, 0.15, 0.6193305)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, -0.43301868, 0.15, 0.6193305)
 albedo = Color(0.81960785, 0.4, 0, 1)
 texture = ExtResource("14_tjwgh")
 
@@ -449,7 +452,7 @@ script = ExtResource("5_8fvur")
 color = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 
 [node name="pointer2" parent="SubViewport/Node3D/central" unique_id=391330810 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.07092416, 0, -0.18700211, 0, 0.2, 0, 0.18700211, 0, 0.07092416, 0.03, 0.155, 1.6882926)
+transform = Transform3D(-0.15788823, 0, -0.12276536, 0, 0.2, 0, 0.12276536, 0, -0.15788823, 0.03, 0.155, 1.6882926)
 albedo = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 texture = ExtResource("15_lgb5m")
 
@@ -463,11 +466,11 @@ own_world_3d = true
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D/SubViewport" unique_id=319754700]
-transform = Transform3D(-0.7591504, -0.6509153, -2.8452412e-08, 0, -4.371139e-08, 1, -0.6509153, 0.7591504, 3.3183518e-08, 0, 1.91, 0)
+transform = Transform3D(0.44271624, -0.89666164, -3.919433e-08, 0, -4.3711385e-08, 1, -0.89666164, -0.44271624, -1.9351743e-08, 0, 1.91, 0)
 fov = 30.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D/SubViewport" unique_id=2125197666]
-transform = Transform3D(0.91310775, -0.4076123, 0, 0.40762097, 0.9130883, 0, 0, 0, 0.9999812, 0, -3.19, 0)
+transform = Transform3D(-0.16906245, -0.98554397, 0, 0.98556507, -0.16905883, 0, 0, 0, 0.9999812, 0, -3.19, 0)
 mesh = ExtResource("3_foao3")
 surface_material_override/0 = SubResource("StandardMaterial3D_uvulu")
 script = ExtResource("16_q4phu")
@@ -491,5 +494,98 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.23
 anchor_bottom = 1.0
+offset_right = 20.470001
 grow_vertical = 2
 color = Color(0.34, 0.34, 0.34, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="bar" unique_id=1227160908]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=320253459]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.0015432099
+anchor_right = 0.014756944
+anchor_bottom = 1.0015432
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NewGame" parent="." unique_id=1521978630 instance=ExtResource("21_0djjy")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416668
+anchor_top = 0.4351852
+anchor_right = 0.41184896
+anchor_bottom = 0.53434837
+offset_right = 2620.55
+offset_bottom = 364.12726
+scale = Vector2(0.15, 0.15)
+moveamount = 204.825
+label = "New Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" parent="." unique_id=669344554 instance=ExtResource("21_0djjy")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.5385802
+anchor_right = 0.41184896
+anchor_bottom = 0.6377434
+offset_right = 2620.55
+offset_bottom = 364.1273
+scale = Vector2(0.15, 0.15)
+moveamount = 204.825
+label = "Options"
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" parent="." unique_id=1414498999 instance=ExtResource("21_0djjy")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.6419753
+anchor_right = 0.41184896
+anchor_bottom = 0.74113846
+offset_right = 2620.55
+offset_bottom = 364.1273
+scale = Vector2(0.15, 0.15)
+moveamount = 204.825
+label = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" parent="." unique_id=386161385 instance=ExtResource("21_0djjy")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.7453703
+anchor_right = 0.41184896
+anchor_bottom = 0.84453356
+offset_right = 2620.55
+offset_bottom = 364.12726
+scale = Vector2(0.15, 0.15)
+moveamount = 204.825
+label = "Exit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="focus_entered" from="NewGame" to="." method="_on_new_game_focus_entered"]
+[connection signal="mouse_entered" from="NewGame" to="." method="_on_new_game_mouse_entered"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="focus_entered" from="Options" to="." method="_on_options_focus_entered"]
+[connection signal="mouse_entered" from="Options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="Credits" to="." method="_on_credits_focus_entered"]
+[connection signal="mouse_entered" from="Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="focus_entered" from="Exit" to="." method="_on_exit_focus_entered"]
+[connection signal="mouse_entered" from="Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

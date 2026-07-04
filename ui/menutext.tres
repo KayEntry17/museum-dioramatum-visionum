@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cnllmcbkp5fm5"]
+
+[ext_resource type="FontFile" uid="uid://dshd0utm6qqkb" path="res://ui/font/Flexi_IBM_VGA_True.ttf" id="1_gtlw0"]
+
+[resource]
+default_font = ExtResource("1_gtlw0")
