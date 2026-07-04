@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://s7hrhrn7bokl"]
 
 [ext_resource type="ArrayMesh" uid="uid://cgpksqpjhnr72" path="res://3dmodels/cogmesh.res" id="1_0aju0"]
-[ext_resource type="Script" uid="uid://b0or55o6g2njp" path="res://ui/cog.gd" id="2_1ihdg"]
 [ext_resource type="VoxelGIData" uid="uid://bq2ybb8pcgh37" path="res://lightbakes/menumap.VoxelGI_data.res" id="3_hb1jo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hg5ai"]
@@ -439,12 +438,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_uavhf")
 transform = Transform3D(0.78921014, -0.22217076, -0.60524374, -0.0807349, 0.9083857, -0.17841807, 0.58943427, 0.86468464, 0.69897, 1.3861513, 0.19531037, -2.6152477)
 mesh = ExtResource("1_0aju0")
 surface_material_override/0 = SubResource("StandardMaterial3D_uavhf")
-
-[node name="spinningcog" type="MeshInstance3D" parent="." unique_id=21030650]
-transform = Transform3D(-0.18368334, 0.047042318, -9.630704e-10, 0, -1.7265995e-08, -0.185, -0.022032483, -0.39218867, 8.029054e-09, 2.4867716, 0.6766978, -1.9179555)
-visible = false
-mesh = ExtResource("1_0aju0")
-script = ExtResource("2_1ihdg")
 
 [node name="maino" type="MeshInstance3D" parent="." unique_id=602733666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030423403, -0.020079851, -0.008152366)

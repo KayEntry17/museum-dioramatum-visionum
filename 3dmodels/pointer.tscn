@@ -2,17 +2,27 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ccrh0a6vwvo4j" path="res://3dmodels/pointer.res" id="1_ksiq8"]
 [ext_resource type="Script" uid="uid://b0or55o6g2njp" path="res://ui/cog.gd" id="1_nptfy"]
+[ext_resource type="Texture2D" uid="uid://ck2wjfyukh1wd" path="res://ui/icons/spinal-coil.png" id="3_vejr8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nptfy"]
 resource_local_to_scene = true
-albedo_color = Color(0.99999815, 0.99999815, 0.99999815, 1)
 
 [node name="pointer" type="Node3D" unique_id=87834326]
-transform = Transform3D(-0.99944013, 0, -0.03345519, 0, 1, 0, 0.03345519, 0, -0.99944013, 0, 0, 0)
+transform = Transform3D(0.31381422, 0, -0.94948435, 0, 1, 0, 0.94948435, 0, 0.31381422, 0, 0, 0)
 script = ExtResource("1_nptfy")
 lerpspeed = 7.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1227229996]
-transform = Transform3D(-0.29264727, -0.9562213, 4.179776e-08, 0, -4.3711424e-08, -1.0000008, 0.9562213, -0.29264727, 1.2792019e-08, -0.8350004, 3.5380197, -0.2300001)
+transform = Transform3D(-0.29264703, -0.9562205, 4.1797726e-08, 0, -4.371139e-08, -1, 0.9562205, -0.29264703, 1.2792008e-08, -0.835, 2.4924793, -0.23)
 mesh = ExtResource("1_ksiq8")
 surface_material_override/0 = SubResource("StandardMaterial3D_nptfy")
+
+[node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D" unique_id=1991049057]
+transform = Transform3D(0.28500003, -1.53265e-16, 2.9802322e-08, -2.9802322e-08, -1.2457748e-08, 0.28500003, 4.440892e-16, -0.28500003, -1.2457747e-08, -0.0050000474, -1.0192, 0.01999998)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_vejr8")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=898057040]
+transform = Transform3D(0.285, 0, 0, 0, -1.2457746e-08, 0.285, 0, -0.285, -1.2457746e-08, -0.005, -0.68, 0.02)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_vejr8")
