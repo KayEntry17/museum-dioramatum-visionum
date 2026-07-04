@@ -11,3 +11,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.rotation.y+=0.8*delta
+	self.rotation_degrees.y+=int(self.rotation_degrees.y)%360-int(self.rotation_degrees.y)

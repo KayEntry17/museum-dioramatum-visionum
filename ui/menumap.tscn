@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cgjue2d4b5o6v"]
 
 [ext_resource type="ArrayMesh" uid="uid://cgpksqpjhnr72" path="res://3dmodels/cogmesh.res" id="1_1ojqq"]
+[ext_resource type="Script" uid="uid://bt4qigtofrrgs" path="res://ui/menumap.gd" id="1_snhw4"]
 [ext_resource type="ArrayMesh" uid="uid://b62mjfa8w1o7c" path="res://3dmodels/menumeshwall.tres" id="1_u3byb"]
 [ext_resource type="Material" uid="uid://ctkkdwuo4pbal" path="res://materials/basic_white.tres" id="2_x13xw"]
 [ext_resource type="VoxelGIData" uid="uid://bq2ybb8pcgh37" path="res://lightbakes/menumap.VoxelGI_data.res" id="3_t502y"]
@@ -15,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://d01sbmc84plfn" path="res://ui/icons/vhs.png" id="12_gqae4"]
 [ext_resource type="Texture2D" uid="uid://imjn7cpft2oc" path="res://ui/icons/exit-door.png" id="13_iw0sq"]
 [ext_resource type="Texture2D" uid="uid://dotjut1fp4b44" path="res://ui/icons/eye-target.png" id="14_rw2q5"]
+[ext_resource type="VoxelGIData" uid="uid://dm7dnn64lpaug" path="res://lightbakes/menumapi.VoxelGI2_data.res" id="16_l078y"]
+[ext_resource type="Script" uid="uid://dlqyjv38i3a4p" path="res://core/maincam.gd" id="18_t17im"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hg5ai"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -28,6 +31,8 @@ sky_material = SubResource("ProceduralSkyMaterial_hg5ai")
 [sub_resource type="Environment" id="Environment_3q5ct"]
 background_mode = 2
 sky = SubResource("Sky_1ojqq")
+tonemap_mode = 3
+tonemap_exposure = 0.52
 ssao_enabled = true
 ssao_radius = 0.16
 ssao_intensity = 3.39
@@ -36,6 +41,7 @@ ssao_detail = 5.0
 ssao_light_affect = 1.0
 ssao_ao_channel_affect = 0.49
 ssil_enabled = true
+ssil_intensity = 0.09
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hg5ai"]
 _surfaces = [{
@@ -83,6 +89,8 @@ _surfaces = [{
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w87ql"]
 emission_enabled = true
+grow = true
+grow_amount = 0.002
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iw0sq"]
 render_priority = 2
@@ -115,7 +123,7 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvcj8"]
 render_priority = 2
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rw2q5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_t17im"]
 viewport_path = NodePath("../../SubViewport")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kvcj8"]
@@ -192,7 +200,9 @@ grow = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvulu"]
 shading_mode = 0
 
-[node name="Node3D" type="Node3D" unique_id=1762458911]
+[node name="Node3D" type="Node3D" unique_id=1762458911 node_paths=PackedStringArray("roomset")]
+script = ExtResource("1_snhw4")
+roomset = [NodePath("central"), NodePath("righte"), NodePath("lefte2"), NodePath("settings"), NodePath("credits"), NodePath("centered"), NodePath("spiraling"), NodePath("beyond"), NodePath("outside")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1061893218]
 environment = SubResource("Environment_3q5ct")
@@ -217,7 +227,7 @@ size = Vector3(0.1, 0.4, 2.68)
 material = ExtResource("2_x13xw")
 
 [node name="cylinderthingies" type="MeshInstance3D" parent="." unique_id=885640125]
-transform = Transform3D(0.935, 0, 0, 0, 0.935, 0, 0, 0, 0.935, -2.091661, -0.028345287, -2.359099)
+transform = Transform3D(0.935, 0, 0, 0, 0.935, 0, 0, 0, 0.935, -2.15117, -0.028345287, -2.359099)
 mesh = SubResource("ArrayMesh_u3byb")
 surface_material_override/0 = ExtResource("2_x13xw")
 
@@ -262,9 +272,9 @@ mesh = ExtResource("1_1ojqq")
 surface_material_override/0 = ExtResource("2_x13xw")
 
 [node name="VoxelGI" type="VoxelGI" parent="." unique_id=1076868625]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022566319, -0.07319343, -4.6610417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022566319, -0.07319343, -3.7100813)
 subdiv = 3
-size = Vector3(9.596099, 1, 14.83068)
+size = Vector3(9.596099, 1, 16.732601)
 data = ExtResource("3_t502y")
 
 [node name="outside" type="MeshInstance3D" parent="." unique_id=323114314]
@@ -272,11 +282,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.621, -0.157, -49.112)
 mesh = SubResource("ArrayMesh_gqae4")
 surface_material_override/0 = SubResource("StandardMaterial3D_w87ql")
 script = ExtResource("4_r5ne5")
+color = Color(1, 0, 0.016666412, 1)
 
 [node name="pointer7" parent="outside" unique_id=485143446 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(-0.18892218, 0, 0.06563857, 0, 0.2, 0, -0.06563857, 0, -0.18892218, 1.5570095, 0.157, 52.004528)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(0.13113073, 0, -0.15101239, 0, 0.2, 0, 0.15101239, 0, 0.13113073, 1.5570095, 0.157, 52.004528)
+albedo = Color(1, 0, 0.016666412, 1)
 texture = ExtResource("13_iw0sq")
+
+[node name="Camera3D9" type="Camera3D" parent="outside" unique_id=1056328952]
+transform = Transform3D(0.777146, 0.4526952, -0.4371627, 0, 0.6946584, 0.7193398, 0.62932044, -0.55903196, 0.53985095, -1.119, 5.199, 55.602997)
+fov = 39.0
+size = 5.734
 
 [node name="beyond" type="MeshInstance3D" parent="." unique_id=1410470307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.15, -16.401999)
@@ -285,86 +301,132 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iw0sq")
 script = ExtResource("4_r5ne5")
 
 [node name="pointer8" parent="beyond" unique_id=1514895900 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(0.18070877, 0, -0.08569922, 0, 0.2, 0, 0.08569922, 0, 0.18070877, -0.03399059, 0.15, -10.773794)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(-0.1116537, 0, 0.16593212, 0, 0.2, 0, -0.16593212, 0, -0.1116537, -0.03399059, 0.15, -10.773794)
 texture = ExtResource("14_rw2q5")
 
+[node name="Camera3D2" type="Camera3D" parent="beyond" unique_id=1693729931]
+transform = Transform3D(0.8241262, 0.2745992, -0.4953901, 0, 0.8746197, 0.48480964, 0.56640625, -0.3995443, 0.72079706, -2.65, 2.742, -6.3670006)
+fov = 39.0
+size = 5.734
+
 [node name="credits" type="MeshInstance3D" parent="." unique_id=1068624752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8587284, -0.155, -1.9476362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.859, -0.135, -1.948)
 mesh = SubResource("ArrayMesh_1dty8")
 surface_material_override/0 = SubResource("StandardMaterial3D_rxpuq")
 script = ExtResource("4_r5ne5")
+color = Color(0.5484812, 0.47792011, 1, 1)
 
 [node name="pointer8" parent="credits" unique_id=270714153 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(0.13702525, 0, -0.14568493, 0, 0.2, 0, 0.14568493, 0, 0.13702525, -0.019414902, 0.155, -0.102375865)
-albedo = Color(0.99999994, 0.99999994, 1, 1)
+transform = Transform3D(-0.043583006, 0, 0.1951936, 0, 0.2, 0, -0.1951936, 0, -0.043583006, -0.019414902, 0.155, -0.102375865)
+albedo = Color(0.5484812, 0.47792011, 1, 1)
 texture = ExtResource("12_gqae4")
+
+[node name="Camera3D3" type="Camera3D" parent="credits" unique_id=1773918354]
+transform = Transform3D(0.77162457, 0.4575564, -0.4418571, 0, 0.6946584, 0.7193398, 0.63607824, -0.55506027, 0.5360155, -1.8510001, 2.887, 1.504)
+fov = 39.0
+size = 5.734
 
 [node name="settings" type="MeshInstance3D" parent="." unique_id=1352544783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4604774, -0.155, -1.936421)
 mesh = SubResource("ArrayMesh_w87ql")
 surface_material_override/0 = SubResource("StandardMaterial3D_kvcj8")
 script = ExtResource("4_r5ne5")
+color = Color(0, 0.63433564, 0.44012588, 1)
 
 [node name="pointer" parent="settings" unique_id=87834326 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(-0.030377097, 0, 0.19767965, 0, 0.2, 0, -0.19767965, 0, -0.030377097, -0.10633373, 0.17617929, -0.18267095)
-albedo = Color(1, 1, 1, 1)
-texture = SubResource("ViewportTexture_rw2q5")
+transform = Transform3D(-0.07681488, 0, -0.18466045, 0, 0.2, 0, 0.18466045, 0, -0.07681488, -0.10633373, 0.17617929, -0.18267095)
+albedo = Color(0, 0.63433564, 0.44012588, 1)
+texture = SubResource("ViewportTexture_t17im")
+
+[node name="Camera3D4" type="Camera3D" parent="settings" unique_id=339734597]
+transform = Transform3D(0.77162457, 0.4575564, -0.4418571, 0, 0.6946584, 0.7193398, 0.63607824, -0.55506027, 0.5360155, -1.7854774, 2.902, 1.257421)
+fov = 39.0
+size = 5.734
 
 [node name="spiraling" type="MeshInstance3D" parent="." unique_id=1500561921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8391137, -0.15, -4.3589997)
 mesh = SubResource("ArrayMesh_kvcj8")
 surface_material_override/0 = SubResource("StandardMaterial3D_efnem")
 script = ExtResource("4_r5ne5")
+color = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 
 [node name="pointer5" parent="spiraling" unique_id=1013876082 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(0.00054431154, 0, 0.19999935, 0, 0.2, 0, -0.19999935, 0, 0.00054431154, -0.3346901, 0.15, -0.2185235)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(-0.104031846, 0, -0.17081396, 0, 0.2, 0, 0.17081396, 0, -0.104031846, -0.3346901, 0.15, -0.2185235)
+albedo = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 texture = ExtResource("8_iw0sq")
+
+[node name="Camera3D5" type="Camera3D" parent="spiraling" unique_id=1189203784]
+transform = Transform3D(0.77162457, 0.4575564, -0.4418571, 0, 0.6946584, 0.7193398, 0.63607824, -0.55506027, 0.5360155, -2.755886, 3.867, 2.5599997)
+fov = 39.0
+size = 5.734
 
 [node name="lefte2" type="MeshInstance3D" parent="." unique_id=2045437618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2138991, -0.15, -1.5510868)
 mesh = SubResource("ArrayMesh_rxpuq")
 surface_material_override/0 = SubResource("StandardMaterial3D_gqae4")
 script = ExtResource("4_r5ne5")
+color = Color(1, 0.7166667, 0, 1)
 
 [node name="pointer3" parent="lefte2" unique_id=126364325 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(-0.00826681, 0, 0.19982912, 0, 0.2, 0, -0.19982912, 0, -0.00826681, -0.26291132, 0.15, -0.0036673546)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(-0.09642733, 0, -0.17521924, 0, 0.2, 0, 0.17521924, 0, -0.09642733, -0.26291132, 0.15, -0.0036673546)
+albedo = Color(1, 0.7166667, 0, 1)
 texture = ExtResource("10_l078y")
+
+[node name="Camera3D7" type="Camera3D" parent="lefte2" unique_id=1250583196]
+transform = Transform3D(0.777146, 0.4526952, -0.4371627, 0, 0.6946584, 0.7193398, 0.62932044, -0.55903196, 0.53985095, -2.7138991, 3.8470001, 1.8370868)
+fov = 39.0
+size = 5.734
 
 [node name="centered" type="MeshInstance3D" parent="." unique_id=684493070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.763, -0.15, -4.36533)
 mesh = SubResource("ArrayMesh_efnem")
 surface_material_override/0 = SubResource("StandardMaterial3D_r5ne5")
 script = ExtResource("4_r5ne5")
+color = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 
 [node name="pointer6" parent="centered" unique_id=862589641 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(-0.17315036, 0, -0.10009479, 0, 0.2, 0, 0.10009479, 0, -0.17315036, -0.721318, 0.15, -0.21219301)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(0.19999819, 0, -0.0008616135, 0, 0.2, 0, 0.0008616135, 0, 0.19999819, -0.721318, 0.15, -0.21219301)
+albedo = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 texture = ExtResource("7_gqae4")
+
+[node name="Camera3D6" type="Camera3D" parent="centered" unique_id=1209296111]
+transform = Transform3D(0.777146, 0.4526952, -0.4371627, 0, 0.6946584, 0.7193398, 0.62932044, -0.55903196, 0.53985095, -3.163, 3.8070002, 2.5113301)
+fov = 39.0
+size = 5.734
 
 [node name="righte" type="MeshInstance3D" parent="." unique_id=1180281607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2739999, -0.15, -1.551)
 mesh = SubResource("ArrayMesh_r5ne5")
 surface_material_override/0 = SubResource("StandardMaterial3D_l078y")
 script = ExtResource("4_r5ne5")
+color = Color(0.81960785, 0.4, 0, 1)
 
 [node name="pointer4" parent="righte" unique_id=610274695 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(-0.19528385, 0, -0.043176774, 0, 0.2, 0, 0.043176774, 0, -0.19528385, -0.43301868, 0.15, 0.6193305)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(0.19041254, 0, -0.061180793, 0, 0.2, 0, 0.061180793, 0, 0.19041254, -0.43301868, 0.15, 0.6193305)
+albedo = Color(0.81960785, 0.4, 0, 1)
 texture = ExtResource("9_rw2q5")
 
+[node name="Camera3D8" type="Camera3D" parent="righte" unique_id=165941538]
+transform = Transform3D(0.777146, 0.4526952, -0.4371627, 0, 0.6946584, 0.7193398, 0.62932044, -0.55903196, 0.53985095, -2.8160002, 3.482, 2.137)
+fov = 39.0
+size = 5.734
+
 [node name="central" type="MeshInstance3D" parent="." unique_id=2083109565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.155, -1.739)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.154, -1.739)
 mesh = SubResource("ArrayMesh_yjh7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_yjh7s")
 script = ExtResource("4_r5ne5")
+color = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 
 [node name="pointer2" parent="central" unique_id=391330810 instance=ExtResource("6_yjh7s")]
-transform = Transform3D(-0.1025479, 0, -0.17170891, 0, 0.2, 0, 0.17170891, 0, -0.1025479, 0.03, 0.155, 1.6882926)
-albedo = Color(1, 1, 1, 1)
+transform = Transform3D(0.17550242, 0, 0.09591101, 0, 0.2, 0, -0.09591101, 0, 0.17550242, 0.03, 0.155, 1.6882926)
+albedo = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 texture = ExtResource("11_snhw4")
+
+[node name="Camera3D" type="Camera3D" parent="central" unique_id=1055492222]
+transform = Transform3D(0.8660254, 0.3596699, -0.3473292, 0, 0.6946584, 0.7193398, 0.5, -0.6229665, 0.6015918, -5.175, 7.061, 5.92)
+fov = 39.0
+size = 5.734
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1419731731]
 own_world_3d = true
@@ -374,7 +436,20 @@ transparent_bg = true
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.421, 1.91, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport" unique_id=2125197666]
-transform = Transform3D(0.13674901, -0.009802089, -0.99053794, 0.07149463, 0.99738014, -7.977336e-09, 0.9879825, -0.070817955, 0.13710272, 4.421, 0, 0)
+transform = Transform3D(0.057181455, 0, 0.99834496, 0, 0.99993914, 0, -0.9983241, 0, 0.057182647, 4.421, 0, 0)
 mesh = ExtResource("1_1ojqq")
 surface_material_override/0 = SubResource("StandardMaterial3D_uvulu")
 script = ExtResource("6_gqae4")
+
+[node name="VoxelGI2" type="VoxelGI" parent="." unique_id=485905845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5369873, 0, -21.9525)
+visible = false
+size = Vector3(4.7004395, 1, 20)
+data = ExtResource("16_l078y")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1675387211]
+transform = Transform3D(0.8660254, 0.3596699, -0.3473292, 0, 0.6946584, 0.7193398, 0.5, -0.6229665, 0.6015918, -5.175, 7.061, 5.92)
+current = true
+fov = 39.0
+size = 5.734
+script = ExtResource("18_t17im")
