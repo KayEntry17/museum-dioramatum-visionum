@@ -13,11 +13,11 @@ func _process(delta: float) -> void:
 
 
 func _on_exit_focus_entered() -> void:
-	$SubViewport/Node3D.swap(8)
+	map.swap(8)
 
 
 func _on_credits_focus_entered() -> void:
-	$SubViewport/Node3D.swap(4)
+	map.swap(4)
 #
 
 
@@ -30,28 +30,28 @@ func _on_exit_pressed() -> void:
 
 
 func _on_exit_mouse_entered() -> void:
-	$SubViewport/Node3D.swap(8)
+	map.swap(8)
 
 
 func _on_new_game_focus_entered() -> void:
-	$SubViewport/Node3D.swap(0)
+	map.swap(0)
 
 
 func _on_new_game_pressed() -> void:
-	#$SubViewport/Node3D.swap(8)
+	#map.swap(8)
 	pass
 
 
 func _on_new_game_mouse_entered() -> void:
-	$SubViewport/Node3D.swap(0)
+	map.swap(0)
 
 
 func _on_options_focus_entered() -> void:
-	$SubViewport/Node3D.swap(3)
+	map.swap(3)
 
 
 func _on_options_mouse_entered() -> void:
-	$SubViewport/Node3D.swap(3)
+	map.swap(3)
 
 
 func _on_options_pressed() -> void:
@@ -59,4 +59,4 @@ func _on_options_pressed() -> void:
 
 
 func _on_credits_mouse_entered() -> void:
-	$SubViewport/Node3D.swap(4)
+	map.swap(4)
