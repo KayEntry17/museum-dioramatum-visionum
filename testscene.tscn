@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://4i3nvn13wvrw" path="res://icon.svg" id="1_jotil"]
 [ext_resource type="Shader" uid="uid://bbssawublcm2i" path="res://testshader.gdshader" id="3_612pj"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_umt7f"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvulu"]
+shader = ExtResource("3_612pj")
+shader_parameter/anim = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_umt7f"]
 shader = ExtResource("1_44gc5")
-shader_parameter/croonit = 0.502000023845
+shader_parameter/croonit = 3.76
 shader_parameter/offset = 0.0
 
 [sub_resource type="Gradient" id="Gradient_612pj"]
@@ -19,15 +20,6 @@ offsets = PackedFloat32Array(0, 0.5296167)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_612pj"]
 gradient = SubResource("Gradient_612pj")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_612pj"]
-shader = ExtResource("3_612pj")
-shader_parameter/cull_backface = false
-shader_parameter/use_front = true
-shader_parameter/fov = 18.006000807785
-shader_parameter/rot_y_deg = 0.0
-shader_parameter/rot_x_deg = 0.0
-shader_parameter/inset = 0.0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_umt7f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3a4jo"]
@@ -36,38 +28,31 @@ albedo_texture = ExtResource("1_jotil")
 [node name="Node3D" type="Node3D" unique_id=1974876911]
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=740964522]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_uvulu")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_umt7f")
+texture = ExtResource("1_jotil")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=944261215]
 material = SubResource("ShaderMaterial_umt7f")
-offset_left = 533.0
-offset_top = 214.0
-offset_right = 749.0
-offset_bottom = 414.0
+offset_left = 1014.0
+offset_top = 236.0
+offset_right = 1230.0
+offset_bottom = 436.0
 texture = ExtResource("1_jotil")
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=7059212]
-visible = false
 material = SubResource("ShaderMaterial_umt7f")
-offset_left = 533.0
-offset_top = 214.0
-offset_right = 749.0
-offset_bottom = 414.0
+offset_left = 371.0
+offset_top = 251.0
+offset_right = 627.0
+offset_bottom = 451.0
 texture = SubResource("GradientTexture1D_612pj")
-
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=716026578]
-material = SubResource("ShaderMaterial_612pj")
-offset_left = 229.0
-offset_top = 99.0
-offset_right = 445.0
-offset_bottom = 299.0
-texture = ExtResource("1_jotil")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1717365759]
 transform = Transform3D(0.87035567, 0.49242356, 0, -0.49242356, 0.87035567, 0, 0, 0, 1, 1.724, 0, 0)
