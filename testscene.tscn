@@ -108,3 +108,4 @@ fov = 127.2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=362744004]
 libraries/ = SubResource("AnimationLibrary_mawog")
+speed_scale = 0.5
