@@ -35,7 +35,7 @@ func save_game():
 	var save_game = FileAccess.open("user://museumlog.save", FileAccess.WRITE)
 	var json_string=JSON.stringify(save())
 	save_game.store_line(json_string)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time sinceyf the previous frame.
 func load_game():
 	if not FileAccess.file_exists("user://museumlog.save"):
 		settings=defaultsettings
@@ -61,5 +61,5 @@ func load_game():
 			volsfx=node_data["volsfx"]
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"),volsfx)
 			print(settings)
-func _process(delta: float) -> void:
+func _process(delta: float) -> void: 
 	pass

@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		inpdir=inpdir.rotated(-Cam.maincam.global_rotation.y)
 		
 		#print(Cam.maincam.global_position.angle_to(global_position))
-		#print(inpdir)
+		#print(inpddgtir)
 				
 		if inpdir==Vector2(0,0):
 			velocity.x=move_toward(velocity.x,0,slip*delta*speed)
