@@ -79,7 +79,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=187945420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21415854, 0, 0.58999634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22881794, 0, 0.5968187)
 mesh = SubResource("ArrayMesh_pf1db")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBakedMeshInstance3D" unique_id=956351254]
