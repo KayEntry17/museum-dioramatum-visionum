@@ -1,29 +1,6 @@
 [gd_scene format=4 uid="uid://s7hrhrn7bokl"]
 
 [ext_resource type="ArrayMesh" uid="uid://cgpksqpjhnr72" path="res://3dmodels/cogmesh.res" id="1_0aju0"]
-[ext_resource type="VoxelGIData" uid="uid://bq2ybb8pcgh37" path="res://lightbakes/menumap.VoxelGI_data.res" id="3_hb1jo"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hg5ai"]
-sky_top_color = Color(1, 1, 1, 1)
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_bottom_color = Color(0.72, 0.72, 0.72, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_1ojqq"]
-sky_material = SubResource("ProceduralSkyMaterial_hg5ai")
-
-[sub_resource type="Environment" id="Environment_3q5ct"]
-background_mode = 2
-sky = SubResource("Sky_1ojqq")
-ssao_enabled = true
-ssao_radius = 0.16
-ssao_intensity = 3.39
-ssao_power = 1.6643544
-ssao_detail = 5.0
-ssao_light_affect = 1.0
-ssao_ao_channel_affect = 0.49
-ssil_enabled = true
-glow_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hg5ai"]
 _surfaces = [{
@@ -50,13 +27,6 @@ _surfaces = [{
 }]
 
 [node name="Node3D" type="Node3D" unique_id=1762458911]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1061893218]
-environment = SubResource("Environment_3q5ct")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=322720421]
-transform = Transform3D(-0.7655384, 0.067978695, -0.63978904, -0.302447, 0.8396594, 0.45110768, 0.5678707, 0.53884256, -0.6222315, 0, 0, 0)
-shadow_enabled = true
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1942675636]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.45189866, 0, -6.404857)
@@ -441,82 +411,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_uavhf")
 
 [node name="maino" type="MeshInstance3D" parent="." unique_id=602733666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030423403, -0.020079851, -0.008152366)
-visible = false
 mesh = SubResource("ArrayMesh_0aju0")
-
-[node name="VoxelGI" type="VoxelGI" parent="." unique_id=1076868625]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07319343, -5.5577135)
-visible = false
-subdiv = 3
-size = Vector3(6.76, 1, 13.037336)
-data = ExtResource("3_hb1jo")
-
-[node name="theoutdoors" type="CSGBox3D" parent="." unique_id=1411131646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6062775, -0.15, -49.087036)
-visible = false
-size = Vector3(113.07876, 0.1, 141.12247)
-
-[node name="centered" type="CSGBox3D" parent="theoutdoors" unique_id=1419428132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3992774, 0, 44.729706)
-operation = 2
-size = Vector3(2.78, 0.1, 3.5673437)
-
-[node name="centered2" type="CSGBox3D" parent="theoutdoors" unique_id=1637726150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6062775, 0, -20.252136)
-operation = 2
-size = Vector3(89.9, 0.1, 85.867584)
-
-[node name="thebeyond" type="CSGBox3D" parent="theoutdoors" unique_id=1684118120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6062775, 0, 32.675407)
-operation = 2
-size = Vector3(1.195, 0.1, 20.450172)
-
-[node name="swttings" type="CSGBox3D" parent="theoutdoors" unique_id=553049299]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.096755, 0, 47.158615)
-operation = 2
-size = Vector3(1.2161255, 0.1, 1.3137512)
-
-[node name="spiral" type="CSGBox3D" parent="theoutdoors" unique_id=220210082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21872258, 0, 44.73604)
-operation = 2
-size = Vector3(2.845, 0.1, 3.58)
-
-[node name="credits" type="CSGBox3D" parent="theoutdoors" unique_id=460453865]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2405198, 0, 47.1474)
-operation = 2
-size = Vector3(0.8054199, 0.1, 1.3953857)
-
-[node name="lefte" type="CSGBox3D" parent="theoutdoors" unique_id=934514485]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8501766, 0, 47.54395)
-operation = 2
-size = Vector3(1.3088952, 0.1, 2.0449023)
-
-[node name="centered4" type="CSGBox3D" parent="theoutdoors" unique_id=1199025120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1694231, 0, 48.44282)
-operation = 2
-size = Vector3(0.7725363, 0.1, 1.3229932)
-
-[node name="righte" type="CSGBox3D" parent="theoutdoors" unique_id=299820418]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3622775, 0, 47.544037)
-operation = 2
-size = Vector3(1.3088952, 0.1, 2.0449023)
-
-[node name="centered3" type="CSGBox3D" parent="theoutdoors" unique_id=2007636475]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6062775, 0, 49.021034)
-operation = 2
-size = Vector3(2.76, 0.1, 0.9717627)
-
-[node name="mainhall" type="CSGBox3D" parent="theoutdoors" unique_id=1823283189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6062775, 0, 47.355743)
-operation = 2
-size = Vector3(1.195, 0.1, 8.895536)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="theoutdoors" unique_id=788916592]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6062775, 0.15, 43.245365)
-operation = 2
-size = Vector3(1.215, 1, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="theoutdoors" unique_id=1844979803]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5149922, 0.15, 46.50011)
-operation = 2
-size = Vector3(1.9646387, 1, 1)

@@ -271,4 +271,4 @@ flip_faces = true
 size = Vector3(17.983353, 15.23877, 19.629456)
 
 [node name="platformlevel" parent="." unique_id=1804792935 instance=ExtResource("4_x8guy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015328974, 1.8088875, -0.00021368265)
+transform = Transform3D(1.035, 0, 0, 0, 1.035, 0, 0, 0, 1.035, 0.0015328974, 1.8088875, -0.00021368265)

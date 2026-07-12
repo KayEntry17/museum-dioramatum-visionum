@@ -4,13 +4,15 @@
 [ext_resource type="Script" uid="uid://bbnrfkrua41wr" path="res://addons/awesome_input_icons/classes/InputIconTextureRect.gd" id="1_impv7"]
 [ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="3_llbeg"]
 
-[node name="inputprompt" type="TextureButton" unique_id=1742221003]
+[node name="inputprompt" type="Button" unique_id=1953376165]
 custom_minimum_size = Vector2(0, 50)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 552.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_llbeg")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=993571285]
 layout_mode = 1
@@ -19,10 +21,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_bottom = 7
 
 [node name="Control" type="Control" parent="MarginContainer" unique_id=1079648884]
 layout_mode = 2
@@ -42,13 +44,11 @@ metadata/_custom_type_script = "uid://bbnrfkrua41wr"
 
 [node name="Label" type="Label" parent="MarginContainer/Control" unique_id=1313047275]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_right = 40.0
-offset_bottom = 11.5
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 47.0
 grow_vertical = 2
 theme = ExtResource("3_llbeg")
-text = "Jump
+text = "Left
 "
+vertical_alignment = 2
