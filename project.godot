@@ -144,3 +144,4 @@ common/physics_interpolation=true
 
 rendering_device/driver.windows="d3d12"
 camera/depth_of_field/depth_of_field_bokeh_quality=2
+anti_aliasing/quality/use_taa=true

@@ -3,11 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://5ilhtt0ey6ki" path="res://museum/room1.tscn" id="1_2yc01"]
 [ext_resource type="PackedScene" uid="uid://bca5cm0b5np8n" path="res://player/curator.tscn" id="1_f3gim"]
 [ext_resource type="Material" uid="uid://d2j1a5w4jal6s" path="res://gltfs/materials/generic.tres" id="1_wcod2"]
+[ext_resource type="Texture2D" uid="uid://cysll6odc5v3s" path="res://gltfs/room1museum_concretede.png" id="2_nenk8"]
 [ext_resource type="Script" uid="uid://dlqyjv38i3a4p" path="res://core/maincam.gd" id="2_x8g85"]
 [ext_resource type="PackedScene" uid="uid://cypji5w10hmqq" path="res://museum/wire1.tscn" id="4_3walr"]
 [ext_resource type="PackedScene" uid="uid://bbxcqp1qpy7op" path="res://museum/wire2.tscn" id="5_r7cxb"]
 [ext_resource type="Script" uid="uid://c37vs4d03kqlq" path="res://museum/wire.gd" id="5_wcod2"]
 [ext_resource type="Script" uid="uid://bgohrr4ujs4bx" path="res://museum/intro.gd" id="8_p1f42"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0v3"]
+resource_name = "generic"
+cull_mode = 2
+albedo_texture = ExtResource("2_nenk8")
+uv1_scale = Vector3(0.235, 0.365, 0.235)
+uv1_triplanar = true
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6c2k"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -210,27 +220,15 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5u0v3"]
 resource_name = "introk"
-length = 5.866667
-tracks/0/type = "value"
+length = 6.5
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D2:position")
+tracks/0/path = NodePath("Node")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(38.402, 2.348, -0.857)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2, 4.0333333, 4.7),
+"times": PackedFloat32Array(1.8, 4.8999996, 5.566666),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
@@ -243,41 +241,41 @@ tracks/1/keys = {
 "method": &"end_intro"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:movespeed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.0333333, 5.4666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.7, 0.7, 4.0]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:movespeed")
+tracks/2/path = NodePath("Camera3D:fov")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.8, 5.466666),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.055, 4.0]
+"values": [60.0, 60.0, 90.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Camera3D:fov")
+tracks/3/path = NodePath("Camera3D:attributes:dof_blur_amount")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.01, 4.6),
+"times": PackedFloat32Array(0, 1.8, 5.456666),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [72.9, 72.9, 90.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Camera3D:attributes:dof_blur_amount")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4.5899997),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.21, 0.0]
+"values": [0.1, 0.1, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5u0v3"]
@@ -290,8 +288,8 @@ _data = {
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1219698084]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.54023, -0.00051641464, -1.7874504)
-size = Vector3(6.8397827, 1, 4.5545044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.54023, 0.083040714, -1.0206734)
+size = Vector3(6.8397827, 1.1671143, 3.0209503)
 material = ExtResource("1_wcod2")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=944530673]
@@ -304,6 +302,16 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 41.7
 size = Vector3(6.8397827, 1, 4.5545044)
 material = ExtResource("1_wcod2")
 
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=626519]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 40.12122, 0.77390623, -2.5111065)
+size = Vector3(0.35604477, 2.463623, 0.1344986)
+material = SubResource("StandardMaterial3D_5u0v3")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1447763282]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 36.674488, 0.77390605, -2.5111065)
+size = Vector3(0.35604477, 2.463623, 0.1344986)
+material = SubResource("StandardMaterial3D_5u0v3")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131965340]
 environment = SubResource("Environment_f3gim")
 
@@ -315,7 +323,7 @@ Sensitivity = 0.185
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1009259056]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.98927236, 0.14608303, 0, -0.14608303, 0.98927236, 38.402, 2.348, -0.857)
+transform = Transform3D(1, 0, 0, 0, 0.98927236, 0.14608303, 0, -0.14608303, 0.98927236, 38.402, 2.6487918, 1.1799582)
 top_level = true
 attributes = SubResource("CameraAttributesPractical_3walr")
 fov = 90.0
@@ -323,7 +331,7 @@ script = ExtResource("2_x8g85")
 
 [node name="Camera3D2" type="Node3D" parent="." unique_id=1474918684]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.98927236, 0.14608303, 0, -0.14608303, 0.98927236, 38.402, 2.348, -0.857)
+transform = Transform3D(1, 0, 0, 0, 0.98927236, 0.14608303, 0, -0.14608303, 0.98927236, 38.402, 2.6482387, 1.1762129)
 top_level = true
 
 [node name="room1museum" parent="." unique_id=929739325 instance=ExtResource("1_2yc01")]
@@ -340,9 +348,11 @@ surface_material_override/0 = SubResource("ShaderMaterial_nenk8")
 script = ExtResource("5_wcod2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.59952, 2.1089668, 1.0656141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.59952, 2.1089668, 0.8922353)
 light_energy = 10.168
 shadow_enabled = true
+shadow_bias = 1.241
+shadow_normal_bias = 0.27
 spot_range = 3.971092
 
 [node name="Node" type="Node" parent="." unique_id=1458729783]
@@ -350,4 +360,3 @@ script = ExtResource("8_p1f42")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1250058146]
 libraries/ = SubResource("AnimationLibrary_5u0v3")
-speed_scale = 1.3
