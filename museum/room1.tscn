@@ -159,7 +159,7 @@ data = PackedVector3Array(35.8378, 5.9828, -2.3933, 35.8626, 0.6853, -15.2268, 3
 [node name="room1museum" unique_id=929739325 instance=ExtResource("1_nv6xh")]
 
 [node name="Cube_012" parent="." index="1" unique_id=2770361]
-transform = Transform3D(1.005, 0, 1e-45, 0, 1, 0, -1e-45, 0, 1, 37.631332, 1.8066419, -29.4738)
+transform = Transform3D(1.005, 0, 6.609492e-21, 0, 1, 0, -6.6425394e-21, 0, 1, 37.631332, 1.8066419, -29.4738)
 script = ExtResource("2_u0iyc")
 speed = 3.0
 
@@ -173,13 +173,13 @@ transform = Transform3D(0.11452243, 0, 0, 0, 0.11452243, 0, 0, 0, 0.11452243, 38
 mesh = SubResource("ArrayMesh_068yr")
 
 [node name="parkingatlas_007" parent="." index="23" unique_id=960901360]
-transform = Transform3D(-3.3762062e-06, 1.2838221, -7.6412914e-07, -0.41986826, -3.8206457e-07, 1.2132229, 1.2132229, 3.4404488e-06, 0.41986826, 35.64313, 5.1596212, -26.211487)
+transform = Transform3D(-5.055771e-07, 1.2838221, -2.2405222e-06, -1.2311064, -1.1202611e-06, -0.3641101, -0.3641101, 2.0051343e-06, 1.2311064, 35.64313, 5.1596212, -26.211487)
 script = ExtResource("4_u0iyc")
 axis = Vector3(-1, 0, 0)
 speed = 40.0
 
 [node name="parkingatlas_015" type="MeshInstance3D" parent="." index="24" unique_id=1235694730]
-transform = Transform3D(-2.4464962e-06, 1.2838221, -6.73325e-07, 0.36997434, 6.027648e-08, -1.2293568, -1.2293568, -2.5367453e-06, -0.36997434, 35.643, 5.125, -28.451)
+transform = Transform3D(3.6680083e-07, 1.2838221, -2.2643546e-06, 1.2442033, 2.0270646e-07, 0.31647596, 0.31647596, -2.2848972e-06, -1.2442033, 35.643, 5.125, -28.451)
 mesh = SubResource("ArrayMesh_yexrr")
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
@@ -361,22 +361,28 @@ visible = false
 transform = Transform3D(-2.1466591, -3.2413652e-07, 1.4168457e-14, 0, -9.383345e-08, -2.1466591, 3.2413652e-07, -2.1466591, 9.383345e-08, 36.307236, 3.9163318, -2.124279)
 
 [node name="parkingatlas_012" parent="." index="71" unique_id=212637683]
-transform = Transform3D(-1.3178582, 1.8957747e-06, 1.6945188, -1.6945188, -7.406978e-08, -1.3178582, -1.1053686e-06, -2.1466591, 1.5419492e-06, 36.86844, 4.273806, -2.1267223)
+transform = Transform3D(-0.33603907, 4.3952053e-08, 2.120194, -2.120194, -1.929298e-06, -0.33603907, 1.8986323e-06, -2.1466591, 3.4542344e-07, 36.86844, 4.273806, -2.1267223)
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
 [node name="parkingatlas_014" parent="." index="73" unique_id=667047154]
-transform = Transform3D(-1.9552547, 3.7325892e-06, -0.8860726, 0.8860726, -8.062932e-07, -1.9552547, -3.7325892e-06, -2.1466591, -8.062932e-07, 40.178688, 4.273806, -2.1267223)
+transform = Transform3D(0.81137776, 1.2150565e-06, -1.9874133, 1.9874133, -1.8084723e-06, 0.81137776, -1.2150565e-06, -2.1466591, -1.8084723e-06, 40.178688, 4.273806, -2.1267223)
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
 [node name="Cube_032" parent="." index="74" unique_id=2021625149]
-transform = Transform3D(-1.005, 0, 1.8199258e-06, 0, 1, 0, -1.8290255e-06, 0, -1, 39.395973, 1.8066419, -29.4738)
+transform = Transform3D(-1.005, 0, 5.8730416e-06, 0, 1, 0, -5.902407e-06, 0, -1, 39.395973, 1.8066419, -29.4738)
 script = ExtResource("2_u0iyc")
 speed = 3.0
 modifier = 2
+
+[node name="Cylinder_032" parent="." index="77" unique_id=1453328498]
+visible = false
+
+[node name="Cylinder_033" parent="." index="78" unique_id=1915373134]
+visible = false
 
 [node name="BézierCurve_005" parent="." index="79" unique_id=732137428]
 visible = false

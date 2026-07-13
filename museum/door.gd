@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 			self.rotation_degrees.y=lerp(self.rotation_degrees.y,50.0,speed*delta)
 		else:
 			self.rotation_degrees.y=lerp(self.rotation_degrees.y,130.0,speed*delta)
-func turn_on():
+func turn_on(): 
 	on=true
 func turn_off():
 	on=false

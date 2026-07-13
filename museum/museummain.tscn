@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bbxcqp1qpy7op" path="res://museum/wire2.tscn" id="5_r7cxb"]
 [ext_resource type="Script" uid="uid://c37vs4d03kqlq" path="res://museum/wire.gd" id="5_wcod2"]
 [ext_resource type="Script" uid="uid://bgohrr4ujs4bx" path="res://museum/intro.gd" id="8_p1f42"]
+[ext_resource type="PackedScene" uid="uid://romkbskeeycl" path="res://testlevels/platformlevel.tscn" id="10_5u0v3"]
+[ext_resource type="Script" uid="uid://cpi1pqhsifnd" path="res://museum/doorset.gd" id="11_tuqm2"]
+[ext_resource type="Script" uid="uid://cy4wc1yrjnnf7" path="res://museum/general.gd" id="12_w4wu2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0v3"]
 resource_name = "generic"
@@ -51,9 +54,8 @@ fog_depth_end = 53.6
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.5
 dof_blur_far_transition = 6.0
-dof_blur_amount = 0.21
 
-[sub_resource type="Shader" id="Shader_0wj8b"]
+[sub_resource type="Shader" id="Shader_w4wu2"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
 
 shader_type spatial;
@@ -90,10 +92,10 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1f42"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4wu2"]
 resource_local_to_scene = true
 render_priority = 0
-shader = SubResource("Shader_0wj8b")
+shader = SubResource("Shader_w4wu2")
 shader_parameter/albedo = Color(0, 0, 0, 1)
 shader_parameter/albedo_texture_size = Vector2i(0, 0)
 shader_parameter/point_size = 1.0
@@ -145,7 +147,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nenk8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj7mv"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_p1f42")
@@ -161,46 +163,10 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/color = Color(0, 1, 0, 1)
-shader_parameter/on = 1.01
+shader_parameter/on = 0.0
 
 [sub_resource type="Animation" id="Animation_p1f42"]
 length = 3.0000000000000004
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:movespeed")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [4.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:fov")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [90.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:attributes:dof_blur_amount")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.21]
-}
 
 [sub_resource type="Animation" id="Animation_nenk8"]
 resource_name = "intro"
@@ -275,7 +241,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.8, 5.456666),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.1, 0.1, 0.0]
+"values": [0.05, 0.05, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5u0v3"]
@@ -284,6 +250,9 @@ _data = {
 &"intro": SubResource("Animation_nenk8"),
 &"introk": SubResource("Animation_5u0v3")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
+size = Vector3(2.2336426, 2.9853516, 0.60754395)
 
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
@@ -326,8 +295,9 @@ physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.98927236, 0.14608303, 0, -0.14608303, 0.98927236, 38.402, 2.6487918, 1.1799582)
 top_level = true
 attributes = SubResource("CameraAttributesPractical_3walr")
-fov = 90.0
+fov = 60.0
 script = ExtResource("2_x8g85")
+movespeed = 0.7
 
 [node name="Camera3D2" type="Node3D" parent="." unique_id=1474918684]
 physics_interpolation_mode = 1
@@ -339,12 +309,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -
 
 [node name="BézierCurve_008" parent="." unique_id=19811220 instance=ExtResource("4_3walr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.322727, 1.2413305, -12.270446)
-surface_material_override/0 = SubResource("ShaderMaterial_p1f42")
+surface_material_override/0 = SubResource("ShaderMaterial_w4wu2")
 script = ExtResource("5_wcod2")
 
 [node name="BézierCurve_007" parent="." unique_id=644824418 instance=ExtResource("5_r7cxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25604, 1.2413305, -12.285494)
-surface_material_override/0 = SubResource("ShaderMaterial_nenk8")
+surface_material_override/0 = SubResource("ShaderMaterial_uj7mv")
 script = ExtResource("5_wcod2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
@@ -360,3 +330,18 @@ script = ExtResource("8_p1f42")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1250058146]
 libraries/ = SubResource("AnimationLibrary_5u0v3")
+
+[node name="platformlevel" parent="." unique_id=1768093041 instance=ExtResource("10_5u0v3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.378185, 1.7952466, -12.246271)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1328224515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.51844, 2.6883535, -28.341131)
+script = ExtResource("11_tuqm2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1116996967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19934082, -0.9926758, -1.6676788)
+shape = SubResource("BoxShape3D_umt7f")
+
+[node name="general" type="Node" parent="." unique_id=1489219575 node_paths=PackedStringArray("turnlist")]
+script = ExtResource("12_w4wu2")
+turnlist = [NodePath("../StaticBody3D2"), NodePath("../BézierCurve_007"), NodePath("../room1museum/Cube_012"), NodePath("../room1museum/Cube_032")]
