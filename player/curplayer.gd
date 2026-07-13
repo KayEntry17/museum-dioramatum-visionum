@@ -7,10 +7,13 @@ extends CharacterBody3D
 @export var Sensitivity:float=1.0
 var canjump:bool
 func _ready() -> void:
-	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED 
-	Cam.theserthetargets($falsecamx/falsecamy)
+	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	velocity.y=-10000
+	#Cam.theserthetargets($falsecamx/falsecamy)
 	print(Cam.targetcam)
-	Cam.fpsmode=true
+	move_and_slide()
+	velocity.y=0
+	#Cam.fpsmode=true
 func _unhandled_input(event: InputEvent) -> void:
 	if Cam.fpsmode:
 		if event is InputEventMouseMotion: 

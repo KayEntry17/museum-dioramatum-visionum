@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dum5c0bexrw8b" path="res://gltfs/room1museum.glb" id="1_nv6xh"]
 [ext_resource type="VoxelGIData" uid="uid://4ca8qjnrxi2a" path="res://museum/room1.VoxelGI_data.res" id="2_1p5n5"]
+[ext_resource type="Script" uid="uid://cn0lgwfvssi15" path="res://museum/door.gd" id="2_u0iyc"]
 [ext_resource type="Material" uid="uid://dwge78u0f8luq" path="res://gltfs/materials/fixture.tres" id="2_y1kgg"]
 [ext_resource type="Material" uid="uid://dx0sjr67ae05b" path="res://gltfs/materials/fixturelight.tres" id="3_0wj8b"]
 [ext_resource type="Script" uid="uid://dke0pj1354r6f" path="res://museum/rotating.gd" id="4_u0iyc"]
@@ -134,7 +135,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0wj8b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0iyc"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_0wj8b")
@@ -157,18 +158,22 @@ data = PackedVector3Array(35.8378, 5.9828, -2.3933, 35.8626, 0.6853, -15.2268, 3
 
 [node name="room1museum" unique_id=929739325 instance=ExtResource("1_nv6xh")]
 
+[node name="Cube_017" parent="." index="4" unique_id=453380547]
+transform = Transform3D(1, 0, 7e-45, 0, 1, 0, -7e-45, 0, 1, 38.08348, 1.8063074, -2.3665917)
+script = ExtResource("2_u0iyc")
+
 [node name="Sphere_004" type="MeshInstance3D" parent="." index="21" unique_id=34509840]
 transform = Transform3D(0.11452243, 0, 0, 0, 0.11452243, 0, 0, 0, 0.11452243, 38.52016, 4.6803694, -5.7033)
 mesh = SubResource("ArrayMesh_068yr")
 
 [node name="parkingatlas_007" parent="." index="23" unique_id=1577568026]
-transform = Transform3D(-5.6117646e-08, 1.2838221, -2.6441681e-15, -1.1280987, -4.9310763e-08, -0.61285585, -0.61285585, -2.678878e-08, 1.1280987, 35.64313, 5.1596212, -26.211487)
+transform = Transform3D(-5.6117646e-08, 1.2838221, -2.0437717e-15, 1.1242019, 4.9140425e-08, -0.6199751, -0.6199751, -2.7099976e-08, -1.1242019, 35.64313, 5.1596212, -26.211487)
 script = ExtResource("4_u0iyc")
 axis = Vector3(-1, 0, 0)
 speed = 40.0
 
 [node name="parkingatlas_015" type="MeshInstance3D" parent="." index="24" unique_id=1235694730]
-transform = Transform3D(-9.3443396e-07, 1.2838221, -2.3247344e-06, 1.2773786, 1.1623672e-06, 0.12846488, 0.12846488, -2.2195627e-06, -1.2773786, 35.643, 5.125, -28.451)
+transform = Transform3D(4.0231544e-08, 1.2838221, 1.9996673e-06, -1.0987631, -9.998337e-07, 0.6640172, 0.6640172, -1.73223e-06, 1.0987631, 35.643, 5.125, -28.451)
 mesh = SubResource("ArrayMesh_yexrr")
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
@@ -350,24 +355,24 @@ visible = false
 transform = Transform3D(-2.1466591, -3.2413652e-07, 1.4168457e-14, 0, -9.383345e-08, -2.1466591, 3.2413652e-07, -2.1466591, 9.383345e-08, 36.307236, 3.9163318, -2.124279)
 
 [node name="parkingatlas_012" parent="." index="71" unique_id=2115783427]
-transform = Transform3D(-2.1316166, 1.8602043e-06, -0.25368538, 0.25368538, 1.10889395e-08, -2.1316166, -1.8458586e-06, -2.1466591, -2.308443e-07, 36.86844, 4.273806, -2.1267223)
+transform = Transform3D(1.5620621, 2.02166e-06, 1.4724492, -1.4724492, -6.436281e-08, 1.5620621, 1.515252e-06, -2.1466591, 1.3398742e-06, 36.86844, 4.273806, -2.1267223)
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
 [node name="parkingatlas_014" parent="." index="73" unique_id=537780994]
-transform = Transform3D(0.7987528, 1.2265448e-06, 1.9925208, -1.9925208, 1.8131201e-06, 0.7987528, -1.2265448e-06, -2.1466591, 1.8131201e-06, 40.178688, 4.273806, -2.1267223)
+transform = Transform3D(0.8555884, 2.1034214e-07, 1.9687849, -1.9687849, 3.207558e-07, 0.8555884, -2.1034214e-07, -2.1466591, 3.207558e-07, 40.178688, 4.273806, -2.1267223)
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
 [node name="BézierCurve_005" parent="." index="79" unique_id=789626145]
 visible = false
-surface_material_override/0 = SubResource("ShaderMaterial_0wj8b")
+surface_material_override/0 = SubResource("ShaderMaterial_u0iyc")
 
 [node name="BézierCurve_006" parent="." index="80" unique_id=586359439]
 visible = false
-surface_material_override/0 = SubResource("ShaderMaterial_0wj8b")
+surface_material_override/0 = SubResource("ShaderMaterial_u0iyc")
 
 [node name="Collision" parent="." index="81" unique_id=1641264133]
 visible = false
