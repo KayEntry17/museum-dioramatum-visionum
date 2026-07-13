@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://88hnylx4xacw"]
+
+[resource]
+resource_name = "lighupbits"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 0.78042513, 0.36141667, 1)
+emission_energy_multiplier = 2.17

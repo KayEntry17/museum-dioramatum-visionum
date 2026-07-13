@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://by261q7lkovlo"]
+
+[ext_resource type="PackedScene" uid="uid://5ilhtt0ey6ki" path="res://museum/room1.tscn" id="1_2yc01"]
+[ext_resource type="PackedScene" uid="uid://bca5cm0b5np8n" path="res://player/curator.tscn" id="1_f3gim"]
+[ext_resource type="Script" uid="uid://dlqyjv38i3a4p" path="res://core/maincam.gd" id="2_x8g85"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6c2k"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(0.76078475, 0.7670211, 0.779489, 1)
+ground_bottom_color = Color(0.6665683, 0.66656893, 0.6665685, 1)
+ground_horizon_color = Color(0.7607843, 0.76862746, 0.78039217, 1)
+
+[sub_resource type="Sky" id="Sky_yiyty"]
+sky_material = SubResource("ProceduralSkyMaterial_k6c2k")
+
+[sub_resource type="Environment" id="Environment_f3gim"]
+background_mode = 2
+sky = SubResource("Sky_yiyty")
+ambient_light_source = 1
+ambient_light_sky_contribution = 0.0
+ssao_enabled = true
+ssao_radius = 0.53
+ssao_intensity = 4.3
+ssao_power = 1.6076595
+ssao_detail = 2.58
+ssao_horizon = 0.08
+ssao_light_affect = 0.06
+ssao_ao_channel_affect = 0.09
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 1.0
+fog_depth_curve = 0.8122524
+fog_depth_end = 53.6
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3walr"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.5
+dof_blur_far_transition = 6.0
+dof_blur_amount = 0.0
+
+[node name="Node3D" type="Node3D" unique_id=1353796469]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131965340]
+environment = SubResource("Environment_f3gim")
+
+[node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("1_f3gim")]
+transform = Transform3D(-0.99995965, 0, 0.008982386, 0, 1, 0, -0.008982386, 0, -0.99995965, 39.09, 1.673, -4.821508)
+speed = 5.0
+slip = 10.0
+Sensitivity = 0.185
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1009259056]
+physics_interpolation_mode = 1
+transform = Transform3D(-0.99813485, 0, -0.061048523, 0, 1, 0, 0.061048523, 0, -0.99813485, 39.09, 1.673, -18.108139)
+top_level = true
+attributes = SubResource("CameraAttributesPractical_3walr")
+current = true
+fov = 90.0
+script = ExtResource("2_x8g85")
+
+[node name="room1museum" parent="." unique_id=929739325 instance=ExtResource("1_2yc01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -0.25235605)

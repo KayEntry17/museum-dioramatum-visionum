@@ -1,0 +1,188 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dum5c0bexrw8b"
+path="res://.godot/imported/room1museum.glb-065c2415967a158131c87f23f4b35426.scn"
+
+[deps]
+
+source_file="res://gltfs/room1museum.glb"
+dest_files=["res://.godot/imported/room1museum.glb-065c2415967a158131c87f23f4b35426.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material.023": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.023.tres",
+"use_external/path": "uid://cpd8uft2iqawd"
+},
+"Material.024": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.024.tres",
+"use_external/path": "uid://chfu85nmswvnv"
+},
+"Material.026": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.026.tres",
+"use_external/path": "uid://d0huxb3ggc1lg"
+},
+"Material.027": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.027.tres",
+"use_external/path": "uid://vb4utvih8l1s"
+},
+"boldsignagedownscaledtransparent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/boldsignagedownscaledtransparent.tres",
+"use_external/path": "uid://dvp32krh7tej"
+},
+"border": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/border.tres",
+"use_external/path": "uid://baqttdggkk10x"
+},
+"borderpole": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/borderpole.tres",
+"use_external/path": "uid://dyspio7q1o2ot"
+},
+"disclaimerssymbolssized": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/disclaimerssymbolssized.tres",
+"use_external/path": "uid://dyuuqpeeug2gw"
+},
+"doorbw": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/doorbw.tres",
+"use_external/path": "uid://dl7t8r1qcv34o"
+},
+"doorside": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/doorside.tres",
+"use_external/path": "uid://reyncy3khhfk"
+},
+"doorside.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/doorside.001.tres",
+"use_external/path": "uid://fjr36ei1gxuh"
+},
+"entrance mat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/entrance mat.tres",
+"use_external/path": "uid://bm3ry1km1irbt"
+},
+"fixture": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/fixture.tres",
+"use_external/path": "uid://dwge78u0f8luq"
+},
+"fixturelight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/fixturelight.tres",
+"use_external/path": "uid://dx0sjr67ae05b"
+},
+"framesvarietyatlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/framesvarietyatlas.tres",
+"use_external/path": "uid://duwed4kmol8nl"
+},
+"generic": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/generic.tres",
+"use_external/path": "uid://d2j1a5w4jal6s"
+},
+"lightbeam": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/lightbeam.tres",
+"use_external/path": "uid://du7ak1h2re"
+},
+"lighupbits": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/lighupbits.tres",
+"use_external/path": "uid://88hnylx4xacw"
+},
+"logo+doortext": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/logo+doortext.tres",
+"use_external/path": "uid://dg8aj3x42yfjp"
+},
+"marblefloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/marblefloor.tres",
+"use_external/path": "uid://cmymkssjh3ein"
+},
+"moderndoor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/moderndoor.tres",
+"use_external/path": "uid://ut3nndcihm4u"
+},
+"parkingatlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/parkingatlas.tres",
+"use_external/path": "uid://doxqpcq3gcxtq"
+},
+"parkingatlas.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/parkingatlas.001.tres",
+"use_external/path": "uid://bot0txc1sqn0u"
+},
+"railing": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/railing.tres",
+"use_external/path": "uid://b74t65mld36mj"
+},
+"randomatlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/randomatlas.tres",
+"use_external/path": "uid://bxhmcrpdl4ltc"
+},
+"sketches": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/sketches.tres",
+"use_external/path": "uid://bvnu38073g0b4"
+},
+"wireendwhite": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/wireendwhite.tres",
+"use_external/path": "uid://dcg2ovc5nv5uf"
+},
+"wiregen": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/wiregen.tres",
+"use_external/path": "uid://cl7k0awibp3a3"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

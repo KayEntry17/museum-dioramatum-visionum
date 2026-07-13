@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2j1a5w4jal6s"]
+
+[ext_resource type="Texture2D" uid="uid://cysll6odc5v3s" path="res://gltfs/room1museum_concretede.png" id="1_kguul"]
+
+[resource]
+resource_name = "generic"
+cull_mode = 2
+albedo_texture = ExtResource("1_kguul")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

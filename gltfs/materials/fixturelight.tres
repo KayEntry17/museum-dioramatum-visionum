@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dx0sjr67ae05b"]
+
+[ext_resource type="Texture2D" uid="uid://ucoad8pmg055" path="res://gltfs/room1museum_lightfixture.png" id="1_10sij"]
+
+[resource]
+resource_name = "fixturelight"
+cull_mode = 2
+albedo_texture = ExtResource("1_10sij")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.8000002
+emission_operator = 1
+emission_texture = ExtResource("1_10sij")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

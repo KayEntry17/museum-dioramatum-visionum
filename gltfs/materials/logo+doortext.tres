@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dg8aj3x42yfjp"]
+
+[ext_resource type="Texture2D" uid="uid://c8gbxskxsr5nq" path="res://gltfs/room1museum_blacklogo+doortext.png" id="1_cyljn"]
+
+[resource]
+resource_name = "logo+doortext"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_cyljn")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false
+metadata/_gltf_primary_texture_coord = 0

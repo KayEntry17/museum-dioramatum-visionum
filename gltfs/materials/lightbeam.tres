@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du7ak1h2re"]
+
+[resource]
+resource_name = "lightbeam"
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+metallic = 1.0

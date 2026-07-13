@@ -11,12 +11,12 @@ sky_horizon_color = Color(0.76078475, 0.7670211, 0.779489, 1)
 ground_bottom_color = Color(0.6665683, 0.66656893, 0.6665685, 1)
 ground_horizon_color = Color(0.7607843, 0.76862746, 0.78039217, 1)
 
-[sub_resource type="Sky" id="Sky_yiyty"]
+[sub_resource type="Sky" id="Sky_pf1db"]
 sky_material = SubResource("ProceduralSkyMaterial_jt5j1")
 
 [sub_resource type="Environment" id="Environment_dlc0y"]
 background_mode = 2
-sky = SubResource("Sky_yiyty")
+sky = SubResource("Sky_pf1db")
 ssao_enabled = true
 ssao_radius = 0.47
 ssao_intensity = 4.3

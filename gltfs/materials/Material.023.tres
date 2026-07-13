@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cpd8uft2iqawd"]
+
+[ext_resource type="Texture2D" uid="uid://cqvixuv8cush5" path="res://gltfs/room1museum_leafwall.png" id="1_kig4e"]
+
+[resource]
+resource_name = "Material.023"
+cull_mode = 2
+albedo_texture = ExtResource("1_kig4e")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
