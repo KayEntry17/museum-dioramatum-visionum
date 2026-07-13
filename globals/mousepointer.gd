@@ -6,7 +6,12 @@ var timesincemove: float
 var mouseproportion
 var visactive
 var inuse
+var menumode:bool=false
 # Called when the node enters the scene tree for the first time.
+func appear():
+	Input.mouse_mode=Input.MOUSE_MODE_CONFINED_HIDDEN
+	menumode=true
+	
 func _ready() -> void:
 	#mouseproportion=1152/float(DisplayServer.window_get_size().x)
 	print(DisplayServer.window_get_size())
@@ -16,7 +21,7 @@ func _ready() -> void:
 	active=false
 	visactive=false
 	inuse=true
-func activate():
+func activate():  
 	active=true
 	$Icon.position=get_viewport().get_visible_rect().get_center()
 func deactivate():
@@ -33,12 +38,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Icon.global_position.y=clamp($Icon.global_position.y,0,get_viewport().get_visible_rect().size.y)
 # Called every frame. 'delta' is the elapsed time since the previous framehv.
 func _process(delta: float) -> void:
-	#mouseproportion=1152/DisplayServer.window_get_size().x
 	timesincemove+=delta
 	if timesincemove>0.5:
 		visactive=false
+		
 	var caminpdir=Input.get_vector("camera_left","camera_right","camera_up","camera_down")
-	if Input.is_action_pressed("mousetoggle") and active:
+	if Input.is_action_pressed("mousetoggle") and active:   
 		timesincemove=0
 		visactive=true
 		$Icon.global_position+=caminpdir*mousespeed*delta*5

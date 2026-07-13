@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://hb1fh8kn0xwu"
 Cam="*uid://cl5yobo1ply6q"
 Mouss="*uid://cjcspu2oibtfb"
 Save="*uid://g4xvtl1olwp6"
+Pause="*uid://bl04qam8mjys8"
 
 [display]
 

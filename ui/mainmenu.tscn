@@ -7,8 +7,6 @@
 [ext_resource type="ArrayMesh" uid="uid://cgpksqpjhnr72" path="res://3dmodels/cogmesh.res" id="3_foao3"]
 [ext_resource type="VoxelGIData" uid="uid://bq2ybb8pcgh37" path="res://lightbakes/menumap.VoxelGI_data.res" id="4_0djjy"]
 [ext_resource type="Script" uid="uid://btx47cjqbe8bb" path="res://ui/sub_viewport.gd" id="4_8fvur"]
-[ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="4_kn6wg"]
-[ext_resource type="PackedScene" uid="uid://62aplbfjh88o" path="res://ui/inputprompt.tscn" id="4_v6c8f"]
 [ext_resource type="Script" uid="uid://gbify1enelv3" path="res://ui/outside.gd" id="5_8fvur"]
 [ext_resource type="PackedScene" uid="uid://66hhfs1ygeaw" path="res://3dmodels/pointer.tscn" id="6_10bux"]
 [ext_resource type="Texture2D" uid="uid://imjn7cpft2oc" path="res://ui/icons/exit-door.png" id="7_v6c8f"]
@@ -175,7 +173,7 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvcj8"]
 render_priority = 2
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kn6wg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_10bux"]
 viewport_path = NodePath("../../SubViewport")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kvcj8"]
@@ -381,8 +379,17 @@ points = PackedVector2Array(16, 1000, 16, 1244.965, 350, 1244.965, 350, 1781, 34
 width = 8.0
 joint_mode = 2
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1316867327]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24739583
+anchor_right = 1.2473959
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=225243288]
-visible = false
 texture_filter = 1
 material = SubResource("ShaderMaterial_0djjy")
 layout_mode = 1
@@ -411,69 +418,6 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 15
 metadata/_edit_use_anchors_ = true
-
-[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect2" unique_id=518804035]
-layout_mode = 2
-theme = ExtResource("4_kn6wg")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect2/ScrollContainer" unique_id=244341146]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="inputprompt" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1974827430 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt2" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1703803858 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt3" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1565847732 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt4" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=728745866 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt5" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1944389539 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt6" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=910926751 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt7" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=570126340 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt8" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=202996778 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt9" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=70192422 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt10" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1996416289 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt11" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1826398108 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt15" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=180021069 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt16" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1360523565 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt17" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1526062780 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt18" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=2086302854 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt12" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1167202205 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt13" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1562978993 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
-
-[node name="inputprompt14" parent="TextureRect2/ScrollContainer/VBoxContainer" unique_id=1738803585 instance=ExtResource("4_v6c8f")]
-layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2081706152]
 libraries/ = SubResource("AnimationLibrary_10bux")
@@ -567,7 +511,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0, 0.016666412, 1)
 
 [node name="pointer7" parent="SubViewport/Node3D/outside" unique_id=485143446 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, 1.5570095, 0.157, 52.004528)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, 1.5570095, 0.157, 52.004528)
 albedo = Color(1, 0, 0.016666412, 1)
 texture = ExtResource("7_v6c8f")
 
@@ -583,7 +527,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iw0sq")
 script = ExtResource("5_8fvur")
 
 [node name="pointer8" parent="SubViewport/Node3D/beyond" unique_id=1514895900 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, -0.03399059, 0.15, -10.773794)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, -0.03399059, 0.15, -10.773794)
 texture = ExtResource("9_56mna")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewport/Node3D/beyond" unique_id=1693729931]
@@ -600,7 +544,7 @@ color = Color(0.5484812, 0.47792011, 1, 1)
 animationspeed = 2.5
 
 [node name="pointer8" parent="SubViewport/Node3D/credits" unique_id=270714153 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, -0.019414902, 0.155, -0.102375865)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, -0.019414902, 0.155, -0.102375865)
 lerpspeed = 2.0
 albedo = Color(0.5484812, 0.47792011, 1, 1)
 texture = ExtResource("10_ritla")
@@ -618,9 +562,9 @@ script = ExtResource("5_8fvur")
 color = Color(0, 0.63433564, 0.44012588, 1)
 
 [node name="pointer" parent="SubViewport/Node3D/settings" unique_id=87834326 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.08474725, 0, -0.18115713, 0, 0.2, 0, 0.18115713, 0, 0.08474725, -0.10633373, 0.17617929, -0.18267095)
+transform = Transform3D(-0.04935068, 0, 0.19381566, 0, 0.2, 0, -0.19381566, 0, -0.04935068, -0.10633373, 0.17617929, -0.18267095)
 albedo = Color(0, 0.63433564, 0.44012588, 1)
-texture = SubResource("ViewportTexture_kn6wg")
+texture = SubResource("ViewportTexture_10bux")
 
 [node name="Camera3D4" type="Camera3D" parent="SubViewport/Node3D/settings" unique_id=339734597]
 transform = Transform3D(0.77162457, 0.4575564, -0.4418571, 0, 0.6946584, 0.7193398, 0.63607824, -0.55506027, 0.5360155, -1.59, 2.717, 1.252)
@@ -635,7 +579,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 
 [node name="pointer5" parent="SubViewport/Node3D/spiraling" unique_id=1013876082 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.08474729, 0, -0.18115722, 0, 0.2, 0, 0.18115722, 0, 0.08474729, -0.3346901, 0.15, -0.2185235)
+transform = Transform3D(-0.049350705, 0, 0.19381577, 0, 0.2, 0, -0.19381577, 0, -0.049350705, -0.3346901, 0.15, -0.2185235)
 albedo = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 texture = ExtResource("11_docr2")
 
@@ -652,7 +596,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0.7166667, 0, 1)
 
 [node name="pointer3" parent="SubViewport/Node3D/lefte2" unique_id=126364325 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, -0.26291132, 0.15, -0.0036673546)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, -0.26291132, 0.15, -0.0036673546)
 albedo = Color(1, 0.7166667, 0, 1)
 texture = ExtResource("12_cqbrr")
 
@@ -669,7 +613,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 
 [node name="pointer6" parent="SubViewport/Node3D/centered" unique_id=862589641 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, -0.531, 0.15, 0.288)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, -0.531, 0.15, 0.288)
 albedo = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 texture = ExtResource("13_phq6h")
 
@@ -686,7 +630,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.81960785, 0.4, 0, 1)
 
 [node name="pointer4" parent="SubViewport/Node3D/righte" unique_id=610274695 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, -0.43301868, 0.15, 0.6193305)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, -0.43301868, 0.15, 0.6193305)
 albedo = Color(0.81960785, 0.4, 0, 1)
 texture = ExtResource("14_tjwgh")
 
@@ -703,7 +647,7 @@ script = ExtResource("5_8fvur")
 color = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 
 [node name="pointer2" parent="SubViewport/Node3D/central" unique_id=391330810 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.084747285, 0, -0.1811572, 0, 0.2, 0, 0.1811572, 0, 0.084747285, 0.03, 0.155, 1.6882926)
+transform = Transform3D(-0.049350698, 0, 0.19381574, 0, 0.2, 0, -0.19381574, 0, -0.049350698, 0.03, 0.155, 1.6882926)
 albedo = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 texture = ExtResource("15_lgb5m")
 
@@ -717,11 +661,11 @@ own_world_3d = true
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D/SubViewport" unique_id=319754700]
-transform = Transform3D(-0.32435656, -0.9459347, -4.1348127e-08, 0, -4.371138e-08, 1, -0.9459347, 0.32435656, 1.4178078e-08, 0, 1.91, 0)
+transform = Transform3D(0.13602631, 0.9907051, 4.3305104e-08, 0, -4.371138e-08, 1, 0.9907051, -0.13602631, -5.9459e-09, 0, 1.91, 0)
 fov = 30.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D/SubViewport" unique_id=2125197666]
-transform = Transform3D(0.57945013, -2.037519, 0, 0.81500757, 1.4486254, 0, 0, 0, 1, 0, -3.19, 0)
+transform = Transform3D(-0.4116853, 2.2783148, 0, -0.91132593, -1.0292133, 0, 0, 0, 1, 0, -3.19, 0)
 mesh = ExtResource("3_foao3")
 surface_material_override/0 = SubResource("StandardMaterial3D_uvulu")
 script = ExtResource("16_q4phu")
