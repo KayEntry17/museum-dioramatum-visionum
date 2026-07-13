@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://dx0sjr67ae05b" path="res://gltfs/materials/fixturelight.tres" id="3_0wj8b"]
 [ext_resource type="Script" uid="uid://dke0pj1354r6f" path="res://museum/rotating.gd" id="4_u0iyc"]
 [ext_resource type="Material" uid="uid://doxqpcq3gcxtq" path="res://gltfs/materials/parkingatlas.tres" id="5_0wj8b"]
-[ext_resource type="Material" uid="uid://dc3x6xwtb5my5" path="res://materials/wiregr.tres" id="6_u0iyc"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3u2fd"]
 _surfaces = [{
@@ -98,6 +97,61 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pilhc")
 
+[sub_resource type="Shader" id="Shader_0wj8b"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+uniform vec4 color: source_color;
+uniform float on;
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	ALBEDO=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),2)*on);
+	EMISSION=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),2)*1.0*on);
+	//ALPHA =pow(( pow(VIEW.y,2)+pow(VIEW.x,2)+pow(VIEW.z,2)),2)/3.;
+	//ALPHA=pow(dot(NORMAL,VIEW),3.)*transparency;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0wj8b"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_0wj8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0, 1, 0, 1)
+shader_parameter/on = 0.0
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u0iyc"]
 data = PackedVector3Array(35.8378, 5.9828, -2.3933, 35.8626, 0.6853, -15.2268, 35.8626, 0.6853, -2.3933, 35.8378, 5.9828, -2.3933, 35.8626, 0.6853, -19.4669, 35.8626, 0.6853, -15.2268, 35.8626, 0.6853, -19.4669, 35.8378, 5.9828, -2.3933, 35.8378, 5.9828, -29.316198, 35.8626, 0.6853, -19.4669, 35.8378, 5.9828, -29.316198, 35.8626, 0.6853, -29.316198, 41.1777, 0.6853, -29.316198, 41.2024, 5.9828, -2.3933, 41.1777, 0.6853, -2.3933, 41.1777, 0.6853, -29.316198, 41.2024, 5.9828, -29.316198, 41.2024, 5.9828, -2.3933, 41.1777, 0.6853, -2.3933, 35.8378, 5.9828, -2.3933, 35.8626, 0.6853, -2.3933, 41.1777, 0.6853, -2.3933, 41.2024, 5.9828, -2.3933, 35.8378, 5.9828, -2.3933, 40.1232, 0.6853, -24.226599, 36.917, 0.6853, -19.4669, 36.917, 0.6853, -24.226599, 35.8626, 0.6853, -19.4669, 36.917, 0.6853, -24.226599, 36.917, 0.6853, -19.4669, 35.8626, 0.6853, -19.4669, 35.8626, 0.6853, -29.316198, 36.917, 0.6853, -24.226599, 35.8626, 0.6853, -29.316198, 40.1232, 0.6853, -24.226599, 36.917, 0.6853, -24.226599, 37.640198, 0.6853, -29.316198, 40.1232, 0.6853, -24.226599, 35.8626, 0.6853, -29.316198, 40.1232, 0.6853, -24.226599, 37.640198, 0.6853, -29.316198, 39.3768, 0.6853, -29.316198, 40.1232, 0.6853, -24.226599, 39.3768, 0.6853, -29.316198, 41.1777, 0.6853, -29.316198, 40.1232, 0.6853, -24.226599, 36.917, 0.6853, -15.2268, 36.917, 0.6853, -19.4669, 40.1232, 0.6853, -24.226599, 41.1777, 0.6853, -29.316198, 41.1777, 0.6853, -2.3933, 40.1232, 0.6853, -24.226599, 41.1777, 0.6853, -2.3933, 40.1232, 0.6853, -7.5099998, 36.917, 0.6853, -15.2268, 40.1232, 0.6853, -24.226599, 40.1232, 0.6853, -7.5099998, 36.917, 0.6853, -15.2268, 40.1232, 0.6853, -7.5099998, 36.917, 0.6853, -7.5099998, 36.917, 0.6853, -7.5099998, 35.8626, 0.6853, -15.2268, 36.917, 0.6853, -15.2268, 36.917, 0.6853, -7.5099998, 35.8626, 0.6853, -2.3933, 35.8626, 0.6853, -15.2268, 40.1232, 0.6853, -7.5099998, 35.8626, 0.6853, -2.3933, 36.917, 0.6853, -7.5099998, 40.1232, 0.6853, -7.5099998, 41.1777, 0.6853, -2.3933, 35.8626, 0.6853, -2.3933, 41.2024, 5.9828, -29.316198, 35.8378, 5.9828, -2.3933, 41.2024, 5.9828, -2.3933, 41.2024, 5.9828, -29.316198, 35.8378, 5.9828, -29.316198, 35.8378, 5.9828, -2.3933, 40.007298, 0.6516, -19.5905, 40.007298, 5.9775996, -15.1036, 40.007298, 0.6516, -15.1036, 40.007298, 0.6516, -19.5905, 40.007298, 5.9775996, -19.5905, 40.007298, 5.9775996, -15.1036, 41.2196, 0.6516, -19.5905, 40.007298, 5.9775996, -19.5905, 40.007298, 0.6516, -19.5905, 41.2196, 0.6516, -19.5905, 41.2196, 5.9775996, -19.5905, 40.007298, 5.9775996, -19.5905, 41.2196, 0.6516, -15.1036, 41.2196, 5.9775996, -19.5905, 41.2196, 0.6516, -19.5905, 41.2196, 0.6516, -15.1036, 41.2196, 5.9775996, -15.1036, 41.2196, 5.9775996, -19.5905, 40.007298, 0.6516, -15.1036, 41.2196, 5.9775996, -15.1036, 41.2196, 0.6516, -15.1036, 40.007298, 0.6516, -15.1036, 40.007298, 5.9775996, -15.1036, 41.2196, 5.9775996, -15.1036, 40.007298, 5.9775996, -15.1036, 41.2196, 5.9775996, -19.5905, 41.2196, 5.9775996, -15.1036, 40.007298, 5.9775996, -15.1036, 40.007298, 5.9775996, -19.5905, 41.2196, 5.9775996, -19.5905, 35.7908, 5.9775996, -15.1036, 37.003, 5.9775996, -19.5905, 37.003, 5.9775996, -15.1036, 35.7908, 5.9775996, -15.1036, 35.7908, 5.9775996, -19.5905, 37.003, 5.9775996, -19.5905, 35.7908, 0.6516, -15.1036, 37.003, 5.9775996, -15.1036, 37.003, 0.6516, -15.1036, 35.7908, 0.6516, -15.1036, 35.7908, 5.9775996, -15.1036, 37.003, 5.9775996, -15.1036, 37.003, 0.6516, -15.1036, 37.003, 5.9775996, -19.5905, 37.003, 0.6516, -19.5905, 37.003, 0.6516, -15.1036, 37.003, 5.9775996, -15.1036, 37.003, 5.9775996, -19.5905, 37.003, 0.6516, -19.5905, 35.7908, 5.9775996, -19.5905, 35.7908, 0.6516, -19.5905, 37.003, 0.6516, -19.5905, 37.003, 5.9775996, -19.5905, 35.7908, 5.9775996, -19.5905, 35.7908, 0.6516, -19.5905, 35.7908, 5.9775996, -15.1036, 35.7908, 0.6516, -15.1036, 35.7908, 0.6516, -19.5905, 35.7908, 5.9775996, -19.5905, 35.7908, 5.9775996, -15.1036, 37.6364, 2.9521, -29.316198, 35.8378, 5.9828, -29.316198, 37.6312, 5.8454, -29.316198, 35.8378, 5.9828, -29.316198, 37.6364, 2.9521, -29.316198, 37.640198, 0.82269996, -29.316198, 35.8378, 5.9828, -29.316198, 37.640198, 0.82269996, -29.316198, 35.8626, 0.6853, -29.316198, 37.640198, 0.82269996, -29.316198, 37.640198, 0.6853, -29.316198, 35.8626, 0.6853, -29.316198, 39.3857, 5.8454, -29.316198, 37.6312, 5.8454, -29.316198, 35.8378, 5.9828, -29.316198, 39.3857, 5.8454, -29.316198, 35.8378, 5.9828, -29.316198, 41.2024, 5.9828, -29.316198, 41.1777, 0.6853, -29.316198, 39.3857, 5.8454, -29.316198, 41.2024, 5.9828, -29.316198, 41.1777, 0.6853, -29.316198, 39.3805, 2.9521, -29.316198, 39.3857, 5.8454, -29.316198, 39.3805, 2.9521, -29.316198, 41.1777, 0.6853, -29.316198, 39.3768, 0.82269996, -29.316198, 39.3768, 0.6853, -29.316198, 39.3768, 0.82269996, -29.316198, 41.1777, 0.6853, -29.316198, 39.3805, 2.9521, -29.316198, 37.6312, 5.8454, -29.316198, 39.3857, 5.8454, -29.316198, 39.3805, 2.9521, -29.316198, 37.6364, 2.9521, -29.316198, 37.6312, 5.8454, -29.316198)
 
@@ -107,213 +161,215 @@ data = PackedVector3Array(35.8378, 5.9828, -2.3933, 35.8626, 0.6853, -15.2268, 3
 transform = Transform3D(0.11452243, 0, 0, 0, 0.11452243, 0, 0, 0, 0.11452243, 38.52016, 4.6803694, -5.7033)
 mesh = SubResource("ArrayMesh_068yr")
 
-[node name="parkingatlas_007" parent="." index="23" unique_id=1207077624]
-transform = Transform3D(-5.6117646e-08, 1.2838221, 0, -0.7578588, -3.312706e-08, 1.0362669, 1.0362669, 4.5296666e-08, 0.7578588, 35.64313, 5.1596212, -26.211487)
+[node name="parkingatlas_007" parent="." index="23" unique_id=1577568026]
+transform = Transform3D(-5.6117646e-08, 1.2838221, -2.6441681e-15, -1.1280987, -4.9310763e-08, -0.61285585, -0.61285585, -2.678878e-08, 1.1280987, 35.64313, 5.1596212, -26.211487)
 script = ExtResource("4_u0iyc")
-axis = Vector3(1, 0, 0)
+axis = Vector3(-1, 0, 0)
 speed = 40.0
 
 [node name="parkingatlas_015" type="MeshInstance3D" parent="." index="24" unique_id=1235694730]
-transform = Transform3D(-2.0935595e-09, 1.2838221, -2.0246416e-06, 1.1124859, 1.0123208e-06, 0.64076066, 0.64076066, -1.7533926e-06, -1.1124859, 35.643, 5.125, -28.451)
+transform = Transform3D(-9.3443396e-07, 1.2838221, -2.3247344e-06, 1.2773786, 1.1623672e-06, 0.12846488, 0.12846488, -2.2195627e-06, -1.2773786, 35.643, 5.125, -28.451)
 mesh = SubResource("ArrayMesh_yexrr")
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_008" parent_id_path=PackedInt32Array(1617884082) index="0" unique_id=675644374]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_008" parent_id_path=PackedInt32Array(332146558) index="0" unique_id=675644374]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_009" parent_id_path=PackedInt32Array(6121738) index="0" unique_id=634932534]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_009" parent_id_path=PackedInt32Array(1535310945) index="0" unique_id=634932534]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_010" parent_id_path=PackedInt32Array(1807099835) index="0" unique_id=191156580]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_010" parent_id_path=PackedInt32Array(1100561960) index="0" unique_id=191156580]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="0" unique_id=2044533533]
+[node name="SpotLight3D" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="0" unique_id=2044533533]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 spot_range = 6.0
 spot_angle = 41.2781
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="1" unique_id=48806185]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="1" unique_id=48806185]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.6858244e-06, 130.07649)
 spot_range = 6.0
 spot_angle = 34.871174
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="2" unique_id=497057533]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="2" unique_id=497057533]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.059889317, 185.49014)
 spot_range = 6.0
 spot_angle = 53.4963
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="3" unique_id=1798406359]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="3" unique_id=1798406359]
 transform = Transform3D(0.988895, 0, -0.14861572, 0.044680964, 0.9537353, 0.29730895, 0.14174005, -0.30064765, 0.9431441, 9.82061, 3.93751, 240.75447)
 light_energy = 4.395
 shadow_enabled = true
 spot_range = 16.178871
 spot_angle = 18.245066
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="4" unique_id=452351934]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="4" unique_id=452351934]
 transform = Transform3D(0.988895, 0, -0.14861572, 0.044680964, 0.9537353, 0.29730895, 0.14174005, -0.30064765, 0.9431441, -17.991901, 2.6808648, 236.76805)
 light_energy = 4.395
 shadow_enabled = true
 spot_range = 16.178871
 spot_angle = 18.245066
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="5" unique_id=478120856]
+[node name="SpotLight3D6" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="5" unique_id=478120856]
 transform = Transform3D(-0.23672041, 0.0097726425, -0.9715287, -0.0028297238, 0.99993825, 0.010747899, 0.9715737, 0.0052934047, -0.23667814, -39.40609, 3.5127282, 2.9115262)
 light_energy = 4.395
 shadow_enabled = true
 spot_range = 16.178871
 spot_angle = 18.245066
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(1809538346) index="6" unique_id=922373570]
+[node name="SpotLight3D7" type="SpotLight3D" parent="Sphere_003" parent_id_path=PackedInt32Array(364655513) index="6" unique_id=922373570]
 transform = Transform3D(-0.23672041, 0.0097726425, -0.9715287, -0.0028297238, 0.99993825, 0.010747899, 0.9715737, 0.0052934047, -0.23667814, -42.093815, 3.4567027, -17.405191)
 light_energy = 4.395
 shadow_enabled = true
 spot_range = 16.178871
 spot_angle = 18.245066
 
-[node name="framesvarietyatlas_005" parent="." index="32" unique_id=183963027]
+[node name="framesvarietyatlas_005" parent="." index="32" unique_id=1810540297]
 transform = Transform3D(0, 1.3971759, 0, 0, 0, -1.3971759, -1.3971759, 0, 0, 41.239655, 2.0741568, -11.368542)
 
-[node name="framesvarietyatlas_010" parent="." index="37" unique_id=1061895847]
+[node name="framesvarietyatlas_010" parent="." index="37" unique_id=289335849]
 transform = Transform3D(0, 1.3971759, 0, 0, 0, -1.3971759, -1.3971759, 0, 0, 41.239655, 2.0741568, -25.074215)
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_011" parent_id_path=PackedInt32Array(217569619) index="0" unique_id=1918744849]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_011" parent_id_path=PackedInt32Array(1659390913) index="0" unique_id=1918744849]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 5.9428164e-08, -1.4436476, -0.4861951)
 spot_range = 2.2409232
 spot_angle = 39.17184
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_012" parent_id_path=PackedInt32Array(1014371044) index="0" unique_id=612252904]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_012" parent_id_path=PackedInt32Array(1314898269) index="0" unique_id=612252904]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_013" parent_id_path=PackedInt32Array(1655452060) index="0" unique_id=2055841787]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_013" parent_id_path=PackedInt32Array(1470037212) index="0" unique_id=2055841787]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, -0.2557949, -1.3721362, -0.47875264)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_014" parent_id_path=PackedInt32Array(26012985) index="0" unique_id=1340075260]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_014" parent_id_path=PackedInt32Array(1576303164) index="0" unique_id=1340075260]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 5.9428164e-08, -1.4436476, -0.4861951)
 spot_range = 2.2409232
 spot_angle = 39.17184
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_015" parent_id_path=PackedInt32Array(1532290659) index="0" unique_id=2074988106]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_015" parent_id_path=PackedInt32Array(1399344003) index="0" unique_id=2074988106]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_016" parent_id_path=PackedInt32Array(1605686370) index="0" unique_id=1325605929]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_016" parent_id_path=PackedInt32Array(1596822765) index="0" unique_id=1325605929]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.051226556, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_017" parent_id_path=PackedInt32Array(721820854) index="0" unique_id=1336728314]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_017" parent_id_path=PackedInt32Array(287741789) index="0" unique_id=1336728314]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 5.9428164e-08, -1.4436476, -0.4861951)
 spot_range = 2.2409232
 spot_angle = 39.17184
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_018" parent_id_path=PackedInt32Array(1759395701) index="0" unique_id=637257034]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_018" parent_id_path=PackedInt32Array(823915650) index="0" unique_id=637257034]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_019" parent_id_path=PackedInt32Array(1967418277) index="0" unique_id=439600120]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_019" parent_id_path=PackedInt32Array(933435628) index="0" unique_id=439600120]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.07118044, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_020" parent_id_path=PackedInt32Array(1152986783) index="0" unique_id=379583061]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_020" parent_id_path=PackedInt32Array(1176717665) index="0" unique_id=379583061]
 transform = Transform3D(7.1054274e-15, -1, -3.8725453e-08, 0.10351422, -3.9778065e-08, 0.9946281, -0.9946281, -4.07406e-09, 0.10351422, 0.008572578, -0.3526932, 0.04251279)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_021" parent_id_path=PackedInt32Array(1323608256) index="0" unique_id=468208300]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_021" parent_id_path=PackedInt32Array(427655056) index="0" unique_id=468208300]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, -0.029535681, -0.32719156, 0.010716054)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_022" parent_id_path=PackedInt32Array(431549105) index="0" unique_id=508481525]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_022" parent_id_path=PackedInt32Array(1630447049) index="0" unique_id=508481525]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, -0.020155534, -0.32719156, 0.010716055)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_023" parent_id_path=PackedInt32Array(1652003429) index="0" unique_id=1122662526]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_023" parent_id_path=PackedInt32Array(2138283251) index="0" unique_id=1122662526]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115725, -0.33193755, 0.046876013)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_024" parent_id_path=PackedInt32Array(466945089) index="0" unique_id=1193504814]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_024" parent_id_path=PackedInt32Array(1852506978) index="0" unique_id=1193504814]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.09295352, -0.32719156, 0.010716055)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_025" parent_id_path=PackedInt32Array(1491432398) index="0" unique_id=884483114]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_025" parent_id_path=PackedInt32Array(581386505) index="0" unique_id=884483114]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115725, -0.32719156, 0.010716055)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_026" parent_id_path=PackedInt32Array(1675473692) index="0" unique_id=1466413278]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_026" parent_id_path=PackedInt32Array(1237654937) index="0" unique_id=1466413278]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.032680325, -1.609598, -0.50346607)
 spot_range = 2.2409232
 spot_angle = 39.17184
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_027" parent_id_path=PackedInt32Array(1652368692) index="0" unique_id=1582450574]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_027" parent_id_path=PackedInt32Array(1133398122) index="0" unique_id=1582450574]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_028" parent_id_path=PackedInt32Array(2090969607) index="0" unique_id=105231367]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_028" parent_id_path=PackedInt32Array(1751173904) index="0" unique_id=105231367]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, -0.3208673, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_029" parent_id_path=PackedInt32Array(1289876285) index="0" unique_id=847039471]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_029" parent_id_path=PackedInt32Array(1610532135) index="0" unique_id=847039471]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 5.9428164e-08, -1.4436476, -0.4861951)
 spot_range = 2.2409232
 spot_angle = 39.17184
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_030" parent_id_path=PackedInt32Array(823187464) index="0" unique_id=1175615326]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_030" parent_id_path=PackedInt32Array(1736849994) index="0" unique_id=1175615326]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_031" parent_id_path=PackedInt32Array(1092243433) index="0" unique_id=1029320158]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Cylinder_031" parent_id_path=PackedInt32Array(728701282) index="0" unique_id=1029320158]
 transform = Transform3D(0, -4.315834, -1.7257337e-07, 0.44675007, -1.7164628e-07, 4.292649, -4.292649, -1.7863792e-08, 0.44675007, 0.18115729, -1.4043717, -0.48210752)
 spot_range = 2.8341713
 spot_angle = 35.95368
 
-[node name="parkingatlas_010" parent="." index="69" unique_id=1233245869]
+[node name="parkingatlas_010" parent="." index="69" unique_id=1202222219]
 visible = false
 
-[node name="parkingatlas_011" parent="." index="70" unique_id=816918511]
+[node name="parkingatlas_011" parent="." index="70" unique_id=1439961750]
 transform = Transform3D(-2.1466591, -3.2413652e-07, 1.4168457e-14, 0, -9.383345e-08, -2.1466591, 3.2413652e-07, -2.1466591, 9.383345e-08, 36.307236, 3.9163318, -2.124279)
 
-[node name="parkingatlas_012" parent="." index="71" unique_id=308245120]
-transform = Transform3D(-1.9662691, 1.8674319e-06, 0.8613541, -0.8613541, -3.765098e-08, -1.9662691, -1.6953986e-06, -2.1466591, 7.8380026e-07, 36.86844, 4.273806, -2.1267223)
+[node name="parkingatlas_012" parent="." index="71" unique_id=2115783427]
+transform = Transform3D(-2.1316166, 1.8602043e-06, -0.25368538, 0.25368538, 1.10889395e-08, -2.1316166, -1.8458586e-06, -2.1466591, -2.308443e-07, 36.86844, 4.273806, -2.1267223)
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
-[node name="parkingatlas_014" parent="." index="73" unique_id=758593328]
-transform = Transform3D(1.7030665, 1.9390052e-08, 1.3067939, -1.3067939, 5.7121778e-08, 1.7030665, -1.9390052e-08, -2.1466591, 5.7121778e-08, 40.178688, 4.273806, -2.1267223)
+[node name="parkingatlas_014" parent="." index="73" unique_id=537780994]
+transform = Transform3D(0.7987528, 1.2265448e-06, 1.9925208, -1.9925208, 1.8131201e-06, 0.7987528, -1.2265448e-06, -2.1466591, 1.8131201e-06, 40.178688, 4.273806, -2.1267223)
 script = ExtResource("4_u0iyc")
 axis = Vector3(1, 0, 0)
 speed = 40.0
 
-[node name="BézierCurve_005" parent="." index="79" unique_id=368778310]
-surface_material_override/0 = ExtResource("6_u0iyc")
+[node name="BézierCurve_005" parent="." index="79" unique_id=789626145]
+visible = false
+surface_material_override/0 = SubResource("ShaderMaterial_0wj8b")
 
-[node name="BézierCurve_006" parent="." index="80" unique_id=481944956]
-surface_material_override/0 = ExtResource("6_u0iyc")
+[node name="BézierCurve_006" parent="." index="80" unique_id=586359439]
+visible = false
+surface_material_override/0 = SubResource("ShaderMaterial_0wj8b")
 
-[node name="Collision" parent="." index="81" unique_id=1157707257]
+[node name="Collision" parent="." index="81" unique_id=1641264133]
 visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="82" unique_id=964179935]
@@ -324,6 +380,6 @@ shape = SubResource("ConcavePolygonShape3D_u0iyc")
 
 [node name="VoxelGI" type="VoxelGI" parent="." index="83" unique_id=1811108936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.66202, 3.9143562, -13.15192)
-subdiv = 3
+subdiv = 2
 size = Vector3(10.861389, 8.486824, 32.58612)
 data = ExtResource("2_1p5n5")

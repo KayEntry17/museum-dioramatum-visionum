@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://5ilhtt0ey6ki" path="res://museum/room1.tscn" id="1_2yc01"]
 [ext_resource type="PackedScene" uid="uid://bca5cm0b5np8n" path="res://player/curator.tscn" id="1_f3gim"]
+[ext_resource type="Material" uid="uid://d2j1a5w4jal6s" path="res://gltfs/materials/generic.tres" id="1_wcod2"]
 [ext_resource type="Script" uid="uid://dlqyjv38i3a4p" path="res://core/maincam.gd" id="2_x8g85"]
+[ext_resource type="PackedScene" uid="uid://cypji5w10hmqq" path="res://museum/wire1.tscn" id="4_3walr"]
+[ext_resource type="PackedScene" uid="uid://bbxcqp1qpy7op" path="res://museum/wire2.tscn" id="5_r7cxb"]
+[ext_resource type="Script" uid="uid://c37vs4d03kqlq" path="res://museum/wire.gd" id="5_wcod2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6c2k"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -38,25 +42,165 @@ dof_blur_far_distance = 0.5
 dof_blur_far_transition = 6.0
 dof_blur_amount = 0.0
 
+[sub_resource type="Shader" id="Shader_0wj8b"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+uniform vec4 color: source_color;
+uniform float on;
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	ALBEDO=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),2)*on);
+	EMISSION=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),3.))*0.2*on;
+	//ALPHA =pow(( pow(VIEW.y,2)+pow(VIEW.x,2)+pow(VIEW.z,2)),2)/3.;
+	//ALPHA=pow(dot(NORMAL,VIEW),3.)*transparency;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7cxb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_0wj8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0, 1, 0, 1)
+shader_parameter/on = 0.0
+
+[sub_resource type="Shader" id="Shader_p1f42"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+uniform vec4 color: source_color;
+uniform float on;
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	ALBEDO=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),2)*on);
+	EMISSION=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),3.))*0.2*on;
+	//ALPHA =pow(( pow(VIEW.y,2)+pow(VIEW.x,2)+pow(VIEW.z,2)),2)/3.;
+	//ALPHA=pow(dot(NORMAL,VIEW),3.)*transparency;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcod2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_p1f42")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0, 1, 0, 1)
+shader_parameter/on = 1.01
+
 [node name="Node3D" type="Node3D" unique_id=1353796469]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1219698084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.54023, -0.00051641464, -1.7874504)
+size = Vector3(6.8397827, 1, 4.5545044)
+material = ExtResource("1_wcod2")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=944530673]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 34.90928, 2.6756926, -1.7874504)
+size = Vector3(6.8397827, 1, 4.5545044)
+material = ExtResource("1_wcod2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1791990636]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 41.569, 2.676, -1.787)
+size = Vector3(6.8397827, 1, 4.5545044)
+material = ExtResource("1_wcod2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131965340]
 environment = SubResource("Environment_f3gim")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("1_f3gim")]
-transform = Transform3D(-0.99995965, 0, 0.008982386, 0, 1, 0, -0.008982386, 0, -0.99995965, 39.09, 1.673, -4.821508)
+transform = Transform3D(1, 0, -0.00020480156, 0, 1, 0, 0.00020480156, 0, 1, 39.09, 1.673, -4.821508)
 speed = 5.0
 slip = 10.0
 Sensitivity = 0.185
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1009259056]
 physics_interpolation_mode = 1
-transform = Transform3D(-0.99813485, 0, -0.061048523, 0, 1, 0, 0.061048523, 0, -0.99813485, 39.09, 1.673, -18.108139)
+transform = Transform3D(1, 0, 0, 0, 0.9578225, 0.28736052, 0, -0.28736052, 0.9578225, 38.402, 2.348, -0.857)
 top_level = true
 attributes = SubResource("CameraAttributesPractical_3walr")
-current = true
 fov = 90.0
 script = ExtResource("2_x8g85")
 
 [node name="room1museum" parent="." unique_id=929739325 instance=ExtResource("1_2yc01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -0.25235605)
+
+[node name="BézierCurve_008" parent="." unique_id=19811220 instance=ExtResource("4_3walr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.322727, 1.2413305, -12.270446)
+surface_material_override/0 = SubResource("ShaderMaterial_r7cxb")
+script = ExtResource("5_wcod2")
+
+[node name="BézierCurve_007" parent="." unique_id=644824418 instance=ExtResource("5_r7cxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25604, 1.2413305, -12.285494)
+surface_material_override/0 = SubResource("ShaderMaterial_wcod2")
+script = ExtResource("5_wcod2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.59952, 2.1089668, 1.0656141)
+light_energy = 10.168
+shadow_enabled = true
+spot_range = 3.971092

@@ -24,19 +24,21 @@ uniform vec3 uv1_offset;
 uniform vec3 uv2_scale;
 uniform vec3 uv2_offset;
 uniform vec4 color: source_color;
+uniform float on;
 void vertex() {
 	UV = UV * uv1_scale.xy + uv1_offset.xy;
 }
 
 void fragment() {
-	ALBEDO=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),0.1));
-	EMISSION=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),3.))*0.2;
+	ALBEDO=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),2)*on);
+	EMISSION=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),3.))*0.2*on;
 	//ALPHA =pow(( pow(VIEW.y,2)+pow(VIEW.x,2)+pow(VIEW.z,2)),2)/3.;
 	//ALPHA=pow(dot(NORMAL,VIEW),3.)*transparency;
 }
 "
 
 [resource]
+resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_0wj8b")
 shader_parameter/albedo = Color(0, 0, 0, 1)
@@ -51,3 +53,4 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/color = Color(0, 1, 0, 1)
+shader_parameter/on = 0.0
