@@ -7,7 +7,8 @@ extends CharacterBody3D
 @export var Sensitivity:float=1.0
 var canjump:bool
 func _ready() -> void:
-	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	Mouss.leave()
 	velocity.y=-10000
 	#Cam.theserthetargets($falsecamx/falsecamy)
 	print(Cam.targetcam)

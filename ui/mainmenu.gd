@@ -24,8 +24,7 @@ func _on_credits_focus_entered() -> void:
 
 
 func _on_credits_pressed() -> void:
-	#Audio.change_track(menutheme)
-	pass
+	Transition.change_scene(2)
 
 
 func _on_exit_pressed() -> void:

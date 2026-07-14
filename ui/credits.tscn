@@ -1,74 +1,193 @@
 [gd_scene format=3 uid="uid://dylxxomovql4l"]
 
+[ext_resource type="Script" uid="uid://d1hybivjsg5jd" path="res://ui/credits.gd" id="1_42u7w"]
 [ext_resource type="Texture2D" uid="uid://baf5rpeal4xe0" path="res://ui/LogoDoor.png" id="1_74u3g"]
 [ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="2_1bagf"]
+[ext_resource type="AudioStream" uid="uid://c4olu5fmpc4q4" path="res://audio/crowtry8slightly changed velocity i guess.wav" id="2_d0gn6"]
 [ext_resource type="FontFile" uid="uid://lqu0dddd6n0k" path="res://ui/font/Moderniz.otf" id="3_1bagf"]
 [ext_resource type="Texture2D" uid="uid://s3u17nvjljof" path="res://ui/signage.png" id="3_icdkc"]
+[ext_resource type="Texture2D" uid="uid://8ef4rouytvb4" path="res://ui/yt17.png" id="5_icdkc"]
+
+[sub_resource type="Animation" id="Animation_icdkc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_42u7w"]
+resource_name = "credits"
+length = 1.7
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 1.51, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(574, 397), Vector2(574, 397), Vector2(574, -1167), Vector2(574, -1167)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d0gn6"]
+_data = {
+&"RESET": SubResource("Animation_icdkc"),
+&"credits": SubResource("Animation_42u7w")
+}
 
 [node name="Node2D" type="Node2D" unique_id=874148868]
+script = ExtResource("1_42u7w")
+menutheme = ExtResource("2_d0gn6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1751463163]
-offset_left = -1147.0
-offset_top = -1145.0
-offset_right = 1683.0
-offset_bottom = 4431.764
+offset_left = -1151.0
+offset_top = -1149.0
+offset_right = 1679.0
+offset_bottom = 4427.764
 color = Color(0, 0, 0, 1)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=296426168]
-position = Vector2(577, 190)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=229152056]
+libraries/ = SubResource("AnimationLibrary_d0gn6")
+autoplay = &"credits"
+speed_scale = 0.05
 
-[node name="LogoDoor" type="Sprite2D" parent="." unique_id=978533409]
-position = Vector2(185.61969, 140.00002)
+[node name="Node" type="Node2D" parent="." unique_id=686126260]
+
+[node name="LogoDoor" type="Sprite2D" parent="Node" unique_id=978533409]
+position = Vector2(-386.2202, -100.5)
 scale = Vector2(0.39518413, 0.39518413)
 texture = ExtResource("1_74u3g")
 
-[node name="Label" type="Label" parent="." unique_id=876858265]
-offset_left = 13.0
-offset_top = 306.0
-offset_right = 425.0
-offset_bottom = 334.0
+[node name="Label" type="Label" parent="Node" unique_id=876858265]
+offset_left = -558.83997
+offset_top = 65.49997
+offset_right = -146.83997
+offset_bottom = 93.49997
 theme = ExtResource("2_1bagf")
 text = "Thank you for checking out my game!"
 
-[node name="Label2" type="Label" parent="." unique_id=1125875427]
-offset_left = 13.0
-offset_top = 449.0
-offset_right = 425.0
-offset_bottom = 477.0
+[node name="Label5" type="Label" parent="Node" unique_id=1591901362]
+offset_left = -217.83997
+offset_top = 1628.5
+offset_right = 194.16003
+offset_bottom = 1656.5
 theme = ExtResource("2_1bagf")
-text = "By Yatagarasu The 17th
+text = "A Vision Gallery Production, 2026"
 
-All models and textures by Yatagarasu The 17th, some based on Unsplash stock photos.
-All artwork by Yatagarasu The 17th
-Coding and game design also by Yatagarasu The 17th
-I truly am the Tommy Wiseau of videogames."
+[node name="Label2" type="Label" parent="Node" unique_id=1125875427]
+offset_left = -558.83997
+offset_top = 208.49997
+offset_right = -146.83997
+offset_bottom = 236.49997
+theme = ExtResource("2_1bagf")
+text = "By The Last Yatagarasu"
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=953882320]
-offset_left = 1.0
-offset_top = 654.0
-offset_right = 422.0
-offset_bottom = 694.0
+[node name="Label6" type="Label" parent="Node" unique_id=1788987116]
+offset_left = -558.83997
+offset_top = 978.5
+offset_right = 783.16003
+offset_bottom = 1161.5
+theme = ExtResource("2_1bagf")
+text = "Thank you for checking out my game. 
+This is only a prototype, with the final game planned to have an additional five worlds
+and a lot more mechanics. 
+If you want to give any feedback or just chat,
+feel free to contact me using the links on my itch io page. 
+Each bit of feedback helps and greatly raises the odds of me completing it."
 
-[node name="Label3" type="Label" parent="ColorRect2" unique_id=455759093]
+[node name="Label3" type="Label" parent="Node" unique_id=481863607]
+offset_left = -558.83997
+offset_top = 258.5
+offset_right = 432.16003
+offset_bottom = 410.5
+theme = ExtResource("2_1bagf")
+theme_override_font_sizes/font_size = 20
+text = "
+All models and textures by The Last Yatagarasu, some based on Unsplash stock photos.
+All artwork by The Last Yatagarasu.
+Coding and game design also by The Last Yatagarasu.
+I truly am the Gilson B. Pontes of videogames."
+
+[node name="Label4" type="Label" parent="Node" unique_id=1007386073]
+offset_left = -558.83997
+offset_top = 488.5
+offset_right = 461.16003
+offset_bottom = 860.5
+theme = ExtResource("2_1bagf")
+theme_override_font_sizes/font_size = 21
+text = "Title screen and credits theme by The Last Yatagarasu
+
+Additional music by:
+Makoto
+https://makotohiramatsu.itch.io/
+https://scrapbox.io/makotohiramatsu/
+FabienC@RustedMusicStudio
+and 2 asset packs I bought years ago on Humble choice and forgot who made
+
+SFX:
+
+Drop 47.wav by roboroo -- https://freesound.org/s/492932/ -- License: Attribution 4.0
+MECHSwtch_Switch_power_cord_on_off.wav by DBS_Sounds -- https://freesound.org/s/613659/ -- License: Attribution 4.0
+Switch 35.wav by LG -- https://freesound.org/s/73076/ -- License: Attribution 4.0
+"
+
+[node name="ColorRect2" type="ColorRect" parent="Node" unique_id=953882320]
+offset_left = -570.83997
+offset_top = 388.5
+offset_right = -149.83997
+offset_bottom = 468.5
+
+[node name="Label3" type="Label" parent="Node/ColorRect2" unique_id=455759093]
 layout_mode = 0
-offset_top = 12.0
+offset_top = 44.0
 offset_right = 415.0
-offset_bottom = 50.0
+offset_bottom = 93.0
 theme = ExtResource("2_1bagf")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1bagf")
+theme_override_font_sizes/font_size = 36
 text = "Audio Credits"
 
-[node name="Signage" type="Sprite2D" parent="." unique_id=794521031]
-position = Vector2(170, 407)
+[node name="Signage" type="Sprite2D" parent="Node" unique_id=794521031]
+position = Vector2(-401.8399, 166.49998)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_icdkc")
 region_enabled = true
 region_rect = Rect2(0, 1704.758, 1418, 425.24194)
 
-[node name="Signage2" type="Sprite2D" parent="." unique_id=674120448]
-position = Vector2(167, 843)
+[node name="Signage2" type="Sprite2D" parent="Node" unique_id=674120448]
+position = Vector2(-404.8399, 911.5)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_icdkc")
 region_enabled = true
 region_rect = Rect2(-12.231934, 395.95276, 1418, 425.24194)
+
+[node name="Yt17" type="Sprite2D" parent="Node" unique_id=974253075]
+texture_filter = 1
+position = Vector2(-21.725037, 1409.5)
+scale = Vector2(1.51, 1.51)
+texture = ExtResource("5_icdkc")

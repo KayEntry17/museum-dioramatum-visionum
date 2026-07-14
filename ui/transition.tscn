@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7fxitcis4d2y" path="res://ui/transition.gd" id="1_dvrck"]
 [ext_resource type="PackedScene" uid="uid://cki1cab1gdhcg" path="res://ui/mainmenu.tscn" id="2_dky4j"]
 [ext_resource type="PackedScene" uid="uid://by261q7lkovlo" path="res://museum/museummain.tscn" id="3_q6hxq"]
+[ext_resource type="PackedScene" uid="uid://dylxxomovql4l" path="res://ui/credits.tscn" id="4_q6hxq"]
 
 [sub_resource type="Animation" id="Animation_qj0xm"]
 length = 0.001
@@ -220,7 +221,7 @@ tracks/1/path = NodePath("HBoxContainer/ColorRect3:offset_transform_position_rat
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.7, 1),
+"times": PackedFloat32Array(0.7, 0.93333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 1), Vector2(0, 0)]
@@ -268,7 +269,7 @@ tracks/5/path = NodePath("HBoxContainer/ColorRect6:offset_transform_position_rat
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.53333336, 1),
+"times": PackedFloat32Array(0.53333336, 0.93333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, -1), Vector2(0, 0)]
@@ -388,7 +389,7 @@ tracks/15/path = NodePath("HBoxContainer/ColorRect16:offset_transform_position_r
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0.13333333, 1),
+"times": PackedFloat32Array(0.13333333, 0.93333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, -1), Vector2(0, 0)]
@@ -417,27 +418,21 @@ _data = {
 &"troon": SubResource("Animation_dvrck")
 }
 
-[node name="Control" type="Control" unique_id=2106259394]
+[node name="Control" type="CanvasLayer" unique_id=580756792]
 process_mode = 3
-z_index = 1000
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_dvrck")
-scenesuseful = Array[PackedScene]([ExtResource("2_dky4j"), ExtResource("3_q6hxq")])
+scenesuseful = Array[PackedScene]([ExtResource("2_dky4j"), ExtResource("3_q6hxq"), ExtResource("4_q6hxq")])
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1098541203]
 process_mode = 3
 z_index = 1000
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=686366899]
@@ -447,6 +442,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer" unique_id=425715030]
@@ -456,6 +452,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer" unique_id=351637429]
@@ -465,6 +462,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="HBoxContainer" unique_id=289077470]
@@ -474,6 +472,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="HBoxContainer" unique_id=1685978882]
@@ -483,6 +482,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="HBoxContainer" unique_id=260152145]
@@ -492,6 +492,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="HBoxContainer" unique_id=1452935612]
@@ -501,6 +502,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect8" type="ColorRect" parent="HBoxContainer" unique_id=1061694285]
@@ -510,6 +512,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect9" type="ColorRect" parent="HBoxContainer" unique_id=1228464463]
@@ -519,6 +522,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect10" type="ColorRect" parent="HBoxContainer" unique_id=911313069]
@@ -528,6 +532,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect11" type="ColorRect" parent="HBoxContainer" unique_id=423219799]
@@ -537,6 +542,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect12" type="ColorRect" parent="HBoxContainer" unique_id=70961361]
@@ -546,6 +552,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect13" type="ColorRect" parent="HBoxContainer" unique_id=2069121759]
@@ -555,6 +562,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect14" type="ColorRect" parent="HBoxContainer" unique_id=262561580]
@@ -564,6 +572,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect15" type="ColorRect" parent="HBoxContainer" unique_id=527537045]
@@ -573,6 +582,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect16" type="ColorRect" parent="HBoxContainer" unique_id=1384454166]
@@ -582,6 +592,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2060579670]
