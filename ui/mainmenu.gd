@@ -29,21 +29,21 @@ func _on_credits_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	#Audio.change_track(testsong)
+	get_tree().quit()
 	pass
 
 
 func _on_exit_mouse_entered() -> void:
 	map.swap(8)
-
+ 
 
 func _on_new_game_focus_entered() -> void:
 	map.swap(0)
 
 
 func _on_new_game_pressed() -> void:
-	#map.swap(8)
-	pass
+	Transition.change_scene(1)
+	pass  
 
 
 func _on_new_game_mouse_entered() -> void:

@@ -1,7 +1,7 @@
 extends Node
 var targetcam
 var maincam
-var fpsmode:bool=true
+var fpsmode:bool=false
 var mousemove
 var prevmouse
 var rotinterpolation:bool=true

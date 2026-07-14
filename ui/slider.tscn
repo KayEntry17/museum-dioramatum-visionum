@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dvgx00wq2v8is"]
+
+[ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="1_6odk5"]
+[ext_resource type="Script" uid="uid://cfmfnngsm31ws" path="res://slider.gd" id="1_iisc6"]
+[ext_resource type="PackedScene" uid="uid://mbm0a44g6her" path="res://ui/genericmodule.tscn" id="3_pv0ha"]
+
+[node name="Control" type="HSlider" unique_id=2040736750]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6odk5")
+script = ExtResource("1_iisc6")
+bus_name = "Main"
+
+[node name="button" parent="." unique_id=1521978630 instance=ExtResource("3_pv0ha")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = -0.11111111
+anchor_top = 0.47376543
+anchor_right = 0.1403212
+anchor_bottom = 0.50284183
+offset_right = 1641.35
+offset_bottom = 106.76849
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.15, 0.15)
+metadata/_edit_use_anchors_ = true

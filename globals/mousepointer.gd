@@ -50,6 +50,9 @@ func _process(delta: float) -> void:
 	if menumode:
 		timesincemove=0
 		visactive=true
+		#$Icon.global_position.x=move_toward($Icon.global_position.x, get_viewport().get_mouse_position().x,10000*delta)
+		#$Icon.global_position.y=move_toward($Icon.global_position.y, get_viewport().get_mouse_position().y,10000*delta)
+
 		$Icon.global_position=get_viewport().get_mouse_position()
 		if Input.is_action_pressed("mouseclick"):
 			inuse=true	

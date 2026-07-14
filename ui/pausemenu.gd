@@ -26,11 +26,12 @@ func animation_done():
 func animation_over():
 	if !paused:
 		Pause.unpause()
-		Mouss.leave()
+		Mouss.leave() 
 func unpause():
 	if paused:
 		paused=false
 		$AnimationPlayer.stop()
+		get_viewport().gui_release_focus()
 		#$AnimationPlayer.speed_scale=-0.6
 		$AnimationPlayer.play_backwards("spawn")
 	

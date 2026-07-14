@@ -16,8 +16,9 @@ func _ready() -> void:
 	#Mouss.activate()
 	#Cam.fpsmode=true
 func _unhandled_input(event: InputEvent) -> void:
-	print("asdaids")
+	
 	if Cam.fpsmode:
+		print("asdaids")
 		if event is InputEventMouseMotion: 
 			var mousemovek=Vector2(event.relative.x*Sensitivity*0.05,event.relative.y*Sensitivity*0.05)
 			$falsecamx.rotate(Vector3(0,-1.0,0), mousemovek.x)
