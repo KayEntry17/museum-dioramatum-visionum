@@ -15,7 +15,7 @@ func do_it(text,time):
 		on=true
 		$ColorRect/Label.text=text
 		$AnimationPlayer.play("appear")
-		await get_tree().create_timer(time).timeout
+		await get_tree().create_timer(time,false).timeout
 		$AnimationPlayer.play_backwards("appear")
 		off=false
 	else:

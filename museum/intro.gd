@@ -11,6 +11,7 @@ func end_intro():
 	Cam.fpsmode=true
 	Tut.do_it("Use WASD or Left Stick for movement,
 Mouse or Right Stick for view.",3)
+
 	
 func midend_intro():
 	$"../room1museum/Cube_017".on=false

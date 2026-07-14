@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="1_6odk5"]
 [ext_resource type="Script" uid="uid://cfmfnngsm31ws" path="res://slider.gd" id="1_iisc6"]
-[ext_resource type="PackedScene" uid="uid://mbm0a44g6her" path="res://ui/genericmodule.tscn" id="3_pv0ha"]
 
 [node name="Control" type="HSlider" unique_id=2040736750]
 anchors_preset = 15
@@ -14,16 +13,36 @@ theme = ExtResource("1_6odk5")
 script = ExtResource("1_iisc6")
 bus_name = "Main"
 
-[node name="button" parent="." unique_id=1521978630 instance=ExtResource("3_pv0ha")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = -0.11111111
-anchor_top = 0.47376543
-anchor_right = 0.1403212
-anchor_bottom = 0.50284183
-offset_right = 1641.35
-offset_bottom = 106.76849
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.15, 0.15)
-metadata/_edit_use_anchors_ = true
+[node name="Label" type="Label" parent="." unique_id=1172924944]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -23.0
+offset_right = -33.0
+offset_bottom = 23.0
+grow_vertical = 2
+theme = ExtResource("1_6odk5")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_font_sizes/font_size = 35
+text = "Main"
+
+[node name="ColorRect" type="ColorRect" parent="Label" unique_id=1067136347]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1953125
+anchor_right = 0.20399305
+anchor_bottom = 0.25536266
+offset_left = -14.84375
+offset_top = 30.0
+offset_right = 79.49653
+offset_bottom = 26.253319
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

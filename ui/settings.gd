@@ -11,3 +11,4 @@ func _process(delta: float) -> void:
 	pass
 func launch():
 	$"../AnimationPlayer".play("swap")
+	$Control/Control.grab_focus()

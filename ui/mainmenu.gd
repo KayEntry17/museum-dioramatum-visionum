@@ -59,7 +59,7 @@ func _on_options_mouse_entered() -> void:
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	$TextureRect2.launch()
 
 
 func _on_credits_mouse_entered() -> void:

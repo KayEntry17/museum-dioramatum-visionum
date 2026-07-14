@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dmfh7fdgj7o18" path="res://ui/logo2.png" id="4_docr2"]
 [ext_resource type="Script" uid="uid://gbify1enelv3" path="res://ui/outside.gd" id="5_8fvur"]
 [ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="5_cqbrr"]
-[ext_resource type="Texture2D" uid="uid://1nndpgel224j" path="res://gltfs/room1museum_disclaimerstextsized.png" id="5_v6c8f"]
 [ext_resource type="PackedScene" uid="uid://66hhfs1ygeaw" path="res://3dmodels/pointer.tscn" id="6_10bux"]
 [ext_resource type="Script" uid="uid://c8vrpr4jnvxj1" path="res://ui/settings.gd" id="7_ritla"]
 [ext_resource type="Texture2D" uid="uid://imjn7cpft2oc" path="res://ui/icons/exit-door.png" id="7_v6c8f"]
 [ext_resource type="ArrayMesh" uid="uid://b62mjfa8w1o7c" path="res://3dmodels/menumeshwall.tres" id="8_kn6wg"]
 [ext_resource type="Texture2D" uid="uid://dotjut1fp4b44" path="res://ui/icons/eye-target.png" id="9_56mna"]
+[ext_resource type="PackedScene" uid="uid://dvgx00wq2v8is" path="res://ui/slider.tscn" id="9_docr2"]
 [ext_resource type="Texture2D" uid="uid://d01sbmc84plfn" path="res://ui/icons/vhs.png" id="10_ritla"]
 [ext_resource type="Texture2D" uid="uid://ck2wjfyukh1wd" path="res://ui/icons/spinal-coil.png" id="11_docr2"]
 [ext_resource type="Texture2D" uid="uid://cly0esldqatlb" path="res://ui/icons/stone-bust.png" id="12_cqbrr"]
@@ -36,6 +36,16 @@ shader = ExtResource("21_8fvur")
 shader_parameter/croonit = 0.0
 shader_parameter/offset = 0.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umt7f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+corner_radius_top_right = 50
+corner_radius_bottom_left = 50
+
 [sub_resource type="Animation" id="Animation_0djjy"]
 length = 0.001
 tracks/0/type = "value"
@@ -50,10 +60,94 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2/Control/Panel:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2/TextureRect:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect2/Control/Control:offset_transform_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect2/Control/Control2:offset_transform_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect2/Control/Control3:offset_transform_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect2/Control/ColorRect:offset_transform_position_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_8fvur"]
 resource_name = "swap"
-length = 2.0
+length = 3.0000000000000004
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -61,10 +155,94 @@ tracks/0/path = NodePath("TextureRect:material:shader_parameter/croonit")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.20000004768372]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2/Control/Panel:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 1.20000004768372, 0.0]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2/TextureRect:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.03),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect2/Control/Control:offset_transform_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect2/Control/Control2:offset_transform_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect2/Control/Control3:offset_transform_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextureRect2/Control/ColorRect:offset_transform_position_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1, 2.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -1), Vector2(0, 0.02)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10bux"]
@@ -180,7 +358,7 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvcj8"]
 render_priority = 2
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ritla"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_docr2"]
 viewport_path = NodePath("../../SubViewport")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kvcj8"]
@@ -439,6 +617,17 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect" type="TextureRect" parent="ColorRect2" unique_id=1510161325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_right = -1144.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="TextureRect2" type="MarginContainer" parent="." unique_id=1009646950]
 texture_filter = 1
 material = SubResource("ShaderMaterial_0djjy")
@@ -450,20 +639,72 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 5
 script = ExtResource("7_ritla")
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="TextureRect2" unique_id=1560876372]
+[node name="Control" type="Control" parent="TextureRect2" unique_id=1896749145]
 layout_mode = 2
-texture = ExtResource("5_v6c8f")
-region_rect = Rect2(0, 2.818056, 175, 135.1283)
-patch_margin_left = 12
-patch_margin_top = 15
-patch_margin_right = 86
-patch_margin_bottom = 112
+
+[node name="Control" parent="TextureRect2/Control" unique_id=2040736750 instance=ExtResource("9_docr2")]
+layout_mode = 1
+offset_left = 142.0
+offset_top = 51.0
+offset_right = -79.0
+offset_bottom = -496.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+
+[node name="Control2" parent="TextureRect2/Control" unique_id=1875557506 instance=ExtResource("9_docr2")]
+layout_mode = 1
+offset_left = 142.0
+offset_top = 118.0
+offset_right = -79.0
+offset_bottom = -429.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+bus_name = "Music"
+
+[node name="Control3" parent="TextureRect2/Control" unique_id=1331895072 instance=ExtResource("9_docr2")]
+layout_mode = 1
+offset_left = 142.0
+offset_top = 193.0
+offset_right = -79.0
+offset_bottom = -354.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+bus_name = "SFX"
+
+[node name="Panel" type="Panel" parent="TextureRect2/Control" unique_id=909503325]
+layout_mode = 0
+offset_right = 857.0
+offset_bottom = 628.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_umt7f")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect2/Control" unique_id=312397512]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -304.5
+offset_top = -1.0
+offset_right = -296.5
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, -1)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2081706152]
 libraries/ = SubResource("AnimationLibrary_10bux")
@@ -478,6 +719,7 @@ anchor_right = 1.0355903
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 0
 texture = SubResource("ViewportTexture_j3pel")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -571,7 +813,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0, 0.016666412, 1)
 
 [node name="pointer7" parent="SubViewport/Node3D/outside" unique_id=485143446 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, 1.5570095, 0.157, 52.004528)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, 1.5570095, 0.157, 52.004528)
 albedo = Color(1, 0, 0.016666412, 1)
 texture = ExtResource("7_v6c8f")
 
@@ -587,7 +829,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iw0sq")
 script = ExtResource("5_8fvur")
 
 [node name="pointer8" parent="SubViewport/Node3D/beyond" unique_id=1514895900 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.03399059, 0.15, -10.773794)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.03399059, 0.15, -10.773794)
 texture = ExtResource("9_56mna")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewport/Node3D/beyond" unique_id=1693729931]
@@ -604,7 +846,7 @@ color = Color(0.5484812, 0.47792011, 1, 1)
 animationspeed = 2.5
 
 [node name="pointer8" parent="SubViewport/Node3D/credits" unique_id=270714153 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.019414902, 0.155, -0.102375865)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.019414902, 0.155, -0.102375865)
 lerpspeed = 2.0
 albedo = Color(0.5484812, 0.47792011, 1, 1)
 texture = ExtResource("10_ritla")
@@ -622,9 +864,9 @@ script = ExtResource("5_8fvur")
 color = Color(0, 0.63433564, 0.44012588, 1)
 
 [node name="pointer" parent="SubViewport/Node3D/settings" unique_id=87834326 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649391, 0, 0.16928983, 0, 0.2, 0, -0.16928983, 0, -0.10649391, -0.10633373, 0.17617929, -0.18267095)
+transform = Transform3D(0.11715149, 0, 0.16209729, 0, 0.2, 0, -0.16209729, 0, 0.11715149, -0.10633373, 0.17617929, -0.18267095)
 albedo = Color(0, 0.63433564, 0.44012588, 1)
-texture = SubResource("ViewportTexture_ritla")
+texture = SubResource("ViewportTexture_docr2")
 
 [node name="Camera3D4" type="Camera3D" parent="SubViewport/Node3D/settings" unique_id=339734597]
 transform = Transform3D(0.77162457, 0.4575564, -0.4418571, 0, 0.6946584, 0.7193398, 0.63607824, -0.55506027, 0.5360155, -1.59, 2.717, 1.252)
@@ -639,7 +881,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 
 [node name="pointer5" parent="SubViewport/Node3D/spiraling" unique_id=1013876082 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649397, 0, 0.16928992, 0, 0.2, 0, -0.16928992, 0, -0.10649397, -0.3346901, 0.15, -0.2185235)
+transform = Transform3D(0.11715154, 0, 0.16209736, 0, 0.2, 0, -0.16209736, 0, 0.11715154, -0.3346901, 0.15, -0.2185235)
 albedo = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 texture = ExtResource("11_docr2")
 
@@ -656,7 +898,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0.7166667, 0, 1)
 
 [node name="pointer3" parent="SubViewport/Node3D/lefte2" unique_id=126364325 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.26291132, 0.15, -0.0036673546)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.26291132, 0.15, -0.0036673546)
 albedo = Color(1, 0.7166667, 0, 1)
 texture = ExtResource("12_cqbrr")
 
@@ -673,7 +915,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 
 [node name="pointer6" parent="SubViewport/Node3D/centered" unique_id=862589641 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.531, 0.15, 0.288)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.531, 0.15, 0.288)
 albedo = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 texture = ExtResource("13_phq6h")
 
@@ -690,7 +932,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.81960785, 0.4, 0, 1)
 
 [node name="pointer4" parent="SubViewport/Node3D/righte" unique_id=610274695 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.43301868, 0.15, 0.6193305)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.43301868, 0.15, 0.6193305)
 albedo = Color(0.81960785, 0.4, 0, 1)
 texture = ExtResource("14_tjwgh")
 
@@ -707,7 +949,7 @@ script = ExtResource("5_8fvur")
 color = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 
 [node name="pointer2" parent="SubViewport/Node3D/central" unique_id=391330810 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, 0.03, 0.155, 1.6882926)
+transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, 0.03, 0.155, 1.6882926)
 albedo = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 texture = ExtResource("15_lgb5m")
 
@@ -721,11 +963,11 @@ own_world_3d = true
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D/SubViewport" unique_id=319754700]
-transform = Transform3D(-0.61061865, 0.7919245, 3.4616125e-08, 0, -4.3711378e-08, 1, 0.7919245, 0.61061865, 2.6690994e-08, 0, 1.91, 0)
+transform = Transform3D(-0.94867665, -0.31624642, -1.3823575e-08, 0, -4.371137e-08, 1, -0.31624642, 0.94867665, 4.146799e-08, 0, 1.91, 0)
 fov = 30.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D/SubViewport" unique_id=2125197666]
-transform = Transform3D(0.36047798, 2.331919, 0, -0.9327675, 0.90119505, 0, 0, 0, 1, 0, -3.19, 0)
+transform = Transform3D(0.99942034, -0.085089006, 0, 0.034035597, 2.4985511, 0, 0, 0, 1, 0, -3.19, 0)
 mesh = ExtResource("3_foao3")
 surface_material_override/0 = SubResource("StandardMaterial3D_uvulu")
 script = ExtResource("16_q4phu")
