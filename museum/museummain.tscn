@@ -348,3 +348,4 @@ script = ExtResource("12_w4wu2")
 turnlist = [NodePath("../StaticBody3D2"), NodePath("../BézierCurve_007"), NodePath("../room1museum/Cube_012"), NodePath("../room1museum/Cube_032")]
 
 [node name="Control" parent="." unique_id=8135944 instance=ExtResource("13_uj7mv")]
+mouse_filter = 1

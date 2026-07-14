@@ -1,10 +1,13 @@
 extends Node
 var pauses=0
 func pause():
+	
 	pauses+=1
+	print(pauses)
 	get_tree().paused=true
 func unpause():
-	pauses-=1
+	pauses=0
+	print(pauses)
 	if pauses==0:
 		get_tree().paused=false
 func frame_freeze(ts,dur):
