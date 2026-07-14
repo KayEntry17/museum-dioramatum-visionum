@@ -10,9 +10,11 @@ var menumode:bool=false
 # Called when the node enters the scene tree for the first time.
 func appear():
 	Input.mouse_mode=Input.MOUSE_MODE_CONFINED_HIDDEN
-	menumode=true
+	menumode=true 
 	print("sfdsdf")
-	
+func leave():
+	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	menumode=false
 func _ready() -> void: 
 	#mouseproportion=1152/float(DisplayServer.window_get_size().x) 
 	print(DisplayServer.window_get_size())
@@ -21,8 +23,8 @@ func _ready() -> void:
 	$Icon.modulate.a=1
 	active=false
 	visactive=false
-	#inuse=true
-	appear()
+	inuse=true
+	#appear()
 func activate():  
 	active=true
 	$Icon.position=get_viewport().get_visible_rect().get_center()

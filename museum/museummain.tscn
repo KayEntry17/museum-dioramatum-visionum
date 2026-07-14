@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://romkbskeeycl" path="res://testlevels/platformlevel.tscn" id="10_5u0v3"]
 [ext_resource type="Script" uid="uid://cpi1pqhsifnd" path="res://museum/doorset.gd" id="11_tuqm2"]
 [ext_resource type="Script" uid="uid://cy4wc1yrjnnf7" path="res://museum/general.gd" id="12_w4wu2"]
+[ext_resource type="PackedScene" uid="uid://d3lb8xtskpup0" path="res://ui/pausemenu.tscn" id="13_uj7mv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0v3"]
 resource_name = "generic"
@@ -92,7 +93,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4wu2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj7mv"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_w4wu2")
@@ -147,7 +148,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj7mv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7kr8"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_p1f42")
@@ -309,12 +310,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -
 
 [node name="BézierCurve_008" parent="." unique_id=19811220 instance=ExtResource("4_3walr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.322727, 1.2413305, -12.270446)
-surface_material_override/0 = SubResource("ShaderMaterial_w4wu2")
+surface_material_override/0 = SubResource("ShaderMaterial_uj7mv")
 script = ExtResource("5_wcod2")
 
 [node name="BézierCurve_007" parent="." unique_id=644824418 instance=ExtResource("5_r7cxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25604, 1.2413305, -12.285494)
-surface_material_override/0 = SubResource("ShaderMaterial_uj7mv")
+surface_material_override/0 = SubResource("ShaderMaterial_a7kr8")
 script = ExtResource("5_wcod2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
@@ -345,3 +346,5 @@ shape = SubResource("BoxShape3D_umt7f")
 [node name="general" type="Node" parent="." unique_id=1489219575 node_paths=PackedStringArray("turnlist")]
 script = ExtResource("12_w4wu2")
 turnlist = [NodePath("../StaticBody3D2"), NodePath("../BézierCurve_007"), NodePath("../room1museum/Cube_012"), NodePath("../room1museum/Cube_032")]
+
+[node name="Control" parent="." unique_id=8135944 instance=ExtResource("13_uj7mv")]

@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://d3lb8xtskpup0"]
+
+[ext_resource type="Script" uid="uid://xmpa5vum2stt" path="res://ui/pausemenu.gd" id="1_khnwn"]
+[ext_resource type="PackedScene" uid="uid://cnsemeb4y4sxv" path="res://ui/buttonb.tscn" id="1_uxloo"]
+
+[sub_resource type="Animation" id="Animation_khnwn"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_uxloo"]
+resource_name = "spawn"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:offset_transform_position_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:offset_transform_position_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 8.49), Vector2(0, 8.49), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Exit:offset_transform_position_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 8.49), Vector2(0, 8.49), Vector2(0, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"animation_over"
+}, {
+"args": [],
+"method": &"animation_done"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect3:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.1882353)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khnwn"]
+_data = {
+&"RESET": SubResource("Animation_khnwn"),
+&"spawn": SubResource("Animation_uxloo")
+}
+
+[node name="Control" type="Control" unique_id=8135944]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_khnwn")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=811232970]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1445842738]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011284722
+anchor_top = 0.74228394
+anchor_right = 0.34375
+anchor_bottom = 0.89969134
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0, 0)
+color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=745740850]
+process_mode = 3
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.0015432099
+anchor_right = 0.017361112
+anchor_bottom = 1.0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 1)
+
+[node name="Credits" parent="." unique_id=1521978630 instance=ExtResource("1_uxloo")]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.75308645
+anchor_right = 0.41184896
+anchor_bottom = 0.8151825
+offset_right = 2620.55
+offset_bottom = 228.01672
+scale = Vector2(0.15, 0.15)
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 8.49)
+focus_neighbor_left = NodePath("../Options")
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_right = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Options")
+moveamount = 350.0
+label = "Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" parent="." unique_id=42960070 instance=ExtResource("1_uxloo")]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010416667
+anchor_top = 0.8194444
+anchor_right = 0.41184896
+anchor_bottom = 0.88154054
+offset_right = 2620.55
+offset_bottom = 228.01672
+scale = Vector2(0.15, 0.15)
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 8.49)
+focus_neighbor_left = NodePath("../Credits")
+focus_neighbor_top = NodePath("../Credits")
+focus_neighbor_right = NodePath("../NewGame")
+focus_neighbor_bottom = NodePath("../NewGame")
+focus_next = NodePath("../NewGame")
+focus_previous = NodePath("../Credits")
+moveamount = 350.0
+label = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1488818064]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_khnwn")
+speed_scale = 0.6

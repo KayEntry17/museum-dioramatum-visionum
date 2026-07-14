@@ -13,8 +13,10 @@ func _ready() -> void:
 	print(Cam.targetcam)
 	move_and_slide()
 	velocity.y=0
+	#Mouss.activate()
 	#Cam.fpsmode=true
 func _unhandled_input(event: InputEvent) -> void:
+	print("asdaids")
 	if Cam.fpsmode:
 		if event is InputEventMouseMotion: 
 			var mousemovek=Vector2(event.relative.x*Sensitivity*0.05,event.relative.y*Sensitivity*0.05)
