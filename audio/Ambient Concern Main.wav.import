@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nmnqb6cfohqf"
+path="res://.godot/imported/Ambient Concern Main.wav-92772a2c18d484867e40930328263171.sample"
+
+[deps]
+
+source_file="res://audio/Ambient Concern Main.wav"
+dest_files=["res://.godot/imported/Ambient Concern Main.wav-92772a2c18d484867e40930328263171.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqdeb0qfad60n"
+path="res://.godot/imported/Lost(Loop) - drone - dark.wav-4eeddc6bd13dc671b0c3f3e0ed22d27a.sample"
+
+[deps]
+
+source_file="res://audio/lost1.2_wav/Lost(Loop) - drone - dark.wav"
+dest_files=["res://.godot/imported/Lost(Loop) - drone - dark.wav-4eeddc6bd13dc671b0c3f3e0ed22d27a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

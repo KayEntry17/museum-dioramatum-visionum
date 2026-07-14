@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4olu5fmpc4q4"
+path="res://.godot/imported/crowtry8slightly changed velocity i guess.wav-f3113945e29178a7737d482276028f46.sample"
+
+[deps]
+
+source_file="res://audio/crowtry8slightly changed velocity i guess.wav"
+dest_files=["res://.godot/imported/crowtry8slightly changed velocity i guess.wav-f3113945e29178a7737d482276028f46.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

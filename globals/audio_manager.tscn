@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://be66u2qcmwqgb"]
+
+[ext_resource type="Script" uid="uid://uqn3u1padmeq" path="res://globals/audio_manager.gd" id="1_exsf0"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=2142565361]
+process_mode = 3
+bus = &"Music"
+script = ExtResource("1_exsf0")
+
+[node name="TransitionTimer" type="Timer" parent="." unique_id=1503556683]
+process_mode = 3
+one_shot = true
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="timeout" from="TransitionTimer" to="." method="_on_transition_timer_timeout"]

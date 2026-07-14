@@ -11,22 +11,26 @@ var menumode:bool=false
 func appear():
 	Input.mouse_mode=Input.MOUSE_MODE_CONFINED_HIDDEN
 	menumode=true
+	print("sfdsdf")
 	
-func _ready() -> void:
-	#mouseproportion=1152/float(DisplayServer.window_get_size().x)
+func _ready() -> void: 
+	#mouseproportion=1152/float(DisplayServer.window_get_size().x) 
 	print(DisplayServer.window_get_size())
 	
 	mousepos=Vector2(0,0)
 	$Icon.modulate.a=1
 	active=false
 	visactive=false
-	inuse=true
+	#inuse=true
+	appear()
 func activate():  
 	active=true
 	$Icon.position=get_viewport().get_visible_rect().get_center()
 func deactivate():
 	active=false
 func _unhandled_input(event: InputEvent) -> void:
+	
+			
 	if active:
 		
 		if event is InputEventMouseMotion: 
@@ -41,7 +45,14 @@ func _process(delta: float) -> void:
 	timesincemove+=delta
 	if timesincemove>0.5:
 		visactive=false
-		
+	if menumode:
+		timesincemove=0
+		visactive=true
+		$Icon.global_position=get_viewport().get_mouse_position()
+		if Input.is_action_pressed("mouseclick"):
+			inuse=true	
+		else:
+			inuse=false
 	var caminpdir=Input.get_vector("camera_left","camera_right","camera_up","camera_down")
 	if Input.is_action_pressed("mousetoggle") and active:   
 		timesincemove=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d1utythn2ue57"
+path="res://.godot/imported/Echo(loop) - hollow - scary - anxiety.wav-3596a2870a70a1e7b66da9dee31896bf.sample"
+
+[deps]
+
+source_file="res://audio/lost1.2_wav/Echo(loop) - hollow - scary - anxiety.wav"
+dest_files=["res://.godot/imported/Echo(loop) - hollow - scary - anxiety.wav-3596a2870a70a1e7b66da9dee31896bf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

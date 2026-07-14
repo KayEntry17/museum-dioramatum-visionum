@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b32nbpwgmdq2m"
+path="res://.godot/imported/Anormal - calming - ambient.wav-cd32b29a79dceb5abda7a26ee28b1364.sample"
+
+[deps]
+
+source_file="res://audio/lost1.2_wav/Anormal - calming - ambient.wav"
+dest_files=["res://.godot/imported/Anormal - calming - ambient.wav-cd32b29a79dceb5abda7a26ee28b1364.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

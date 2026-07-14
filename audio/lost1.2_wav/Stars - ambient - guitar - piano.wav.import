@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cydvhwp3hay84"
+path="res://.godot/imported/Stars - ambient - guitar - piano.wav-6a68ac0d321a13165a6718e4e67ab3cc.sample"
+
+[deps]
+
+source_file="res://audio/lost1.2_wav/Stars - ambient - guitar - piano.wav"
+dest_files=["res://.godot/imported/Stars - ambient - guitar - piano.wav-6a68ac0d321a13165a6718e4e67ab3cc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

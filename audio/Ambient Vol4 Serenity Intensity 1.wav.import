@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bph61twvgldc3"
+path="res://.godot/imported/Ambient Vol4 Serenity Intensity 1.wav-0d7c8f302c3a83927569ad47841d40ae.sample"
+
+[deps]
+
+source_file="res://audio/Ambient Vol4 Serenity Intensity 1.wav"
+dest_files=["res://.godot/imported/Ambient Vol4 Serenity Intensity 1.wav-0d7c8f302c3a83927569ad47841d40ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
