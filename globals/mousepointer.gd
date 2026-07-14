@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	mousepos=Vector2(0,0)
 	$Icon.modulate.a=1
-	active=false
+	active=false  
 	visactive=false
 	inuse=true
 	#appear()

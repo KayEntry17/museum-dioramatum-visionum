@@ -5,11 +5,14 @@ var nextscene=0
 func change_scene(scenenumb):
 	Pause.pause()
 	transitioning=true
+	Mouss.menumode=false
+	Mouss.timesincemove=3.0
 	nextscene=scenenumb
 	$AnimationPlayer.play("troon")
 func end_anim():
 	if transitioning:
 		transitioning=false
+		
 		get_tree().change_scene_to_packed(scenesuseful[nextscene])
 		await get_tree().create_timer(0.1).timeout
 		$AnimationPlayer.play_backwards("troon")

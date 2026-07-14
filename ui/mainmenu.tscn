@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bt4qigtofrrgs" path="res://ui/menumap.gd" id="1_awnty"]
 [ext_resource type="Script" uid="uid://blfhkjt6l82ks" path="res://ui/mainmenu.gd" id="1_yli8f"]
-[ext_resource type="Texture2D" uid="uid://baf5rpeal4xe0" path="res://ui/LogoDoor.png" id="2_10bux"]
 [ext_resource type="AudioStream" uid="uid://c4olu5fmpc4q4" path="res://audio/crowtry8slightly changed velocity i guess.wav" id="2_56mna"]
 [ext_resource type="Material" uid="uid://ctkkdwuo4pbal" path="res://materials/basic_white.tres" id="2_yli8f"]
 [ext_resource type="AudioStream" uid="uid://bxuap6t8wc4kg" path="res://audio/sfx/492932__roboroo__drop-47.wav" id="3_56mna"]
 [ext_resource type="ArrayMesh" uid="uid://cgpksqpjhnr72" path="res://3dmodels/cogmesh.res" id="3_foao3"]
 [ext_resource type="VoxelGIData" uid="uid://bq2ybb8pcgh37" path="res://lightbakes/menumap.VoxelGI_data.res" id="4_0djjy"]
 [ext_resource type="Script" uid="uid://btx47cjqbe8bb" path="res://ui/sub_viewport.gd" id="4_8fvur"]
+[ext_resource type="Texture2D" uid="uid://dmfh7fdgj7o18" path="res://ui/logo2.png" id="4_docr2"]
 [ext_resource type="Script" uid="uid://gbify1enelv3" path="res://ui/outside.gd" id="5_8fvur"]
+[ext_resource type="Theme" uid="uid://cnllmcbkp5fm5" path="res://ui/menutext.tres" id="5_cqbrr"]
 [ext_resource type="Texture2D" uid="uid://1nndpgel224j" path="res://gltfs/room1museum_disclaimerstextsized.png" id="5_v6c8f"]
 [ext_resource type="PackedScene" uid="uid://66hhfs1ygeaw" path="res://3dmodels/pointer.tscn" id="6_10bux"]
 [ext_resource type="Script" uid="uid://c8vrpr4jnvxj1" path="res://ui/settings.gd" id="7_ritla"]
@@ -269,6 +270,7 @@ menutheme = ExtResource("2_56mna")
 testsong = ExtResource("3_56mna")
 
 [node name="bar" type="ColorRect" parent="." unique_id=133351984]
+clip_children = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.24776909
@@ -282,10 +284,10 @@ material = SubResource("ShaderMaterial_umt7f")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.07006972
-anchor_top = 0.100137174
-anchor_right = 1.0089573
-anchor_bottom = 0.37311384
-texture = ExtResource("2_10bux")
+anchor_top = 0.22633745
+anchor_right = 1.0973232
+anchor_bottom = 0.35390946
+texture = ExtResource("4_docr2")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -300,6 +302,35 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+
+[node name="Label5" type="Label" parent="bar" unique_id=83881072]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.715
+offset_top = 18.0
+offset_right = 275.285
+offset_bottom = 46.0
+grow_horizontal = 2
+theme = ExtResource("5_cqbrr")
+theme_override_font_sizes/font_size = 18
+text = "A Vision Gallery Production, 2026"
+
+[node name="Label6" type="Label" parent="bar" unique_id=2030239283]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.715
+offset_top = 123.0
+offset_right = 271.285
+offset_bottom = 166.0
+grow_horizontal = 2
+theme = ExtResource("5_cqbrr")
+theme_override_font_sizes/font_size = 20
+text = "An exposition by
+The Last Yatagarasu"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=320253459]
 custom_minimum_size = Vector2(5, 0)
@@ -438,7 +469,6 @@ patch_margin_bottom = 112
 libraries/ = SubResource("AnimationLibrary_10bux")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=225243288]
-visible = false
 texture_filter = 1
 material = SubResource("ShaderMaterial_0djjy")
 layout_mode = 1
@@ -541,7 +571,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0, 0.016666412, 1)
 
 [node name="pointer7" parent="SubViewport/Node3D/outside" unique_id=485143446 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, 1.5570095, 0.157, 52.004528)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, 1.5570095, 0.157, 52.004528)
 albedo = Color(1, 0, 0.016666412, 1)
 texture = ExtResource("7_v6c8f")
 
@@ -557,7 +587,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iw0sq")
 script = ExtResource("5_8fvur")
 
 [node name="pointer8" parent="SubViewport/Node3D/beyond" unique_id=1514895900 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, -0.03399059, 0.15, -10.773794)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.03399059, 0.15, -10.773794)
 texture = ExtResource("9_56mna")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewport/Node3D/beyond" unique_id=1693729931]
@@ -574,7 +604,7 @@ color = Color(0.5484812, 0.47792011, 1, 1)
 animationspeed = 2.5
 
 [node name="pointer8" parent="SubViewport/Node3D/credits" unique_id=270714153 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, -0.019414902, 0.155, -0.102375865)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.019414902, 0.155, -0.102375865)
 lerpspeed = 2.0
 albedo = Color(0.5484812, 0.47792011, 1, 1)
 texture = ExtResource("10_ritla")
@@ -592,7 +622,7 @@ script = ExtResource("5_8fvur")
 color = Color(0, 0.63433564, 0.44012588, 1)
 
 [node name="pointer" parent="SubViewport/Node3D/settings" unique_id=87834326 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.17623024, 0, -0.094566934, 0, 0.2, 0, 0.094566934, 0, -0.17623024, -0.10633373, 0.17617929, -0.18267095)
+transform = Transform3D(-0.10649391, 0, 0.16928983, 0, 0.2, 0, -0.16928983, 0, -0.10649391, -0.10633373, 0.17617929, -0.18267095)
 albedo = Color(0, 0.63433564, 0.44012588, 1)
 texture = SubResource("ViewportTexture_ritla")
 
@@ -609,7 +639,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 
 [node name="pointer5" parent="SubViewport/Node3D/spiraling" unique_id=1013876082 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.17623033, 0, -0.094566986, 0, 0.2, 0, 0.094566986, 0, -0.17623033, -0.3346901, 0.15, -0.2185235)
+transform = Transform3D(-0.10649397, 0, 0.16928992, 0, 0.2, 0, -0.16928992, 0, -0.10649397, -0.3346901, 0.15, -0.2185235)
 albedo = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 texture = ExtResource("11_docr2")
 
@@ -626,7 +656,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0.7166667, 0, 1)
 
 [node name="pointer3" parent="SubViewport/Node3D/lefte2" unique_id=126364325 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, -0.26291132, 0.15, -0.0036673546)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.26291132, 0.15, -0.0036673546)
 albedo = Color(1, 0.7166667, 0, 1)
 texture = ExtResource("12_cqbrr")
 
@@ -643,7 +673,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 
 [node name="pointer6" parent="SubViewport/Node3D/centered" unique_id=862589641 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, -0.531, 0.15, 0.288)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.531, 0.15, 0.288)
 albedo = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 texture = ExtResource("13_phq6h")
 
@@ -660,7 +690,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.81960785, 0.4, 0, 1)
 
 [node name="pointer4" parent="SubViewport/Node3D/righte" unique_id=610274695 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, -0.43301868, 0.15, 0.6193305)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, -0.43301868, 0.15, 0.6193305)
 albedo = Color(0.81960785, 0.4, 0, 1)
 texture = ExtResource("14_tjwgh")
 
@@ -677,7 +707,7 @@ script = ExtResource("5_8fvur")
 color = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 
 [node name="pointer2" parent="SubViewport/Node3D/central" unique_id=391330810 instance=ExtResource("6_10bux")]
-transform = Transform3D(-0.1762303, 0, -0.09456697, 0, 0.2, 0, 0.09456697, 0, -0.1762303, 0.03, 0.155, 1.6882926)
+transform = Transform3D(-0.10649396, 0, 0.16928989, 0, 0.2, 0, -0.16928989, 0, -0.10649396, 0.03, 0.155, 1.6882926)
 albedo = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 texture = ExtResource("15_lgb5m")
 
@@ -691,11 +721,11 @@ own_world_3d = true
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D/SubViewport" unique_id=319754700]
-transform = Transform3D(0.95624626, -0.2925621, -1.2788298e-08, 0, -4.3711378e-08, 1, -0.2925621, -0.95624626, -4.1798863e-08, 0, 1.91, 0)
+transform = Transform3D(-0.61061865, 0.7919245, 3.4616125e-08, 0, -4.3711378e-08, 1, 0.7919245, 0.61061865, 2.6690994e-08, 0, 1.91, 0)
 fov = 30.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D/SubViewport" unique_id=2125197666]
-transform = Transform3D(-0.83369815, -1.3805503, 0, 0.55222005, -2.0842457, 0, 0, 0, 1, 0, -3.19, 0)
+transform = Transform3D(0.36047798, 2.331919, 0, -0.9327675, 0.90119505, 0, 0, 0, 1, 0, -3.19, 0)
 mesh = ExtResource("3_foao3")
 surface_material_override/0 = SubResource("StandardMaterial3D_uvulu")
 script = ExtResource("16_q4phu")

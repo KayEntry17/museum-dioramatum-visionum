@@ -6,6 +6,7 @@ extends Control
 func _ready() -> void:
 	$NewGame.grab_focus()
 	Audio.change_track(menutheme)
+	Mouss.appear()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
