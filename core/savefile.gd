@@ -4,7 +4,7 @@ var level:int=0
 var defaultsettings:Dictionary={
 	"resolution":1,
 	"antialiasing":1,
-	"graphics":3,
+	"graphics":1,
 	"fullscreen":2,
 	"sensitivity":0.5,
 	"screenshake":1,
@@ -23,6 +23,7 @@ func save():
 	volsfx=(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
 	volm=(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 	volmus=(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	print(settings)
 	var save_dict={
 		"level":level,
 		"settings":settings,
@@ -34,11 +35,13 @@ func save():
 func save_game():
 	var save_game = FileAccess.open("user://museumlog.save", FileAccess.WRITE)
 	var json_string=JSON.stringify(save())
+	print(json_string)
 	save_game.store_line(json_string)
 # Called every frame. 'delta' is the elapsed time sinceyf the previous frame.
 func load_game():
 	if not FileAccess.file_exists("user://museumlog.save"):
 		settings=defaultsettings
+		print("asdaoidsjaidsjaid")
 		return
 		
 	else:
