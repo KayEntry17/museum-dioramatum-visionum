@@ -27,6 +27,7 @@ Save="*uid://g4xvtl1olwp6"
 Pause="*uid://bl04qam8mjys8"
 Audio="*uid://be66u2qcmwqgb"
 Transition="*uid://bitunam0n5nmj"
+Tut="*uid://bs7b6aqbqrhn5"
 
 [display]
 
@@ -37,6 +38,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/awesome_input_icons/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 

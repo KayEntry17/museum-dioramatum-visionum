@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
 size = Vector3(2.5830994, 1.8305664, 1)
 
-[node name="Node3D" type="CharacterBody3D" unique_id=906936805]
+[node name="Node3D" type="CharacterBody3D" unique_id=906936805 groups=["player"]]
 script = ExtResource("1_givxw")
 Sensitivity = 0.3
 
