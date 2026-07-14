@@ -7,7 +7,7 @@ var on:bool=false
 func _ready() -> void:
 	self.min_value=0.0001
 	bus_ind=AudioServer.get_bus_index(bus_name)
-
+	#self.value=b
 	AudioServer.set_bus_volume_db(bus_ind,linear_to_db(value))
 	print(AudioServer.get_bus_index(bus_name))
 	$Label.text=bus_name
@@ -24,7 +24,7 @@ func _on_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_ind,linear_to_db(value))
 
 
-func _on_focus_entered() -> void:
+func _on_focus_entered() -> void: 
 	on=true
 	
 

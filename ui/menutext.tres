@@ -26,7 +26,43 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 shadow_offset = Vector2(-8.59, 5.4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkiyt"]
+[sub_resource type="Gradient" id="Gradient_gtlw0"]
+offsets = PackedFloat32Array(0.18307087, 0.42322835, 0.496063, 0.5610236, 0.75)
+colors = PackedColorArray(1, 1, 1, 0.98622686, 1, 1, 1, 0.9909301, 0.34117648, 0.34117648, 0.34117648, 1, 0.34117648, 0.34117648, 0.34117648, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cqbrr"]
+gradient = SubResource("Gradient_gtlw0")
+width = 20
+height = 20
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_o8k1a"]
+offsets = PackedFloat32Array(0.084645666, 0.13188976, 0.18307087, 0.42322835, 0.496063, 0.5610236, 0.75)
+colors = PackedColorArray(0.34117648, 0.34117648, 0.34117648, 1, 1, 1, 1, 0.9890025, 1, 1, 1, 0.98622686, 1, 1, 1, 0.9909301, 0.34117648, 0.34117648, 0.34117648, 1, 0.34117648, 0.34117648, 0.34117648, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jto6m"]
+gradient = SubResource("Gradient_o8k1a")
+width = 20
+height = 20
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chjmh"]
+bg_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+corner_radius_top_left = 2
+corner_radius_bottom_right = 2
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqnb1"]
 bg_color = Color(1, 1, 1, 0)
 border_width_left = 2
 border_width_top = 2
@@ -95,7 +131,11 @@ corner_radius_bottom_left = 4
 default_font = ExtResource("1_gtlw0")
 Button/styles/focus = SubResource("StyleBoxFlat_gtlw0")
 Button/styles/normal = SubResource("StyleBoxFlat_umt7f")
-HSlider/styles/slider = SubResource("StyleBoxFlat_mkiyt")
+HSlider/icons/grabber = SubResource("GradientTexture2D_cqbrr")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_jto6m")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_chjmh")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_chjmh")
+HSlider/styles/slider = SubResource("StyleBoxFlat_xqnb1")
 Label/font_sizes/font_size = 28
 ScrollContainer/colors/scroll_hint_horizontal_color = Color(0, 0, 0, 1)
 ScrollContainer/colors/scroll_hint_vertical_color = Color(0, 0, 0, 1)

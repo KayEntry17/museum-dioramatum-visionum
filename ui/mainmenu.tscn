@@ -17,6 +17,8 @@
 [ext_resource type="ArrayMesh" uid="uid://b62mjfa8w1o7c" path="res://3dmodels/menumeshwall.tres" id="8_kn6wg"]
 [ext_resource type="Texture2D" uid="uid://dotjut1fp4b44" path="res://ui/icons/eye-target.png" id="9_56mna"]
 [ext_resource type="PackedScene" uid="uid://dvgx00wq2v8is" path="res://ui/slider.tscn" id="9_docr2"]
+[ext_resource type="Script" uid="uid://bpc1dvk1thr1l" path="res://ui/label.gd" id="10_cqbrr"]
+[ext_resource type="Shader" uid="uid://5ykdkgkkqpyf" path="res://ui/reverse menu.gdshader" id="10_phq6h"]
 [ext_resource type="Texture2D" uid="uid://d01sbmc84plfn" path="res://ui/icons/vhs.png" id="10_ritla"]
 [ext_resource type="Texture2D" uid="uid://ck2wjfyukh1wd" path="res://ui/icons/spinal-coil.png" id="11_docr2"]
 [ext_resource type="Texture2D" uid="uid://cly0esldqatlb" path="res://ui/icons/stone-bust.png" id="12_cqbrr"]
@@ -36,6 +38,38 @@ shader = ExtResource("21_8fvur")
 shader_parameter/croonit = 0.0
 shader_parameter/offset = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqbrr"]
+shader = ExtResource("10_phq6h")
+shader_parameter/col = Color(0.34117648, 0.34117648, 0.34117648, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_docr2"]
+content_margin_left = 9.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(-8.59, 5.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqbrr"]
+content_margin_left = 9.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(-8.59, 5.4)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umt7f"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
@@ -45,6 +79,16 @@ border_width_bottom = 5
 border_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
 corner_radius_top_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phq6h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_0djjy"]
 length = 0.001
@@ -144,10 +188,82 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(0, -1)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect2/Control/Label:offset_transform_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextureRect2/Control/OptionButton:offset_transform_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextureRect2/Control/OptionButton2:offset_transform_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextureRect2/Control/ColorRect4:offset_transform_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextureRect2/Control/Button2:offset_transform_scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextureRect2/Control/Button:offset_transform_scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_8fvur"]
 resource_name = "swap"
-length = 3.0000000000000004
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -239,10 +355,82 @@ tracks/7/path = NodePath("TextureRect2/Control/ColorRect:offset_transform_positi
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 1, 2.0333333),
+"times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -1), Vector2(0, -1), Vector2(0, 0.02)]
+"values": [Vector2(0, -1), Vector2(0, -1), Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect2/Control/Label:offset_transform_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.02, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextureRect2/Control/OptionButton:offset_transform_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.02, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextureRect2/Control/OptionButton2:offset_transform_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.02, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextureRect2/Control/ColorRect4:offset_transform_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.82, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextureRect2/Control/Button2:offset_transform_scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(2.01, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextureRect2/Control/Button:offset_transform_scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(2.01, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10bux"]
@@ -650,64 +838,434 @@ layout_mode = 2
 
 [node name="Control" parent="TextureRect2/Control" unique_id=2040736750 instance=ExtResource("9_docr2")]
 layout_mode = 1
-offset_left = 142.0
-offset_top = 51.0
-offset_right = -79.0
-offset_bottom = -496.0
+anchors_preset = -1
+anchor_left = 0.16569428
+anchor_top = 0.10188088
+anchor_right = 0.90781796
+anchor_bottom = 0.24451411
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
 offset_transform_pivot_ratio = Vector2(0, 0.5)
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_top = NodePath("../Button")
+focus_neighbor_right = NodePath("../Control2")
+focus_neighbor_bottom = NodePath("../Control2")
+focus_next = NodePath("../Control2")
+focus_previous = NodePath("../Button")
+max_value = 1.0
+step = 0.01
+value = 1.0
+bus_name = "Master"
+metadata/_edit_use_anchors_ = true
 
 [node name="Control2" parent="TextureRect2/Control" unique_id=1875557506 instance=ExtResource("9_docr2")]
 layout_mode = 1
-offset_left = 142.0
-offset_top = 118.0
-offset_right = -79.0
-offset_bottom = -429.0
+anchors_preset = -1
+anchor_left = 0.16569428
+anchor_top = 0.20689656
+anchor_right = 0.90781796
+anchor_bottom = 0.34952977
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
 offset_transform_pivot_ratio = Vector2(0, 0.5)
+focus_neighbor_left = NodePath("../Control")
+focus_neighbor_top = NodePath("../Control")
+focus_neighbor_right = NodePath("../Control3")
+focus_neighbor_bottom = NodePath("../Control3")
+focus_next = NodePath("../Control3")
+focus_previous = NodePath("../Control")
+max_value = 1.0
+step = 0.01
+value = 1.0
 bus_name = "Music"
+metadata/_edit_use_anchors_ = true
 
 [node name="Control3" parent="TextureRect2/Control" unique_id=1331895072 instance=ExtResource("9_docr2")]
 layout_mode = 1
-offset_left = 142.0
-offset_top = 193.0
-offset_right = -79.0
-offset_bottom = -354.0
+anchors_preset = -1
+anchor_left = 0.16569428
+anchor_top = 0.32445142
+anchor_right = 0.90781796
+anchor_bottom = 0.46708465
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 1)
 offset_transform_pivot_ratio = Vector2(0, 0.5)
+focus_neighbor_left = NodePath("../Control2")
+focus_neighbor_top = NodePath("../Control2")
+focus_neighbor_right = NodePath("../OptionButton")
+focus_neighbor_bottom = NodePath("../OptionButton")
+focus_next = NodePath("../OptionButton")
+focus_previous = NodePath("../Control2")
+max_value = 1.0
+step = 0.01
+value = 1.0
 bus_name = "SFX"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2/Control" unique_id=17721083]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03850642
+anchor_top = 0.012539185
+anchor_right = 0.8975675
+anchor_bottom = 1.290317
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0.12, 0)
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_font_sizes/font_size = 42
+text = "Audio
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect2/Control/Label" unique_id=1601942760]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.043465544
+anchor_top = 0.051519692
+anchor_right = 1.1138046
+anchor_bottom = 0.061332963
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="TextureRect2/Control/Label" unique_id=2029860953]
+visible = false
+material = SubResource("ShaderMaterial_cqbrr")
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.038032353
+anchor_top = 0.061332963
+anchor_right = 1.1124463
+anchor_bottom = 0.32874468
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect2/Control/Label" unique_id=2146743230]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.043465544
+anchor_top = 0.32874468
+anchor_right = 1.1138046
+anchor_bottom = 0.33855796
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="TextureRect2/Control" unique_id=997677900]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7362894
+anchor_top = 0.50940436
+anchor_right = 0.9101517
+anchor_bottom = 0.5658307
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(-3.41, 0)
+focus_neighbor_left = NodePath("../Control3")
+focus_neighbor_top = NodePath("../Control3")
+focus_neighbor_right = NodePath("../OptionButton2")
+focus_neighbor_bottom = NodePath("../OptionButton2")
+focus_next = NodePath("../OptionButton2")
+focus_previous = NodePath("../Control3")
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_docr2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_docr2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cqbrr")
+selected = 0
+item_count = 2
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "High"
+popup/item_1/id = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2/Control/OptionButton" unique_id=608225047]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.147651
+anchor_top = -0.3888889
+anchor_right = -3.2885902
+anchor_bottom = 0.8888889
+offset_left = 6.1035156e-05
+offset_right = -3.0517578e-05
+grow_vertical = 2
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_font_sizes/font_size = 38
+text = "Quality"
+script = ExtResource("10_cqbrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect2/Control/OptionButton/Label" unique_id=1666220131]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15624964
+anchor_top = 0.7826087
+anchor_right = 0.9249203
+anchor_bottom = 0.9419466
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton2" type="OptionButton" parent="TextureRect2/Control" unique_id=1457901407]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7362894
+anchor_top = 0.6943574
+anchor_right = 0.9101517
+anchor_bottom = 0.75078374
+offset_bottom = -3.0517578e-05
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(-3.41, 0)
+focus_neighbor_left = NodePath("../OptionButton")
+focus_neighbor_top = NodePath("../OptionButton")
+focus_neighbor_right = NodePath("../Button2")
+focus_neighbor_bottom = NodePath("../Button2")
+focus_next = NodePath("../Button2")
+focus_previous = NodePath("../OptionButton")
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_docr2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_docr2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_cqbrr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cqbrr")
+selected = 0
+item_count = 4
+popup/item_0/text = "Off"
+popup/item_0/id = 0
+popup/item_1/text = "TAA"
+popup/item_1/id = 1
+popup/item_2/text = "MSAA 2X"
+popup/item_2/id = 2
+popup/item_3/text = "MSAA 4X"
+popup/item_3/id = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2/Control/OptionButton2" unique_id=600901026]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.0134234
+anchor_top = -0.4722222
+anchor_right = -3.1543617
+anchor_bottom = 0.8055556
+offset_left = 6.1035156e-05
+offset_right = -3.0517578e-05
+grow_vertical = 2
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_font_sizes/font_size = 38
+text = "AA"
+script = ExtResource("10_cqbrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect2/Control/OptionButton2/Label" unique_id=638835354]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7173913
+anchor_right = 0.76867104
+anchor_bottom = 0.8767292
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="TextureRect2/Control" unique_id=909503325]
 layout_mode = 0
-offset_right = 857.0
-offset_bottom = 628.0
+anchor_right = 1.0
+anchor_bottom = 0.984326
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0, 0)
 offset_transform_pivot_ratio = Vector2(0, 0)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_umt7f")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="TextureRect2/Control" unique_id=2033191511]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0011668612
+anchor_top = 0.8134796
+anchor_right = 0.9964994
+anchor_bottom = 0.8232929
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect2/Control" unique_id=312397512]
 custom_minimum_size = Vector2(8, 0)
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -304.5
-offset_top = -1.0
-offset_right = -296.5
-offset_bottom = -1.0
+anchors_preset = -1
+anchor_left = 0.14469078
+anchor_top = 0.0031347962
+anchor_right = 0.15402567
+anchor_bottom = 0.8213166
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position_ratio = Vector2(0, -1)
 color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect2/Control" unique_id=815070150]
+layout_mode = 0
+anchor_left = 0.6884481
+anchor_top = 0.85423195
+anchor_right = 0.8693116
+anchor_bottom = 0.94670844
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0, 0)
+focus_neighbor_left = NodePath("../Button2")
+focus_neighbor_top = NodePath("../Button2")
+focus_neighbor_right = NodePath("../Control")
+focus_neighbor_bottom = NodePath("../Control")
+focus_next = NodePath("../Control")
+focus_previous = NodePath("../Button2")
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.35686275, 0.35686275, 0.35686275, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_phq6h")
+text = "Apply"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2/Control/Button" unique_id=1477640249]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.774194
+anchor_top = -0.4722222
+anchor_right = -1.9151322
+anchor_bottom = 0.8055555
+offset_left = 6.1035156e-05
+offset_right = -3.0517578e-05
+grow_vertical = 2
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_font_sizes/font_size = 38
+script = ExtResource("10_cqbrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect2/Control/Button/Label" unique_id=1578278948]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.544755
+anchor_top = 0.96647006
+anchor_right = 4.05544
+anchor_bottom = 1.032956
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="TextureRect2/Control" unique_id=2130052221]
+layout_mode = 0
+anchor_left = 0.13418902
+anchor_top = 0.85423195
+anchor_right = 0.3150525
+anchor_bottom = 0.94670844
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0, 0)
+focus_neighbor_left = NodePath("../OptionButton2")
+focus_neighbor_top = NodePath("../OptionButton2")
+focus_neighbor_right = NodePath("../Button")
+focus_neighbor_bottom = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../OptionButton2")
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.35686275, 0.35686275, 0.35686275, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_phq6h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_phq6h")
+text = "Save
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect2/Control/Button2" unique_id=194714157]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.774194
+anchor_top = -0.4722222
+anchor_right = -1.9151322
+anchor_bottom = 0.8055555
+offset_left = 6.1035156e-05
+offset_right = -3.0517578e-05
+grow_vertical = 2
+theme = ExtResource("5_cqbrr")
+theme_override_colors/font_color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+theme_override_font_sizes/font_size = 38
+script = ExtResource("10_cqbrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect2/Control/Button2/Label" unique_id=249191829]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.544755
+anchor_top = 0.96647006
+anchor_right = 4.05544
+anchor_bottom = 1.032956
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0, 1)
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2081706152]
 libraries/ = SubResource("AnimationLibrary_10bux")
+speed_scale = 3.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=225243288]
 texture_filter = 1
@@ -813,7 +1371,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0, 0.016666412, 1)
 
 [node name="pointer7" parent="SubViewport/Node3D/outside" unique_id=485143446 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, 1.5570095, 0.157, 52.004528)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, 1.5570095, 0.157, 52.004528)
 albedo = Color(1, 0, 0.016666412, 1)
 texture = ExtResource("7_v6c8f")
 
@@ -829,7 +1387,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iw0sq")
 script = ExtResource("5_8fvur")
 
 [node name="pointer8" parent="SubViewport/Node3D/beyond" unique_id=1514895900 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.03399059, 0.15, -10.773794)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, -0.03399059, 0.15, -10.773794)
 texture = ExtResource("9_56mna")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewport/Node3D/beyond" unique_id=1693729931]
@@ -846,7 +1404,7 @@ color = Color(0.5484812, 0.47792011, 1, 1)
 animationspeed = 2.5
 
 [node name="pointer8" parent="SubViewport/Node3D/credits" unique_id=270714153 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.019414902, 0.155, -0.102375865)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, -0.019414902, 0.155, -0.102375865)
 lerpspeed = 2.0
 albedo = Color(0.5484812, 0.47792011, 1, 1)
 texture = ExtResource("10_ritla")
@@ -864,7 +1422,7 @@ script = ExtResource("5_8fvur")
 color = Color(0, 0.63433564, 0.44012588, 1)
 
 [node name="pointer" parent="SubViewport/Node3D/settings" unique_id=87834326 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715149, 0, 0.16209729, 0, 0.2, 0, -0.16209729, 0, 0.11715149, -0.10633373, 0.17617929, -0.18267095)
+transform = Transform3D(-0.021954527, 0, -0.19879137, 0, 0.2, 0, 0.19879137, 0, -0.021954527, -0.10633373, 0.17617929, -0.18267095)
 albedo = Color(0, 0.63433564, 0.44012588, 1)
 texture = SubResource("ViewportTexture_docr2")
 
@@ -881,7 +1439,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 
 [node name="pointer5" parent="SubViewport/Node3D/spiraling" unique_id=1013876082 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715154, 0, 0.16209736, 0, 0.2, 0, -0.16209736, 0, 0.11715154, -0.3346901, 0.15, -0.2185235)
+transform = Transform3D(-0.021954536, 0, -0.19879146, 0, 0.2, 0, 0.19879146, 0, -0.021954536, -0.3346901, 0.15, -0.2185235)
 albedo = Color(0.45291847, 0.0026004082, 0.81575084, 1)
 texture = ExtResource("11_docr2")
 
@@ -898,7 +1456,7 @@ script = ExtResource("5_8fvur")
 color = Color(1, 0.7166667, 0, 1)
 
 [node name="pointer3" parent="SubViewport/Node3D/lefte2" unique_id=126364325 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.26291132, 0.15, -0.0036673546)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, -0.26291132, 0.15, -0.0036673546)
 albedo = Color(1, 0.7166667, 0, 1)
 texture = ExtResource("12_cqbrr")
 
@@ -915,7 +1473,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 
 [node name="pointer6" parent="SubViewport/Node3D/centered" unique_id=862589641 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.531, 0.15, 0.288)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, -0.531, 0.15, 0.288)
 albedo = Color(0.33441484, 0.6214856, 1.92523e-07, 1)
 texture = ExtResource("13_phq6h")
 
@@ -932,7 +1490,7 @@ script = ExtResource("5_8fvur")
 color = Color(0.81960785, 0.4, 0, 1)
 
 [node name="pointer4" parent="SubViewport/Node3D/righte" unique_id=610274695 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, -0.43301868, 0.15, 0.6193305)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, -0.43301868, 0.15, 0.6193305)
 albedo = Color(0.81960785, 0.4, 0, 1)
 texture = ExtResource("14_tjwgh")
 
@@ -949,7 +1507,7 @@ script = ExtResource("5_8fvur")
 color = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 
 [node name="pointer2" parent="SubViewport/Node3D/central" unique_id=391330810 instance=ExtResource("6_10bux")]
-transform = Transform3D(0.11715152, 0, 0.16209733, 0, 0.2, 0, -0.16209733, 0, 0.11715152, 0.03, 0.155, 1.6882926)
+transform = Transform3D(-0.021954535, 0, -0.19879144, 0, 0.2, 0, 0.19879144, 0, -0.021954535, 0.03, 0.155, 1.6882926)
 albedo = Color(1.4439225e-06, 0.40685925, 0.59037995, 1)
 texture = ExtResource("15_lgb5m")
 
@@ -963,11 +1521,11 @@ own_world_3d = true
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D/SubViewport" unique_id=319754700]
-transform = Transform3D(-0.94867665, -0.31624642, -1.3823575e-08, 0, -4.371137e-08, 1, -0.31624642, 0.94867665, 4.146799e-08, 0, 1.91, 0)
+transform = Transform3D(0.21901056, 0.975722, 4.2650186e-08, 0, -4.3711367e-08, 1, 0.975722, -0.21901056, -9.57326e-09, 0, 1.91, 0)
 fov = 30.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D/SubViewport" unique_id=2125197666]
-transform = Transform3D(0.99942034, -0.085089006, 0, 0.034035597, 2.4985511, 0, 0, 0, 1, 0, -3.19, 0)
+transform = Transform3D(-0.48649254, 2.1842113, 0, -0.8736844, -1.2162315, 0, 0, 0, 1, 0, -3.19, 0)
 mesh = ExtResource("3_foao3")
 surface_material_override/0 = SubResource("StandardMaterial3D_uvulu")
 script = ExtResource("16_q4phu")
