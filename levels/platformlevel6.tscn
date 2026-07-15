@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cax0pwb8eogsa"]
+
+[ext_resource type="Script" uid="uid://cxgyt88jberx3" path="res://core/platformlevel.gd" id="1_bh732"]
+[ext_resource type="Material" uid="uid://b2qm4540nqsvl" path="res://levels/hazarddrawn.tres" id="2_1asuv"]
+[ext_resource type="Script" uid="uid://ctlbxu5cr8e2l" path="res://core/camdioramacontroller.gd" id="3_men2w"]
+[ext_resource type="Material" uid="uid://cn76fq5c8ufau" path="res://materials/drawn.tres" id="4_qxgr2"]
+[ext_resource type="PackedScene" uid="uid://dnctmrhaywitb" path="res://player/standee.tscn" id="6_0vaj2"]
+[ext_resource type="Script" uid="uid://bgoxkqbtsigsj" path="res://testlevels/finish.gd" id="7_ah1or"]
+[ext_resource type="Shader" uid="uid://dvt054fkhuny7" path="res://testlevels/endbit.gdshader" id="8_s1uvx"]
+[ext_resource type="Script" uid="uid://c5dovsqwqhkp" path="res://testlevels/3dworld.gd" id="9_1asuv"]
+[ext_resource type="Script" uid="uid://2n6qdvl4go8v" path="res://testlevels/murderzone.gd" id="9_rd6ya"]
+[ext_resource type="Material" uid="uid://c0w50jxxb6vjn" path="res://materials/interactable.tres" id="10_men2w"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_og5as"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.5
+dof_blur_amount = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
+size = Vector3(2.458374, 2.9693604, 2.675354)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvulu"]
+render_priority = 1
+shader = ExtResource("8_s1uvx")
+shader_parameter/transparency = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_umt7f"]
+material = SubResource("ShaderMaterial_uvulu")
+top_radius = 0.099121094
+bottom_radius = 0.099121094
+height = 7.9819336
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvulu"]
+size = Vector3(0.23248291, 0.43624878, 0.2305336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3a4jo"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qxgr2"]
+size = Vector3(0.25, 0.25, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_31mai"]
+size = Vector3(0.25, 0.25, 0.5)
+
+[node name="platformlevel" type="Area3D" unique_id=1768093041 node_paths=PackedStringArray("camcontroller", "selfcam", "player")]
+script = ExtResource("1_bh732")
+camcontroller = NodePath("camcontroller")
+selfcam = NodePath("camcontroller/camcontroller/Camera3D")
+player = NodePath("Node3D")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5920153, 0)
+use_collision = true
+radius = 1.0
+height = 2.4663281
+sides = 20
+material = ExtResource("2_1asuv")
+
+[node name="camcontroller" type="Node3D" parent="." unique_id=758807615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("3_men2w")
+rotspeed = 3.0
+
+[node name="camcontroller" type="SpringArm3D" parent="camcontroller" unique_id=57085880]
+collision_mask = 64
+spring_length = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="camcontroller/camcontroller" unique_id=1087537245]
+transform = Transform3D(0.99995553, -0.0029910728, 0.008939356, 0, 0.94832367, 0.31730464, -0.009426475, -0.31729054, 0.94828147, 0, 0, 0)
+attributes = SubResource("CameraAttributesPractical_og5as")
+fov = 44.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066223145, 0.16729736, -0.08950806)
+shape = SubResource("BoxShape3D_umt7f")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2132722857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7931564, -0.3371669, -0.07768555)
+use_collision = true
+size = Vector3(0.2, 0.624, 0.3553711)
+material = ExtResource("4_qxgr2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1187282603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646811, -0.23167664, 0.0026696324)
+use_collision = true
+size = Vector3(0.29487306, 0.624, 1.1402954)
+material = ExtResource("4_qxgr2")
+
+[node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("6_0vaj2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67392117, 0.14739126, -0.25437784)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=198090420 groups=["finish"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79629517, 0.2840438, -0.084068716)
+script = ExtResource("7_ah1or")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=301324198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6830935, 0)
+mesh = SubResource("CylinderMesh_umt7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=549476221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, -0.11733723, -0.009054184)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=402936801 groups=["killzonesf"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.81463206, 0)
+script = ExtResource("9_rd6ya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=851871793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015097737, 0)
+shape = SubResource("BoxShape3D_3a4jo")
+
+[node name="CSGBakedMeshInstance3D58" type="AnimatableBody3D" parent="." unique_id=71840942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23895597, -0.013493091, -0.7951436)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_1asuv")
+direction = Vector3(0, 0, 1)
+distance = 0.687
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D58" unique_id=1560208260]
+mesh = SubResource("BoxMesh_qxgr2")
+surface_material_override/0 = ExtResource("10_men2w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D58" unique_id=1946519798]
+shape = SubResource("BoxShape3D_31mai")
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
