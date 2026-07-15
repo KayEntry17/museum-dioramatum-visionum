@@ -1,8 +1,9 @@
 extends Node
-
+@export var theme:AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Audio.change_track(theme)
 	await get_tree().create_timer(0.5).timeout
 	introduce()
 func mid_intro():
@@ -20,6 +21,7 @@ func midend_intro():
 func _process(delta: float) -> void:
 	pass
 func introduce():
+	
 	Cam.theserthetargets($"../Camera3D2")
 	Cam.fpsmode=false
 	$"../AnimationPlayer".play("introk")

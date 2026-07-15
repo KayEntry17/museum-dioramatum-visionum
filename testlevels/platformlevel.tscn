@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://ctlbxu5cr8e2l" path="res://core/camdioramacontroller.gd" id="2_nqy25"]
 [ext_resource type="PackedScene" uid="uid://dnctmrhaywitb" path="res://player/standee.tscn" id="3_nqy25"]
 [ext_resource type="Material" uid="uid://cn76fq5c8ufau" path="res://materials/drawn.tres" id="3_y7ny0"]
+[ext_resource type="Script" uid="uid://bgoxkqbtsigsj" path="res://testlevels/finish.gd" id="5_7vqrv"]
+[ext_resource type="Shader" uid="uid://dvt054fkhuny7" path="res://testlevels/endbit.gdshader" id="5_bg1id"]
+[ext_resource type="Script" uid="uid://2n6qdvl4go8v" path="res://testlevels/murderzone.gd" id="7_xbc1s"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_og5as"]
 dof_blur_far_enabled = true
@@ -12,6 +15,23 @@ dof_blur_amount = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
 size = Vector3(2.458374, 2.9693604, 2.675354)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvulu"]
+render_priority = 1
+shader = ExtResource("5_bg1id")
+shader_parameter/transparency = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_umt7f"]
+material = SubResource("ShaderMaterial_uvulu")
+top_radius = 0.099121094
+bottom_radius = 0.099121094
+height = 7.9819336
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvulu"]
+size = Vector3(0.23248291, 0.43624878, 0.2305336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3a4jo"]
+size = Vector3(5, 1, 5)
 
 [node name="platformlevel" type="Area3D" unique_id=1768093041 node_paths=PackedStringArray("camcontroller", "selfcam", "player")]
 script = ExtResource("1_24qdx")
@@ -67,3 +87,26 @@ material = ExtResource("3_y7ny0")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("3_nqy25")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4634513, -0.017295778, -0.25437784)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=198090420 groups=["finish"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.411, 1.4383373, 0)
+script = ExtResource("5_7vqrv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=301324198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.015967, 0)
+mesh = SubResource("CylinderMesh_umt7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=549476221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, -0.77171326, -0.009054184)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=402936801 groups=["killzonesf"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0379533, 0)
+script = ExtResource("7_xbc1s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=851871793]
+shape = SubResource("BoxShape3D_3a4jo")
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]

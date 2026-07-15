@@ -1,5 +1,5 @@
 shader_type spatial;
-
+render_mode blend_mix, cull_disabled;
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear;
 uniform sampler2D NORMAL_TEXTURE: hint_normal_roughness_texture, filter_linear;
 uniform sampler2D draw_texture: source_color, filter_linear_mipmap, repeat_enable;
@@ -74,6 +74,7 @@ void fragment() {
 	vec2 uv = SCREEN_UV;
 	
 	vec3 screen_color = texture(SCREEN_TEXTURE, uv).rgb;
+	
 	vec3 screen_normal = texture(NORMAL_TEXTURE, uv).rgb;
 	screen_normal = screen_normal * 2.0 - 1.0;
 	vec2 offset = outline_width / VIEWPORT_SIZE;

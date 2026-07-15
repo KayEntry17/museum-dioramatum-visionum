@@ -18,6 +18,10 @@ func coyotefloor():
 		return false
 func launch():
 	global_transform=startpos
+	velocity.y=-10000
+	#Cam.theserthetargets($falsecamx/falsecamy)
+	print(Cam.targetcam)
+	move_and_slide()
 	#$MeshInstance3D.position=Vector3(0,0,0)
 	$AnimationPlayer.play("start")
 func leave():
@@ -70,4 +74,11 @@ func _process(delta: float) -> void:
 				sincejump=jumpbuffer
 			
 		move_and_slide()
-	
+func win():
+	$AudioWinPlayer2.play()
+	pass
+func die():
+	$AudioStreamPlayer.play()
+	leave()
+	await get_tree().create_timer(1.01,false).timeout
+	launch()

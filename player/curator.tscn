@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bca5cm0b5np8n"]
 
 [ext_resource type="Script" uid="uid://c6kksxp8vdg7s" path="res://player/curplayer.gd" id="1_givxw"]
+[ext_resource type="AudioStream" uid="uid://y4l2m6vllvpe" path="res://audio/sfx/816018__qubodup__footsteps-w-clothes-loop.wav" id="2_f8jpk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6uffy"]
 
@@ -32,3 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85845244, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="falsecamx/falsecamy/Area3D" unique_id=354766505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2924652, -0.4152832, 0)
 shape = SubResource("BoxShape3D_umt7f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=820259891]
+stream = ExtResource("2_f8jpk")
+volume_db = -20.454

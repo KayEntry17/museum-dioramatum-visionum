@@ -3,12 +3,16 @@ var fpscam
 var active=false
 @export var camcontroller:Node3D
 @export var selfcam:Node3D
+@export var activateable:=false
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
 	#interact()
 @export var player:Node3D
-
+var complete:bool=false
+@export var prize:Node
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func turn_on():
+	self.activateable=true
 func _process(delta: float) -> void:
 	if active:
 		Cam.maincam.attributes.dof_blur_amount=lerp(Cam.maincam.attributes.dof_blur_amount,selfcam.attributes.dof_blur_amount,5*delta)
@@ -31,7 +35,7 @@ func _process(delta: float) -> void:
 			#Cam.maincam.attributes.dof_blur_amount=0
 			
 func interact():
-	if !active:
+	if !active and activateable:
 		print("la la la")
 		player.launch()
 		camcontroller.begin()
@@ -45,5 +49,17 @@ func interact():
 		Cam.targetcam=selfcam
 		Cam.fpsmode=false
 		active=true
-		
-	
+func finish():
+	prize.turn_on()
+	Cam.targetcam=fpscam
+	player.leave()
+	#print(fpscam)
+	active=false
+	var tweenb = get_tree().create_tween().set_trans(Tween.TRANS_QUART)
+	tweenb.tween_property(Cam.maincam, "fov",90, 1.9)
+	#print(Cam.maincam.attributes.dof_blur_amount)
+	#var tweenx = get_tree().create_tween()
+	Cam.maincam.dedof=true
+	Mouss.deactivate()
+	await get_tree().create_timer(1.9).timeout
+	Cam.fpsmode=true
