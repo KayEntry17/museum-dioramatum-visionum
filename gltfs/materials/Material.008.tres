@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pr2k4rrmo73g"]
+
+[ext_resource type="Texture2D" uid="uid://b2aex60nb8lqw" path="res://gltfs/museumROOM2_weirdlamp.png" id="1_d7pnd"]
+
+[resource]
+resource_name = "Material.008"
+cull_mode = 2
+albedo_texture = ExtResource("1_d7pnd")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 6.2
+emission_operator = 1
+emission_texture = ExtResource("1_d7pnd")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

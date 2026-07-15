@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dx0sjr67ae05b"]
 
-[ext_resource type="Texture2D" uid="uid://ucoad8pmg055" path="res://gltfs/room1museum_lightfixture.png" id="1_10sij"]
+[ext_resource type="Texture2D" uid="uid://ccjyo7r3j3tk4" path="res://gltfs/museumROOM2_lightfixture.png" id="1_10sij"]
 
 [resource]
 resource_name = "fixturelight"

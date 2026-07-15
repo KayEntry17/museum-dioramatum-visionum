@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://cs7orri3ykjce" path="res://museum/musicswap.gd" id="16_r0awf"]
 [ext_resource type="AudioStream" uid="uid://bf7hopfa4eujf" path="res://audio/lost1.2_wav/Lost - drone - dark.wav" id="17_r0awf"]
 [ext_resource type="AudioStream" uid="uid://bxp06ci1emxjg" path="res://audio/Ambient Nothingness Main.wav" id="17_u0d64"]
+[ext_resource type="PackedScene" uid="uid://b51tkmpkhwika" path="res://museum/museum_room_2.tscn" id="19_3mt8b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0v3"]
 resource_name = "generic"
@@ -264,6 +265,9 @@ size = Vector3(2.2336426, 2.9853516, 0.60754395)
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvulu"]
 size = Vector3(6.935425, 3.4492188, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_umt7f"]
+size = Vector3(7.373535, 1, 2.6748047)
+
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1219698084]
@@ -380,6 +384,13 @@ theme = ExtResource("17_r0awf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1413707275]
 shape = SubResource("BoxShape3D_uvulu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1953354539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.742188, 0, -30.463556)
+mesh = SubResource("BoxMesh_umt7f")
+
+[node name="museumROOM2" parent="." unique_id=372218756 instance=ExtResource("19_3mt8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]

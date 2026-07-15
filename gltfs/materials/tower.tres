@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://umx1pvwav3fp"]
+
+[ext_resource type="Texture2D" uid="uid://1327mwguert2" path="res://gltfs/museumROOM2_tower.png" id="1_ilaoj"]
+
+[resource]
+resource_name = "tower"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_ilaoj")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false
+metadata/_gltf_primary_texture_coord = 0

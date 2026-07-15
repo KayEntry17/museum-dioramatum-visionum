@@ -36,4 +36,5 @@ shape = SubResource("BoxShape3D_umt7f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=820259891]
 stream = ExtResource("2_f8jpk")
-volume_db = -20.454
+volume_db = -10.0
+bus = &"SFX"

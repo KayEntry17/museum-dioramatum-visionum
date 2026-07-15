@@ -55,11 +55,21 @@ func _process(delta: float) -> void:
 		velocity.x=move_toward(velocity.x,0,slip*delta*speed)
 		velocity.z=move_toward(velocity.z,0,slip*delta*speed)
 	else:
+		
+			
 		velocity.x=speed*inpdir.x
 		velocity.z=speed*inpdir.y	
+	
 	#print(velocity)
 	if canjump and Input.is_action_just_pressed("ui_accept") and Cam.fpsmode:
 		velocity.y=jumpspeed
+	if is_on_floor() and Cam.fpsmode and (velocity.x!=0 or velocity.y!=0):
+			if !$AudioStreamPlayer.playing:
+				$AudioStreamPlayer.play()
+			#print(1241232525)
+	else:
+		$AudioStreamPlayer.stop()
 	if Cam.fpsmode:	
 		move_and_slide()
+
 	

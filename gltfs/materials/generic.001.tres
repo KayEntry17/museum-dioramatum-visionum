@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0a7fyh02ju8l"]
+
+[ext_resource type="Texture2D" uid="uid://cgjtm17ib4ul4" path="res://gltfs/museumROOM2_themoreconctheycrete.png" id="1_abpx3"]
+
+[resource]
+resource_name = "generic.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_abpx3")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

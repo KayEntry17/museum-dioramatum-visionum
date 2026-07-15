@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnmr6kcaks5pc"]
+
+[ext_resource type="Texture2D" uid="uid://cpip5qe1htyv5" path="res://gltfs/museumROOM2_lampoftheweirdassvariety.png" id="1_k16jm"]
+
+[resource]
+resource_name = "Material.006"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_k16jm")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

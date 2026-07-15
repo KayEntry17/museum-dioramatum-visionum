@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ut3nndcihm4u"]
 
-[ext_resource type="Texture2D" uid="uid://b500qokptp1a1" path="res://gltfs/room1museum_moderndoor2.png" id="1_by6wu"]
+[ext_resource type="Texture2D" uid="uid://cck0073kofmf2" path="res://gltfs/museumROOM2_moderndoor2.png" id="1_by6wu"]
 
 [resource]
 resource_name = "moderndoor"

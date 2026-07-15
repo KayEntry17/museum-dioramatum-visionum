@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfmice1o5ftjm"]
+
+[ext_resource type="Texture2D" uid="uid://clsuxhfudcnpv" path="res://gltfs/museumROOM2_mountain range.png" id="1_gqnlh"]
+
+[resource]
+resource_name = "Material.036"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_gqnlh")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

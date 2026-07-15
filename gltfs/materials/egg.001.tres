@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cj00vrnufkdo5"]
+
+[ext_resource type="Texture2D" uid="uid://7tpo883ue5i3" path="res://gltfs/museumROOM2_egg.png" id="1_7ph21"]
+
+[resource]
+resource_name = "egg.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_7ph21")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

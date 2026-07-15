@@ -1,0 +1,338 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://crtj3re0eas2e"
+path="res://.godot/imported/museumROOM2.glb-e5b9eee1e39740a40475a6b2f0b01e0a.scn"
+
+[deps]
+
+source_file="res://gltfs/museumROOM2.glb"
+dest_files=["res://.godot/imported/museumROOM2.glb-e5b9eee1e39740a40475a6b2f0b01e0a.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"COLLISION": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/COLLISION.tres",
+"use_external/path": "uid://5d0cimscwttv"
+},
+"FANCYW": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/FANCYW.tres",
+"use_external/path": "uid://dyclkypsv7a5n"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.tres",
+"use_external/path": "uid://l3tpjfrkytrb"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.001.tres",
+"use_external/path": "uid://dpdblm1s7sdc7"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.004.tres",
+"use_external/path": "uid://0paelspwe0am"
+},
+"Material.005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.005.tres",
+"use_external/path": "uid://cr6p1e250152p"
+},
+"Material.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.006.tres",
+"use_external/path": "uid://cnmr6kcaks5pc"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.007.tres",
+"use_external/path": "uid://bbhp5inhgoipl"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.008.tres",
+"use_external/path": "uid://pr2k4rrmo73g"
+},
+"Material.016": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.016.tres",
+"use_external/path": "uid://26qognsvfsll"
+},
+"Material.017": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.017.tres",
+"use_external/path": "uid://cha8mjs0642bw"
+},
+"Material.018": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.018.tres",
+"use_external/path": "uid://buxpnfukbqjd7"
+},
+"Material.019": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.019.tres",
+"use_external/path": "uid://brsxuuf4fdssh"
+},
+"Material.020": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.020.tres",
+"use_external/path": "uid://c8diseg8dxodw"
+},
+"Material.021": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.021.tres",
+"use_external/path": "uid://bqfysx2p23wyd"
+},
+"Material.022": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.022.tres",
+"use_external/path": "uid://b04dmbxpgrvfo"
+},
+"Material.029": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.029.tres",
+"use_external/path": "uid://yn8cu34l0nr6"
+},
+"Material.030": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.030.tres",
+"use_external/path": "uid://c2iakxj34b53q"
+},
+"Material.031": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.031.tres",
+"use_external/path": "uid://cvsdl8gocmm5r"
+},
+"Material.032": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.032.tres",
+"use_external/path": "uid://whommuucjqh3"
+},
+"Material.033": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.033.tres",
+"use_external/path": "uid://dbi2jsp2qqskj"
+},
+"Material.034": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.034.tres",
+"use_external/path": "uid://bolj868xwxjl2"
+},
+"Material.035": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.035.tres",
+"use_external/path": "uid://bnpyyt7vwwe7g"
+},
+"Material.036": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.036.tres",
+"use_external/path": "uid://cfmice1o5ftjm"
+},
+"Material.037": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material.037.tres",
+"use_external/path": "uid://vcm7dqjyk877"
+},
+"Material_1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/Material_1.tres",
+"use_external/path": "uid://daiijjc2qmga3"
+},
+"TheFoundergolden1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/TheFoundergolden1.tres",
+"use_external/path": "uid://ogh7twq4dt7t"
+},
+"boldsignagedownscaledtransparent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/boldsignagedownscaledtransparent.tres",
+"use_external/path": "uid://dvp32krh7tej"
+},
+"borderpole": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/borderpole.tres",
+"use_external/path": "uid://dyspio7q1o2ot"
+},
+"column": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/column.tres",
+"use_external/path": "uid://dxvp4cj4i6io4"
+},
+"curtains": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/curtains.tres",
+"use_external/path": "uid://csa8eqi2g2woy"
+},
+"disclaimerssymbolssized": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/disclaimerssymbolssized.tres",
+"use_external/path": "uid://dyuuqpeeug2gw"
+},
+"doorbw": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/doorbw.tres",
+"use_external/path": "uid://dl7t8r1qcv34o"
+},
+"doorside": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/doorside.tres",
+"use_external/path": "uid://reyncy3khhfk"
+},
+"doorside.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/doorside.001.tres",
+"use_external/path": "uid://fjr36ei1gxuh"
+},
+"egg.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/egg.001.tres",
+"use_external/path": "uid://cj00vrnufkdo5"
+},
+"fixture": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/fixture.tres",
+"use_external/path": "uid://dwge78u0f8luq"
+},
+"fixturelight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/fixturelight.tres",
+"use_external/path": "uid://dx0sjr67ae05b"
+},
+"frame": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/frame.tres",
+"use_external/path": "uid://bhdsvcpd6w2b4"
+},
+"framesvarietyatlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/framesvarietyatlas.tres",
+"use_external/path": "uid://duwed4kmol8nl"
+},
+"generic": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/generic.tres",
+"use_external/path": "uid://d2j1a5w4jal6s"
+},
+"generic.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/generic.001.tres",
+"use_external/path": "uid://b0a7fyh02ju8l"
+},
+"grates.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/grates.001.tres",
+"use_external/path": "uid://clg3cfxl6xxu1"
+},
+"lightbeam": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/lightbeam.tres",
+"use_external/path": "uid://du7ak1h2re"
+},
+"lighupbits": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/lighupbits.tres",
+"use_external/path": "uid://88hnylx4xacw"
+},
+"logo+doortext": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/logo+doortext.tres",
+"use_external/path": "uid://dg8aj3x42yfjp"
+},
+"marblefloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/marblefloor.tres",
+"use_external/path": "uid://cmymkssjh3ein"
+},
+"moderndoor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/moderndoor.tres",
+"use_external/path": "uid://ut3nndcihm4u"
+},
+"painting1alt": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/painting1alt.tres",
+"use_external/path": "uid://c7obnothuag4n"
+},
+"paintingatlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/paintingatlas.tres",
+"use_external/path": "uid://db2llfwxc4ivs"
+},
+"parkingatlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/parkingatlas.tres",
+"use_external/path": "uid://doxqpcq3gcxtq"
+},
+"pipe.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/pipe.001.tres",
+"use_external/path": "uid://d2g105l2btnsv"
+},
+"spaceheater": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/spaceheater.tres",
+"use_external/path": "uid://dwhrqvxb50x62"
+},
+"stagelight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/stagelight.tres",
+"use_external/path": "uid://cs7nx8d6ohx4b"
+},
+"steelbeams": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/steelbeams.tres",
+"use_external/path": "uid://decru7tlb57un"
+},
+"tower": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/tower.tres",
+"use_external/path": "uid://umx1pvwav3fp"
+},
+"window": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/window.tres",
+"use_external/path": "uid://c6yvfig87fvao"
+},
+"wireendwhite": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://gltfs/materials/wireendwhite.tres",
+"use_external/path": "uid://dcg2ovc5nv5uf"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

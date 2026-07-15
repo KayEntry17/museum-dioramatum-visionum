@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dpdblm1s7sdc7"]
+
+[ext_resource type="Texture2D" uid="uid://gstkoog7ge0l" path="res://gltfs/museumROOM2_photosatlas.png" id="1_ngaft"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_ngaft")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

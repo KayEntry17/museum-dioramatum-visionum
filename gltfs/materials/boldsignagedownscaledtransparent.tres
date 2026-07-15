@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dvp32krh7tej"]
 
-[ext_resource type="Texture2D" uid="uid://csiqsefrkmw0a" path="res://gltfs/room1museum_boldsignagedownscaledtransparent.png" id="1_pnb28"]
+[ext_resource type="Texture2D" uid="uid://c8sdewc8bn8f6" path="res://gltfs/museumROOM2_boldsignagedownscaledtransparent.png" id="1_pnb28"]
 
 [resource]
 resource_name = "boldsignagedownscaledtransparent"

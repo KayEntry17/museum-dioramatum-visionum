@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyclkypsv7a5n"]
+
+[ext_resource type="Texture2D" uid="uid://k3l0vv45x18" path="res://gltfs/museumROOM2_lobbyatlas.png" id="1_2lcyb"]
+
+[resource]
+resource_name = "FANCYW"
+cull_mode = 2
+albedo_texture = ExtResource("1_2lcyb")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

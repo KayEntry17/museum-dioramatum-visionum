@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c8diseg8dxodw"]
+
+[ext_resource type="Texture2D" uid="uid://b105potfadain" path="res://gltfs/museumROOM2_panel5.png" id="1_u5yit"]
+
+[resource]
+resource_name = "Material.020"
+cull_mode = 2
+albedo_texture = ExtResource("1_u5yit")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

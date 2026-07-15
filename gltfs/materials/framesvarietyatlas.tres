@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://duwed4kmol8nl"]
 
-[ext_resource type="Texture2D" uid="uid://bboe1sr56pxld" path="res://gltfs/room1museum_framesvarietyatlas.png" id="1_7ijmy"]
+[ext_resource type="Texture2D" uid="uid://bxoa1i4al11dm" path="res://gltfs/museumROOM2_framesvarietyatlas.png" id="1_7ijmy"]
 
 [resource]
 resource_name = "framesvarietyatlas"

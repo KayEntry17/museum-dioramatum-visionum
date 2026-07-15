@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cmymkssjh3ein"]
 
-[ext_resource type="Texture2D" uid="uid://dsqryf8fbljy7" path="res://gltfs/room1museum_floormarble2.png" id="1_ksmj2"]
+[ext_resource type="Texture2D" uid="uid://djtrcvvxro0d0" path="res://gltfs/museumROOM2_floormarble2.png" id="1_ksmj2"]
 
 [resource]
 resource_name = "marblefloor"

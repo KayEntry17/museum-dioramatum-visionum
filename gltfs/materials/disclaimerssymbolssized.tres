@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dyuuqpeeug2gw"]
 
-[ext_resource type="Texture2D" uid="uid://1nndpgel224j" path="res://gltfs/room1museum_disclaimerstextsized.png" id="1_h6xow"]
+[ext_resource type="Texture2D" uid="uid://2u2qjr080a43" path="res://gltfs/museumROOM2_disclaimerstextsized.png" id="1_h6xow"]
 
 [resource]
 resource_name = "disclaimerssymbolssized"

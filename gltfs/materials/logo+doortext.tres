@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dg8aj3x42yfjp"]
 
-[ext_resource type="Texture2D" uid="uid://c8gbxskxsr5nq" path="res://gltfs/room1museum_blacklogo+doortext.png" id="1_cyljn"]
+[ext_resource type="Texture2D" uid="uid://c1l3vwlvkcstc" path="res://gltfs/museumROOM2_blacklogo+doortext.png" id="1_cyljn"]
 
 [resource]
 resource_name = "logo+doortext"

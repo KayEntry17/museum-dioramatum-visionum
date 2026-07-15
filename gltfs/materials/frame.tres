@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhdsvcpd6w2b4"]
+
+[ext_resource type="Texture2D" uid="uid://d12r5v3s5kffn" path="res://gltfs/museumROOM2_frame.png" id="1_6wj65"]
+
+[resource]
+resource_name = "frame"
+cull_mode = 2
+albedo_texture = ExtResource("1_6wj65")
+roughness = 0.27391303
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

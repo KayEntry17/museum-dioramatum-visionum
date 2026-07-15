@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://fjr36ei1gxuh"]
 
-[ext_resource type="Texture2D" uid="uid://dkn057jv3niae" path="res://gltfs/room1museum_doorside.png" id="1_ge70i"]
+[ext_resource type="Texture2D" uid="uid://bagjqiutmsooe" path="res://gltfs/museumROOM2_doorside.png" id="1_ge70i"]
 
 [resource]
 resource_name = "doorside.001"

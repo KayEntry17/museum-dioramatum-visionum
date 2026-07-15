@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://doxqpcq3gcxtq"]
 
-[ext_resource type="Texture2D" uid="uid://banvkirw0ovhk" path="res://gltfs/room1museum_parkingatlasdesaturatedfan.png" id="1_gjk4r"]
+[ext_resource type="Texture2D" uid="uid://bnfrvlw47rlpu" path="res://gltfs/museumROOM2_parkingatlasdesaturatedfan.png" id="1_gjk4r"]
 
 [resource]
 resource_name = "parkingatlas"

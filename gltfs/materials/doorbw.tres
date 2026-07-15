@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dl7t8r1qcv34o"]
 
-[ext_resource type="Texture2D" uid="uid://dao26sw2aouwa" path="res://gltfs/room1museum_doorbw.png" id="1_0fah5"]
+[ext_resource type="Texture2D" uid="uid://kaci8dqygdyl" path="res://gltfs/museumROOM2_doorbw.png" id="1_0fah5"]
 
 [resource]
 resource_name = "doorbw"

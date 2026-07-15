@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbhp5inhgoipl"]
+
+[ext_resource type="Texture2D" uid="uid://618vbsieignf" path="res://gltfs/museumROOM2_grayscalecarpetrich.png" id="1_edohc"]
+
+[resource]
+resource_name = "Material.007"
+cull_mode = 2
+albedo_texture = ExtResource("1_edohc")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

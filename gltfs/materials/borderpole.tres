@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dyspio7q1o2ot"]
 
-[ext_resource type="Texture2D" uid="uid://6qscwfecfixo" path="res://gltfs/room1museum_elevatoratlas.png" id="1_3ldwh"]
+[ext_resource type="Texture2D" uid="uid://bt8kobxwdiacl" path="res://gltfs/museumROOM2_elevatoratlas.png" id="1_3ldwh"]
 
 [resource]
 resource_name = "borderpole"

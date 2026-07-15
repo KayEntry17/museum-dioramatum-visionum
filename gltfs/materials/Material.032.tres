@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://whommuucjqh3"]
+
+[ext_resource type="Texture2D" uid="uid://cdql88mdu8c5a" path="res://gltfs/museumROOM2_bar1.png" id="1_3j6lv"]
+
+[resource]
+resource_name = "Material.032"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_3j6lv")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
