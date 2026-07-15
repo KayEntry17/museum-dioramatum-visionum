@@ -337,6 +337,31 @@ shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/color = Color(0, 1, 0, 1)
 shader_parameter/on = 0.0
 
+[sub_resource type="Curve3D" id="Curve3D_qn4qg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 38.808765, 0.7397108, -41.461174, 0, 0, 0, 0, 0, 0, 39.708614, 0.7397108, -42.487152, 0, 0, 0, 0, 0, 0, 39.43403, 0.73971033, -43.235653, 0, 0, 0, 0, 0, 0, 38.683914, 0.73971033, -44.047863, 0, 0, 0, 0, 0, 0, 38.85594, 0.73971033, -44.983738, 0, 0, 0, 0, 0, 0, 38.678738, 0.73971057, -45.701893, 0, 0, 0, 0, 0, 0, 39.0477, 0.73971033, -46.320484, 0, 0, 0, 0, 0, 0, 39.048088, 0.73970985, -46.923218),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_de2n8"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_0wj8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0, 1, 0, 1)
+shader_parameter/on = 0.0
+
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2127328153]
@@ -471,14 +496,26 @@ curve = SubResource("Curve3D_yte6f")
 [node name="CSGPolygon3D" parent="Path3D" index="0" unique_id=2010259952]
 material = SubResource("ShaderMaterial_ihtd6")
 
+[node name="Path3D2" parent="." unique_id=344682577 instance=ExtResource("20_i81n1")]
+curve = SubResource("Curve3D_qn4qg")
+
+[node name="CSGPolygon3D" parent="Path3D2" index="0" unique_id=2010259952]
+material = SubResource("ShaderMaterial_de2n8")
+
 [node name="platformlevel2" parent="." unique_id=1299227476 node_paths=PackedStringArray("prize") instance=ExtResource("21_yte6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.315544, 1.7927656, -26.704473)
 prize = NodePath("../general")
 
-[node name="platformlevel3" parent="." unique_id=1630266670 instance=ExtResource("22_qn4qg")]
+[node name="platformlevel3" parent="." unique_id=1630266670 node_paths=PackedStringArray("prize") instance=ExtResource("22_qn4qg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.949074, 2.3249452, -40.477024)
+prize = NodePath("general2")
+
+[node name="general2" type="Node" parent="platformlevel3" unique_id=1317342416 node_paths=PackedStringArray("turnlist")]
+script = ExtResource("12_w4wu2")
+turnlist = [NodePath("../../Path3D2")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
 
 [editable path="Path3D"]
+[editable path="Path3D2"]

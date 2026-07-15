@@ -200,7 +200,21 @@ _data = {
 &"start": SubResource("Animation_7j2ep")
 }
 
+[sub_resource type="Gradient" id="Gradient_bkdkv"]
+offsets = PackedFloat32Array(0.27483973, 0.31810898, 0.39156628, 0.42948717, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y3vij"]
+gradient = SubResource("Gradient_bkdkv")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Node3D" type="CharacterBody3D" unique_id=906936805 groups=["standee"]]
+physics_interpolation_mode = 1
 script = ExtResource("1_m142c")
 jumpbuffer = 0.2
 coyotetime = 0.2
@@ -210,7 +224,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11896604, 0)
 shape = SubResource("CylinderShape3D_qta2s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=584006145]
-transform = Transform3D(0.9987631, 0.049721356, 0, -0.049550604, 0.99533254, -0.08280821, -0.0041173375, 0.08270575, 0.99656564, 0, 0, 0)
+transform = Transform3D(0.9987631, 0.049721353, 9.463222e-11, -0.0495506, 0.99533254, -0.08280822, -0.0041173375, 0.08270576, 0.99656564, 0, 0, 0)
 mesh = SubResource("CylinderMesh_m142c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1616392567]
@@ -234,3 +248,8 @@ bus = &"SFX"
 stream = ExtResource("3_xstgf")
 volume_db = 13.619
 bus = &"SFX"
+
+[node name="Decal" type="Decal" parent="." unique_id=1234341656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5031055, 0)
+size = Vector3(0.2, 1, 0.2)
+texture_albedo = SubResource("GradientTexture2D_y3vij")

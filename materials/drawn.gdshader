@@ -8,6 +8,7 @@ uniform vec3 outline_color: source_color = vec3(0.043, 0.282, 0.467);
 uniform float outline_width = 2.0;
 uniform vec3 color: source_color;
 uniform float maxl;
+uniform float invert=1.0;
 uniform float mult;
 // Prevent the quad from being affected by lighting and fog. This also improves performance.
 
@@ -81,7 +82,7 @@ void fragment() {
 	
 	if (is_edge(uv, screen_normal, offset)) {
 		ALBEDO = texture(draw_texture,SCREEN_UV).rgb;
-		ALBEDO=mix(texture(draw_texture,SCREEN_UV).rgb,screen_color,clamp(1.0-coeff,0.0,1.0));
+		ALBEDO=mix(texture(draw_texture,SCREEN_UV).rgb*invert,screen_color,clamp(1.0-coeff,0.0,1.0));
 	} else {
 		ALBEDO = screen_color;
 	}

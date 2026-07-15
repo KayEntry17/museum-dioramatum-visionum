@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvwonj4kor63r" path="res://materials/testmaterialdrawn.png" id="2_bej4i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g184"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_gjy0g")
 shader_parameter/draw_texture = ExtResource("2_bej4i")
@@ -13,6 +14,7 @@ shader_parameter/outline_color = Color(1, 0.95, 1, 1)
 shader_parameter/outline_width = 1.7
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/maxl = 1.525
+shader_parameter/invert = 1.0
 shader_parameter/mult = 1.25
 
 [sub_resource type="Shader" id="Shader_kfrld"]
