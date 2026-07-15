@@ -2,9 +2,10 @@
 This is a game developed for Hack Club Horizons, or to be more exact a prototype of one. 
 You play as a visitor of a mysterious museum with multiple diorama like platformer levels to complete
 
-![awesome gif]((https://img.itch.zone/aW1hZ2UvNDc4MjM4Mi8yODUxODMwMS5wbmc=/original/VHdI7x.png))
-
-![awesome gif](https://img.itch.zone/aW1hZ2UvNDc4MjM4Mi8yODUxODI5NS5wbmc=/original/EXX4bG.png)
+![awesome gif](https://i.postimg.cc/g2nXQJZr/Screenshot-2026-07-15-235027-(Large).png)
+![awesome gif](https://i.postimg.cc/fRJtpL9J/Screenshot-2026-07-15-234329-(Large).png)
+![awesome gif](https://i.postimg.cc/MpvMNTQM/Screenshot-2026-07-15-234320-(Large).png)
+![awesome gif](https://i.postimg.cc/MpvMNTQM/Screenshot-2026-07-15-234320-(Large).png)
 
 ## HOW THIS WAS MADE
 This was made with Godot, Blender, Yoink and Ms Paint.
