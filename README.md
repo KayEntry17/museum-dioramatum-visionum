@@ -5,7 +5,7 @@ You play as a visitor of a mysterious museum with multiple diorama like platform
 ![awesome gif](https://i.postimg.cc/g2nXQJZr/Screenshot-2026-07-15-235027-(Large).png)
 ![awesome gif](https://i.postimg.cc/fRJtpL9J/Screenshot-2026-07-15-234329-(Large).png)
 ![awesome gif](https://i.postimg.cc/MpvMNTQM/Screenshot-2026-07-15-234320-(Large).png)
-![awesome gif](https://i.postimg.cc/MpvMNTQM/Screenshot-2026-07-15-234320-(Large).png)
+![awesome gif](https://i.postimg.cc/L6ygxfnP/Screenshot-2026-07-13-172947-(Large).png)
 
 ## HOW THIS WAS MADE
 This was made with Godot, Blender, Yoink and Ms Paint.
