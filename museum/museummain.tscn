@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://d3lb8xtskpup0" path="res://ui/pausemenu.tscn" id="13_uj7mv"]
 [ext_resource type="Script" uid="uid://b22wct0ol5802" path="res://museum/notif.gd" id="14_a7kr8"]
 [ext_resource type="Script" uid="uid://cs7orri3ykjce" path="res://museum/musicswap.gd" id="16_r0awf"]
-[ext_resource type="AudioStream" uid="uid://bf7hopfa4eujf" path="res://audio/lost1.2_wav/Lost - drone - dark.wav" id="17_r0awf"]
 [ext_resource type="AudioStream" uid="uid://bxp06ci1emxjg" path="res://audio/Ambient Nothingness Main.wav" id="17_u0d64"]
+[ext_resource type="AudioStream" uid="uid://bybpdh0f4qpkl" path="res://audio/lost1.2_wav/Alone(loop) - melancholic - slow.wav" id="18_3mt8b"]
 [ext_resource type="PackedScene" uid="uid://b51tkmpkhwika" path="res://museum/museum_room_2.tscn" id="19_3mt8b"]
+[ext_resource type="PackedScene" uid="uid://dl7iwchitb377" path="res://instruments/wirefast.tscn" id="20_i81n1"]
+[ext_resource type="PackedScene" uid="uid://hr6egodnfbpt" path="res://levels/platformlevel.tscn" id="21_yte6f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mt8b"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -48,7 +50,7 @@ fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
 fog_height = 22.0
-fog_height_density = -0.15
+fog_height_density = -0.18
 fog_depth_curve = 0.27739266
 fog_depth_begin = 4000.0
 fog_depth_end = 4000.0
@@ -272,6 +274,68 @@ size = Vector3(6.935425, 3.4492188, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_umt7f"]
 size = Vector3(7.373535, 1, 2.6748047)
 
+[sub_resource type="Curve3D" id="Curve3D_yte6f"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 39.43592, 0.68130946, -29.79187, 0, 0, 0, 0, 0, 0, 42.478947, 0.6717248, -29.820198, 0, 0, 0, 0, 0, 0, 42.73404, 0.6717253, -31.206076, 0, 0, 0, 0, 0, 0, 40.879414, 0.6717248, -34.829445, 0, 0, 0, 0, 0, 0, 41.230625, 0.6717248, -35.9349, 0, 0, 0, 0, 0, 0, 41.06181, 0.6717248, -37.40787, 0, 0, 0, 0, 0, 0, 40.094074, 0.6717248, -38.699425, 0, 0, 0, 0, 0, 0, 39.45662, 0.6717248, -39.064007, 0, 0, 0, 0, 0, 0, 38.7046, 0.67172456, -40.213455),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Shader" id="Shader_0wj8b"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+uniform vec4 color: source_color;
+uniform float on;
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	ALBEDO=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),2)*on);
+	EMISSION=mix(color.rgb,vec3(1.0),1.0-pow(dot(NORMAL,VIEW),3.))*0.2*on;
+	//ALPHA =pow(( pow(VIEW.y,2)+pow(VIEW.x,2)+pow(VIEW.z,2)),2)/3.;
+	//ALPHA=pow(dot(NORMAL,VIEW),3.)*transparency;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0icf4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_0wj8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0, 1, 0, 1)
+shader_parameter/on = 0.0
+
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2127328153]
@@ -354,7 +418,7 @@ libraries/ = SubResource("AnimationLibrary_5u0v3")
 [node name="platformlevel" parent="." unique_id=1768093041 node_paths=PackedStringArray("prize") instance=ExtResource("10_5u0v3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.378185, 1.7952466, -12.246271)
 activateable = true
-prize = NodePath("../general")
+prize = NodePath("../general2")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1328224515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.51844, 2.6883535, -28.341131)
@@ -366,7 +430,11 @@ shape = SubResource("BoxShape3D_umt7f")
 
 [node name="general" type="Node" parent="." unique_id=1489219575 node_paths=PackedStringArray("turnlist")]
 script = ExtResource("12_w4wu2")
-turnlist = [NodePath("../StaticBody3D2"), NodePath("../BézierCurve_007"), NodePath("../room1museum/Cube_012"), NodePath("../room1museum/Cube_032")]
+turnlist = [NodePath("../StaticBody3D2"), NodePath("../BézierCurve_007"), NodePath("../room1museum/Cube_012"), NodePath("../room1museum/Cube_032"), NodePath("../Path3D")]
+
+[node name="general2" type="Node" parent="." unique_id=1720537462 node_paths=PackedStringArray("turnlist")]
+script = ExtResource("12_w4wu2")
+turnlist = [NodePath("../BézierCurve_008"), NodePath("../platformlevel2")]
 
 [node name="Control" parent="." unique_id=8135944 instance=ExtResource("13_uj7mv")]
 mouse_filter = 1
@@ -384,7 +452,7 @@ shape = SubResource("BoxShape3D_uvulu")
 [node name="Area3D2" type="Area3D" parent="." unique_id=1346821257]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.110725, 2.9779015, -30.59163)
 script = ExtResource("16_r0awf")
-theme = ExtResource("17_r0awf")
+theme = ExtResource("18_3mt8b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1413707275]
 shape = SubResource("BoxShape3D_uvulu")
@@ -394,7 +462,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.742188, 0, -30.463556)
 mesh = SubResource("BoxMesh_umt7f")
 
 [node name="museumROOM2" parent="." unique_id=372218756 instance=ExtResource("19_3mt8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008163452, 0.067985535, 5.0679855)
+
+[node name="Path3D" parent="." unique_id=1821519437 instance=ExtResource("20_i81n1")]
+curve = SubResource("Curve3D_yte6f")
+
+[node name="CSGPolygon3D" parent="Path3D" index="0" unique_id=2010259952]
+material = SubResource("ShaderMaterial_0icf4")
+
+[node name="platformlevel2" parent="." unique_id=1299227476 node_paths=PackedStringArray("prize") instance=ExtResource("21_yte6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.315544, 1.7927656, -26.704473)
+prize = NodePath("../general")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
+
+[editable path="Path3D"]

@@ -52,5 +52,5 @@ shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/color = Color(0, 1, 0, 1)
-shader_parameter/on = 0.0
+shader_parameter/color = Color(2.7915835e-06, 0.53046185, 0.5789203, 1)
+shader_parameter/on = 1.0

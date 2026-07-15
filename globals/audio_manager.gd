@@ -11,7 +11,7 @@ var mon:=true
 	#if chanon==true	:
 		#volv=60
 
-func change_track(song : AudioStream, loopim=true, foti=1.25,fiti=1) -> void:
+func change_track(song : AudioStream, loopim=true, foti=0.5,fiti=0.5) -> void:
 	print(12414) 
 	track=song
 	loopi=loopim

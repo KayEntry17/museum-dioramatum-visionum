@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dl7iwchitb377"]
+
+[ext_resource type="Script" uid="uid://bxs3am7cxy5p4" path="res://wirepath.gd" id="1_vdt8g"]
+[ext_resource type="Material" uid="uid://dc3x6xwtb5my5" path="res://materials/wiregr.tres" id="2_e0hes"]
+
+[node name="Path3D" type="Path3D" unique_id=1821519437]
+script = ExtResource("1_vdt8g")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=2010259952]
+autosmooth = true
+smoothing_angle = 180.0
+polygon = PackedVector2Array(0, 0, 0, 0.1, 0.05, 0.05)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("2_e0hes")

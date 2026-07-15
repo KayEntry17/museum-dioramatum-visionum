@@ -15,6 +15,9 @@ size = Vector3(41.247555, 1, 24.865)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ijhw1"]
 size = Vector3(28.920952, 0.56726074, 24.865)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4ktc"]
+size = Vector3(58.211, 11.284, 198.847)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_u4nq4"]
 _surfaces = [{
 "aabb": AABB(-3.3500538, 20.28191, -3.3500543, 6.7001076, 72.16353, 6.700108),
@@ -188,6 +191,9 @@ debug_color = Color(0, 0.6392157, 0.3882353, 1)
 [node name="Cube_070" parent="." index="39" unique_id=1756417024]
 visible = false
 
+[node name="Cylinder_034" parent="." index="42" unique_id=535660956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.81168, 1.5199715, -35.659676)
+
 [node name="SpotLight3D" type="SpotLight3D" parent="Cylinder_036" parent_id_path=PackedInt32Array(1287924153) index="0" unique_id=1291581703]
 transform = Transform3D(1, -2.9802322e-08, 7.4505806e-08, -8.940697e-08, -0.037777584, 0.9992863, 0, -0.9992862, -0.03777756, 0, -0.7378483, -0.076797485)
 light_color = Color(1, 0.8593765, 0.77217185, 1)
@@ -204,23 +210,26 @@ shadow_enabled = true
 spot_range = 6.577
 spot_angle = 49.1
 
+[node name="disclaimerssymbolssized_004" parent="." index="53" unique_id=252053950]
+visible = false
+
 [node name="framesvarietyatlas_004" parent="." index="56" unique_id=555509092]
-transform = Transform3D(-0.778888, -1.2689698e-07, -1.2689698e-07, 1.2689698e-07, 0, -0.778888, 1.2689698e-07, -0.778888, 2.0674145e-14, 134.0343, 7.9295034, -69.87757)
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 134.0343, 7.9295034, -69.87757)
 
 [node name="framesvarietyatlas_014" parent="." index="58" unique_id=1883768772]
-transform = Transform3D(-0.778888, -1.2689698e-07, -1.2689698e-07, 1.2689698e-07, 0, -0.778888, 1.2689698e-07, -0.778888, 2.0674145e-14, 148.79143, 7.9295034, -69.87757)
+transform = Transform3D(0.9499326, 0.011914988, -5.208206e-10, -5.0962257e-22, -4.3711385e-08, -1, -0.011319239, 0.999929, -4.3708283e-08, 148.79143, 7.9295034, -69.87757)
 
 [node name="framesvarietyatlas_015" parent="." index="59" unique_id=640378765]
-transform = Transform3D(0, -3.249774e-07, -0.778888, 0.778888, -4.6425342e-08, 1.9370163e-14, -4.6425342e-08, -0.778888, 3.249774e-07, 137.94667, 9.008191, -69.87766)
+transform = Transform3D(1.48821e-15, 3.4046277e-08, 0.778888, 0.778888, -3.4046277e-08, 0, 3.4046277e-08, 0.778888, -3.4046277e-08, 137.94667, 9.008191, -69.87766)
 
 [node name="framesvarietyatlas_016" parent="." index="60" unique_id=1920185690]
-transform = Transform3D(-0.778888, -1.2689698e-07, -1.2689698e-07, 1.2689698e-07, 0, -0.778888, 1.2689698e-07, -0.778888, 2.0674145e-14, 144.99231, 7.9433656, -69.87757)
+transform = Transform3D(-1, -1.509958e-07, 6.600236e-15, 0, -4.371139e-08, -1, 1.509958e-07, -1, 4.371139e-08, 144.99231, 7.9433656, -69.87757)
 
 [node name="framesvarietyatlas_017" parent="." index="61" unique_id=1138727654]
-transform = Transform3D(0, -3.249774e-07, -0.778888, 0.778888, -4.6425342e-08, 1.9370163e-14, -4.6425342e-08, -0.778888, 3.249774e-07, 136.63997, 10.101349, -37.666584)
+transform = Transform3D(5.9364694e-15, -4.3312576e-07, -1, 1, -4.371139e-08, 2.4868997e-14, -4.371139e-08, -1, 4.3312576e-07, 133.58264, 8.816067, -37.666584)
 
 [node name="framesvarietyatlas_018" parent="." index="62" unique_id=655043775]
-transform = Transform3D(0, -3.249774e-07, -0.778888, 0.778888, -4.6425342e-08, 1.9370163e-14, -4.6425342e-08, -0.778888, 3.249774e-07, 148.50923, 9.597536, -37.692795)
+transform = Transform3D(5.9364694e-15, -4.3312576e-07, -1, 1, -4.371139e-08, 2.4868997e-14, -4.371139e-08, -1, 4.3312576e-07, 148.50923, 8.777286, -37.692795)
 
 [node name="framesvarietyatlas_019" parent="." index="63" unique_id=70617206]
 transform = Transform3D(-0.778888, -1.2689698e-07, -1.2689698e-07, 1.2689698e-07, 0, -0.778888, 1.2689698e-07, -0.778888, 2.0674145e-14, 141.87108, 8.597069, -69.88763)
@@ -274,13 +283,23 @@ spot_angle = 49.1
 transform = Transform3D(0.14958538, 0.14757362, 0, -0.14757362, 0.14958538, 0, 0, 0, 0.21012795, 25.07203, 2.6841702, -53.98497)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" index="0" unique_id=1423676059]
-transform = Transform3D(-0.05600646, -0.99832845, 0.011370268, -0.99828684, 0.056162268, 0.013906976, -0.014522589, -0.010572228, -0.9997906, 96.00952, 92.761986, 0.7107239)
+transform = Transform3D(-0.05600651, -0.9983284, 0.01137011, -0.9982868, 0.05616264, 0.013906577, -0.014522593, -0.010572288, -0.99979055, 96.00952, 92.761986, 0.7107239)
 shape = SubResource("BoxShape3D_umt7f")
 debug_color = Color(0.96862745, 0, 0.45882353, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2" index="1" unique_id=141894467]
 transform = Transform3D(-0.7706831, -0.6369485, 0.017929565, -0.63703966, 0.77081436, 0.0011024224, -0.014522543, -0.010572192, -0.99982476, 108.09732, 122.21282, 0.88168335)
 shape = SubResource("BoxShape3D_ijhw1")
+debug_color = Color(0.96862745, 0, 0.45882353, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D2" index="2" unique_id=1358205156]
+transform = Transform3D(0.72446734, 0.033018637, -0.68851805, -0.68896514, 0.0031263735, -0.72478783, -0.021778923, 0.9994498, 0.025013642, -91.59651, -78.550446, 14.180969)
+shape = SubResource("BoxShape3D_c4ktc")
+debug_color = Color(0.96862745, 0, 0.45882353, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D2" index="3" unique_id=1206523730]
+transform = Transform3D(0.7244673, 0.03301855, -0.68851805, -0.6889652, 0.0031264545, -0.72478783, -0.021778807, 0.99944985, 0.02501364, -90.86318, -79.8074, -9.289246)
+shape = SubResource("BoxShape3D_c4ktc")
 debug_color = Color(0.96862745, 0, 0.45882353, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Sphere_011" parent_id_path=PackedInt32Array(355399113) index="0" unique_id=914449997]
