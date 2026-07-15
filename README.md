@@ -12,7 +12,8 @@ This was made with Godot, Blender, Yoink and Ms Paint.
 ## How to run
 1. Download the zip file here or on itch: https://yatagarasu-the-17th.itch.io/pinacotheca-visionis
 2. Extract
-3. Enjoy!
+3. run the .exe file (you might need to turn off windows defender)
+4. Enjoy!
 Compatible with Windows, 2 graphics presets included
 
 ## AI DISCLOSURE
