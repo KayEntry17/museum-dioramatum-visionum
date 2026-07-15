@@ -20,6 +20,7 @@ height = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pf1db"]
 albedo_color = Color(0.851769, 0.8517689, 0.85176885, 1)
+billboard_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_24qdx"]
 material = SubResource("StandardMaterial3D_pf1db")
@@ -224,7 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11896604, 0)
 shape = SubResource("CylinderShape3D_qta2s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=584006145]
-transform = Transform3D(0.9987631, 0.049721353, 9.463222e-11, -0.0495506, 0.99533254, -0.08280822, -0.0041173375, 0.08270576, 0.99656564, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999964, 0, 0, 0, 1.0000001, 0, 0, 0)
 mesh = SubResource("CylinderMesh_m142c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1616392567]
@@ -250,6 +251,6 @@ volume_db = 13.619
 bus = &"SFX"
 
 [node name="Decal" type="Decal" parent="." unique_id=1234341656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5031055, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.44034576, 0)
 size = Vector3(0.2, 1, 0.2)
 texture_albedo = SubResource("GradientTexture2D_y3vij")

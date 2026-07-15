@@ -67,10 +67,15 @@ func _process(delta: float) -> void:
 		$Icon.global_position.y=clamp($Icon.global_position.y,0,get_viewport().get_visible_rect().size.y)
 	mousepos=$Icon.global_position
 	if visactive:
+		if Input.is_action_pressed("mouseclick"):
+			inuse=true	
+		else:
+			inuse=false
 		if inuse:
 			$Icon.modulate=lerp($Icon.modulate,Color(0.658, 0.658, 0.658, 1.0),7*delta)
 			$Icon.scale=lerp($Icon.scale,Vector2(0.25,0.25),7*delta)
 			timesincemove=0
+			
 		else:
 			$Icon.modulate=lerp($Icon.modulate,Color(1.0, 1.0, 1.0, 1.0),7*delta)
 			$Icon.scale=lerp($Icon.scale,Vector2(0.3,0.3),7*delta)

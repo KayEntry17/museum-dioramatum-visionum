@@ -78,7 +78,8 @@ func win():
 	$AudioWinPlayer2.play()
 	pass
 func die():
-	$AudioStreamPlayer.play()
-	leave()
-	await get_tree().create_timer(1.01,false).timeout
-	launch()
+	if enablemovement:
+		$AudioStreamPlayer.play()
+		leave()
+		await get_tree().create_timer(1.01,false).timeout
+		launch()

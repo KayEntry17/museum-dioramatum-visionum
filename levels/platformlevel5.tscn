@@ -1,0 +1,1776 @@
+[gd_scene format=3 uid="uid://b7qvgqdgcuuoc"]
+
+[ext_resource type="Script" uid="uid://cxgyt88jberx3" path="res://core/platformlevel.gd" id="1_u38w4"]
+[ext_resource type="Material" uid="uid://b2qm4540nqsvl" path="res://levels/hazarddrawn.tres" id="2_ojdhb"]
+[ext_resource type="Script" uid="uid://ctlbxu5cr8e2l" path="res://core/camdioramacontroller.gd" id="3_jjcrd"]
+[ext_resource type="Material" uid="uid://cn76fq5c8ufau" path="res://materials/drawn.tres" id="4_uj33p"]
+[ext_resource type="PackedScene" uid="uid://dnctmrhaywitb" path="res://player/standee.tscn" id="5_n1lgg"]
+[ext_resource type="Script" uid="uid://bgoxkqbtsigsj" path="res://testlevels/finish.gd" id="6_yyobg"]
+[ext_resource type="Shader" uid="uid://dvt054fkhuny7" path="res://testlevels/endbit.gdshader" id="7_5vf4g"]
+[ext_resource type="Script" uid="uid://2n6qdvl4go8v" path="res://testlevels/murderzone.gd" id="8_lcqv7"]
+[ext_resource type="Script" uid="uid://c5dovsqwqhkp" path="res://testlevels/3dworld.gd" id="9_ojdhb"]
+[ext_resource type="Material" uid="uid://c0w50jxxb6vjn" path="res://materials/interactable.tres" id="10_ojdhb"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_og5as"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.5
+dof_blur_amount = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
+size = Vector3(2.458374, 2.9693604, 10.790314)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvulu"]
+render_priority = 1
+shader = ExtResource("7_5vf4g")
+shader_parameter/transparency = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_umt7f"]
+material = SubResource("ShaderMaterial_uvulu")
+top_radius = 0.099121094
+bottom_radius = 0.099121094
+height = 7.9819336
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvulu"]
+size = Vector3(0.23248291, 8.726677, 0.2305336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3a4jo"]
+size = Vector3(5, 0.7918091, 12.942871)
+
+[sub_resource type="Curve3D" id="Curve3D_15mnc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -8.686, 0, 0, 0, 0, 0, 0, 0, 0, -6.85, 0, 0, 0, 0, 0, 0, 0, 0, -4.016, 0, 0, 0, 0, 0, 0, 0, 0, 0.145),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjcrd"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uj33p"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="platformlevel" type="Area3D" unique_id=1768093041 node_paths=PackedStringArray("camcontroller", "selfcam", "player")]
+script = ExtResource("1_u38w4")
+camcontroller = NodePath("camcontroller")
+selfcam = NodePath("camcontroller/camcontroller/Camera3D")
+activateable = true
+player = NodePath("Node3D")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, -1.3271794, -1.8840855)
+use_collision = true
+radius = 1.0
+height = 1.506
+sides = 20
+material = ExtResource("2_ojdhb")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D" unique_id=2137491472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05606079, 0.19250965, -3.6923144)
+size = Vector3(1.8311157, 1, 7.6470795)
+material = ExtResource("2_ojdhb")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D" unique_id=1153849356]
+transform = Transform3D(-1, 0, -8.742791e-08, 0, 1, 0, 8.742791e-08, 0, -1, 0.0018485785, 0, -7.4904766)
+use_collision = true
+collision_layer = 65
+collision_mask = 65
+radius = 1.0
+height = 1.506
+sides = 20
+material = ExtResource("2_ojdhb")
+
+[node name="camcontroller" type="Node3D" parent="." unique_id=758807615 node_paths=PackedStringArray("path", "player")]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, 0.8, -1.8840855)
+script = ExtResource("3_jjcrd")
+rotspeed = 3.0
+path = NodePath("../Path3D")
+pathuse = true
+player = NodePath("../Node3D")
+
+[node name="camcontroller" type="SpringArm3D" parent="camcontroller" unique_id=57085880]
+collision_mask = 64
+spring_length = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="camcontroller/camcontroller" unique_id=1087537245]
+transform = Transform3D(0.99995553, -0.0029910728, 0.008939356, 0, 0.94832367, 0.31730464, -0.009426475, -0.31729054, 0.94828147, 0, 0, 0)
+attributes = SubResource("CameraAttributesPractical_og5as")
+fov = 44.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 2.2633362, 0.16729736, -1.9437171)
+shape = SubResource("BoxShape3D_umt7f")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2132722857]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 5.2882137, -0.5207432, -1.824395)
+use_collision = true
+size = Vector3(0.46, 2.7368047, 0.355)
+material = ExtResource("4_uj33p")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1187282603]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.839694, -0.23167664, -1.8887855)
+use_collision = true
+size = Vector3(1.578955, 0.624, 0.8840759)
+material = ExtResource("4_uj33p")
+
+[node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("5_n1lgg")]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.6293198, 0.14739126, -1.9178402)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=198090420 groups=["finish"]]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 5.294593, 1.1568699, -1.821246)
+script = ExtResource("6_yyobg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=301324198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6830935, 0)
+mesh = SubResource("CylinderMesh_umt7f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=549476221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, 4.027877, -0.009054184)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=402936801 groups=["killzonesf"]]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, -0.81463206, -1.8840855)
+script = ExtResource("8_lcqv7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=851871793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08899772, -3.9714355)
+shape = SubResource("BoxShape3D_3a4jo")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=2018557736]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, 1.1477658, -1.8840855)
+curve = SubResource("Curve3D_15mnc")
+
+[node name="CSGBakedMeshInstance3D2" type="AnimatableBody3D" parent="." unique_id=503807943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1209319, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=313820381]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D2" unique_id=1603456616]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D6" type="AnimatableBody3D" parent="." unique_id=2057239660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.857627, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D6" unique_id=1281514918]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D6" unique_id=526608275]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D5" type="AnimatableBody3D" parent="." unique_id=417286599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5943221, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D5" unique_id=343979212]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D5" unique_id=2035618329]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D4" type="AnimatableBody3D" parent="." unique_id=2111976117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06771231, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D4" unique_id=1836802922]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D4" unique_id=600964464]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D32" type="AnimatableBody3D" parent="." unique_id=2084055033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1653695, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D32" unique_id=1172270885]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D32" unique_id=1515411844]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D33" type="AnimatableBody3D" parent="." unique_id=1302405542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4286747, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D33" unique_id=2017904885]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D33" unique_id=245621925]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D34" type="AnimatableBody3D" parent="." unique_id=2094429681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6919794, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D34" unique_id=35664854]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D34" unique_id=543130613]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D35" type="AnimatableBody3D" parent="." unique_id=1049954323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9517636, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D35" unique_id=176193743]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D35" unique_id=952346249]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D3" type="AnimatableBody3D" parent="." unique_id=399142869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33101726, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D3" unique_id=509383956]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D3" unique_id=1221119796]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D7" type="AnimatableBody3D" parent="." unique_id=1546847390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21152139, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D7" unique_id=1395487494]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D7" unique_id=474594449]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D8" type="AnimatableBody3D" parent="." unique_id=937425373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47482634, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D8" unique_id=1002699753]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D8" unique_id=1890488962]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D9" type="AnimatableBody3D" parent="." unique_id=88678180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73813105, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D9" unique_id=1326737116]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D9" unique_id=1925052182]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D10" type="AnimatableBody3D" parent="." unique_id=296409563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264741, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D10" unique_id=110153505]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D10" unique_id=1192685526]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D11" type="AnimatableBody3D" parent="." unique_id=624158546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001436, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D11" unique_id=101528028]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D11" unique_id=162316284]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D12" type="AnimatableBody3D" parent="." unique_id=2049891321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21152139, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D12" unique_id=1673714354]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D12" unique_id=489429859]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D13" type="AnimatableBody3D" parent="." unique_id=809074178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47482634, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D13" unique_id=1129916181]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D13" unique_id=534693657]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D14" type="AnimatableBody3D" parent="." unique_id=1614292724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73813105, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D14" unique_id=84647165]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D14" unique_id=1220320513]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D15" type="AnimatableBody3D" parent="." unique_id=1209621400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264741, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D15" unique_id=1841569129]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D15" unique_id=1169838962]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D16" type="AnimatableBody3D" parent="." unique_id=2038653145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001436, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D16" unique_id=410675080]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D16" unique_id=122556766]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D17" type="AnimatableBody3D" parent="." unique_id=1797041368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5259972, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D17" unique_id=577207641]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D17" unique_id=91633783]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D18" type="AnimatableBody3D" parent="." unique_id=1452073715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7893021, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D18" unique_id=1271202063]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D18" unique_id=291000933]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D19" type="AnimatableBody3D" parent="." unique_id=307804535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.052607, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D19" unique_id=1562083318]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D19" unique_id=1603404775]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D20" type="AnimatableBody3D" parent="." unique_id=1840782278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.579217, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D20" unique_id=1487978528]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D20" unique_id=373126845]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D21" type="AnimatableBody3D" parent="." unique_id=2084708320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3159118, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D21" unique_id=1498817741]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D21" unique_id=1571357641]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D22" type="AnimatableBody3D" parent="." unique_id=1307435092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8584502, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D22" unique_id=1648858073]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D22" unique_id=170763231]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D23" type="AnimatableBody3D" parent="." unique_id=50669137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.121756, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D23" unique_id=1166147935]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D23" unique_id=1314423304]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D24" type="AnimatableBody3D" parent="." unique_id=1626926855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3850608, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D24" unique_id=707590808]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D24" unique_id=1065441195]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D25" type="AnimatableBody3D" parent="." unique_id=1824494649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9116702, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D25" unique_id=1974498004]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D25" unique_id=518286478]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D26" type="AnimatableBody3D" parent="." unique_id=604003426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6483655, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D26" unique_id=1636181139]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D26" unique_id=702893910]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D27" type="AnimatableBody3D" parent="." unique_id=779913000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8584502, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D27" unique_id=1589023113]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D27" unique_id=1280206678]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D28" type="AnimatableBody3D" parent="." unique_id=1086710705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.121756, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D28" unique_id=2094963434]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D28" unique_id=1255352845]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D29" type="AnimatableBody3D" parent="." unique_id=1766295821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3850608, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D29" unique_id=1932062230]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D29" unique_id=2130195411]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D30" type="AnimatableBody3D" parent="." unique_id=68647132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9116702, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D30" unique_id=1168139782]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D30" unique_id=468897310]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D31" type="AnimatableBody3D" parent="." unique_id=252846207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6483655, 0.093927175, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D31" unique_id=1349982426]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D31" unique_id=794163981]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D36" type="AnimatableBody3D" parent="." unique_id=1531870650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1209319, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D36" unique_id=1940587395]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D36" unique_id=222138064]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D37" type="AnimatableBody3D" parent="." unique_id=1904763544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.857627, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D37" unique_id=1775343022]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D37" unique_id=1591034240]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D38" type="AnimatableBody3D" parent="." unique_id=432279659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5943221, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D38" unique_id=827513118]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D38" unique_id=1030725273]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D39" type="AnimatableBody3D" parent="." unique_id=177250945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06771231, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D39" unique_id=1617396036]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D39" unique_id=1240470196]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D40" type="AnimatableBody3D" parent="." unique_id=1592142880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1653695, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D40" unique_id=63044237]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D40" unique_id=1101126726]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D41" type="AnimatableBody3D" parent="." unique_id=1916025249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4286747, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D41" unique_id=82570214]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D41" unique_id=279251822]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D42" type="AnimatableBody3D" parent="." unique_id=32492086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6919794, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D42" unique_id=378488714]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D42" unique_id=1754454440]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D43" type="AnimatableBody3D" parent="." unique_id=791722479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9517636, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D43" unique_id=379937678]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D43" unique_id=554988473]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D44" type="AnimatableBody3D" parent="." unique_id=1293844102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33101726, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D44" unique_id=176472206]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D44" unique_id=1063788846]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D45" type="AnimatableBody3D" parent="." unique_id=809381568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21152139, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D45" unique_id=937561973]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D45" unique_id=448964631]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D46" type="AnimatableBody3D" parent="." unique_id=1781510337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47482634, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D46" unique_id=1678829828]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D46" unique_id=1772408236]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D47" type="AnimatableBody3D" parent="." unique_id=664439304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73813105, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D47" unique_id=1965346589]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D47" unique_id=1031298606]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D48" type="AnimatableBody3D" parent="." unique_id=985669037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264741, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D48" unique_id=1166538281]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D48" unique_id=2134755921]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D49" type="AnimatableBody3D" parent="." unique_id=1803067202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001436, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D49" unique_id=441209025]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D49" unique_id=1302303679]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D50" type="AnimatableBody3D" parent="." unique_id=781884370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21152139, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D50" unique_id=1174487040]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D50" unique_id=849583917]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D51" type="AnimatableBody3D" parent="." unique_id=1117328763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47482634, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D51" unique_id=1557785676]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D51" unique_id=608886214]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D52" type="AnimatableBody3D" parent="." unique_id=723857788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73813105, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D52" unique_id=1327542878]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D52" unique_id=1854786051]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D53" type="AnimatableBody3D" parent="." unique_id=2053006111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264741, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D53" unique_id=1536622556]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D53" unique_id=414198378]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D54" type="AnimatableBody3D" parent="." unique_id=1518160873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001436, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D54" unique_id=337176671]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D54" unique_id=1703283425]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D55" type="AnimatableBody3D" parent="." unique_id=1341330796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5259972, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D55" unique_id=1594830977]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D55" unique_id=2094448469]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D56" type="AnimatableBody3D" parent="." unique_id=1391019582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7893021, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D56" unique_id=1900512174]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D56" unique_id=112687271]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D57" type="AnimatableBody3D" parent="." unique_id=1087381016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.052607, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D57" unique_id=1293458427]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D57" unique_id=388119529]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D58" type="AnimatableBody3D" parent="." unique_id=1372488254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.579217, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D58" unique_id=299205768]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D58" unique_id=496147192]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D59" type="AnimatableBody3D" parent="." unique_id=387342057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3159118, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D59" unique_id=2022459542]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D59" unique_id=258966725]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D60" type="AnimatableBody3D" parent="." unique_id=198110932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8584502, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D60" unique_id=1398648603]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D60" unique_id=69998842]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D61" type="AnimatableBody3D" parent="." unique_id=1474694274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.121756, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D61" unique_id=131938582]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D61" unique_id=745641410]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D62" type="AnimatableBody3D" parent="." unique_id=807741520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3850608, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D62" unique_id=980842971]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D62" unique_id=1933710082]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D63" type="AnimatableBody3D" parent="." unique_id=1032235974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9116702, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D63" unique_id=138209462]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D63" unique_id=1582391021]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D64" type="AnimatableBody3D" parent="." unique_id=1633025134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6483655, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D64" unique_id=1921554417]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D64" unique_id=229734331]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D65" type="AnimatableBody3D" parent="." unique_id=366783090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8584502, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D65" unique_id=1230339467]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D65" unique_id=884989995]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D66" type="AnimatableBody3D" parent="." unique_id=66193741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.121756, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D66" unique_id=265251297]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D66" unique_id=1852803897]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D67" type="AnimatableBody3D" parent="." unique_id=389113865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3850608, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D67" unique_id=286577616]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D67" unique_id=1261701117]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D68" type="AnimatableBody3D" parent="." unique_id=581458304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9116702, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D68" unique_id=1260907259]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D68" unique_id=1605259030]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D69" type="AnimatableBody3D" parent="." unique_id=103103855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6483655, 0.36431304, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D69" unique_id=1579668055]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D69" unique_id=539252892]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D70" type="AnimatableBody3D" parent="." unique_id=264855331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1209319, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D70" unique_id=2100033101]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D70" unique_id=1204526614]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D71" type="AnimatableBody3D" parent="." unique_id=1574205620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.857627, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D71" unique_id=475724760]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D71" unique_id=2130748662]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D72" type="AnimatableBody3D" parent="." unique_id=1805912619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5943221, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D72" unique_id=862290063]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D72" unique_id=1812042259]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D73" type="AnimatableBody3D" parent="." unique_id=1660449991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06771231, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D73" unique_id=1509370277]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D73" unique_id=1686194862]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D74" type="AnimatableBody3D" parent="." unique_id=1862337658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1653695, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D74" unique_id=5087889]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D74" unique_id=716558429]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D75" type="AnimatableBody3D" parent="." unique_id=1276892889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4286747, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D75" unique_id=1389253695]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D75" unique_id=1358188867]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D76" type="AnimatableBody3D" parent="." unique_id=289749096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6919794, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D76" unique_id=1830009811]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D76" unique_id=907944398]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D77" type="AnimatableBody3D" parent="." unique_id=1706235709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9517636, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D77" unique_id=1801181097]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D77" unique_id=1820710515]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D78" type="AnimatableBody3D" parent="." unique_id=1875808495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33101726, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D78" unique_id=1276268675]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D78" unique_id=1824212803]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D79" type="AnimatableBody3D" parent="." unique_id=803868604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21152139, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D79" unique_id=578363586]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D79" unique_id=938533948]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D80" type="AnimatableBody3D" parent="." unique_id=184006777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47482634, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D80" unique_id=1543452273]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D80" unique_id=956775597]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D81" type="AnimatableBody3D" parent="." unique_id=1302013793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73813105, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D81" unique_id=1596890918]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D81" unique_id=384512024]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D82" type="AnimatableBody3D" parent="." unique_id=1574439835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264741, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D82" unique_id=273620977]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D82" unique_id=1371080843]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D83" type="AnimatableBody3D" parent="." unique_id=799238531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001436, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D83" unique_id=1622076850]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D83" unique_id=317767015]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D84" type="AnimatableBody3D" parent="." unique_id=636298410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21152139, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D84" unique_id=2001580999]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D84" unique_id=740185023]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D85" type="AnimatableBody3D" parent="." unique_id=696997069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47482634, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D85" unique_id=1131023412]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D85" unique_id=343970467]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D86" type="AnimatableBody3D" parent="." unique_id=836683961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73813105, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D86" unique_id=1580698348]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D86" unique_id=249509956]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D87" type="AnimatableBody3D" parent="." unique_id=835875069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264741, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D87" unique_id=1664563871]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D87" unique_id=977119080]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D88" type="AnimatableBody3D" parent="." unique_id=118070555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001436, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D88" unique_id=1875960425]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D88" unique_id=432596552]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D89" type="AnimatableBody3D" parent="." unique_id=25496342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5259972, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D89" unique_id=1208948739]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D89" unique_id=1471868546]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D90" type="AnimatableBody3D" parent="." unique_id=10144468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7893021, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D90" unique_id=2077109401]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D90" unique_id=314141617]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D91" type="AnimatableBody3D" parent="." unique_id=936331567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.052607, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D91" unique_id=2069856719]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D91" unique_id=769608427]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D92" type="AnimatableBody3D" parent="." unique_id=1673555268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.579217, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D92" unique_id=432961063]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D92" unique_id=1101158029]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D93" type="AnimatableBody3D" parent="." unique_id=790112946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3159118, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D93" unique_id=1598638017]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D93" unique_id=1042311790]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D94" type="AnimatableBody3D" parent="." unique_id=193447601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8584502, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D94" unique_id=1706835657]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D94" unique_id=2019699879]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D95" type="AnimatableBody3D" parent="." unique_id=244518758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.121756, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D95" unique_id=1115982911]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D95" unique_id=1910919637]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D96" type="AnimatableBody3D" parent="." unique_id=1357373834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3850608, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D96" unique_id=70596781]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D96" unique_id=1035961285]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D97" type="AnimatableBody3D" parent="." unique_id=1653466878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9116702, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D97" unique_id=1723948646]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D97" unique_id=72820905]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D98" type="AnimatableBody3D" parent="." unique_id=1824838380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6483655, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D98" unique_id=2126338863]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D98" unique_id=1453772072]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D99" type="AnimatableBody3D" parent="." unique_id=2123150581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8584502, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D99" unique_id=177273687]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D99" unique_id=1701026670]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D100" type="AnimatableBody3D" parent="." unique_id=2054780303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.121756, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D100" unique_id=21326755]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D100" unique_id=1011910132]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D101" type="AnimatableBody3D" parent="." unique_id=1219812834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3850608, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D101" unique_id=103671412]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D101" unique_id=998157925]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D102" type="AnimatableBody3D" parent="." unique_id=114081312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9116702, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D102" unique_id=698744209]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D102" unique_id=1232027257]
+shape = SubResource("BoxShape3D_uj33p")
+
+[node name="CSGBakedMeshInstance3D103" type="AnimatableBody3D" parent="." unique_id=375929057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6483655, 0.64271915, -2.6371717)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("9_ojdhb")
+direction = Vector3(0, 1, 0)
+distance = 0.25
+interval = 0.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D103" unique_id=1814458434]
+mesh = SubResource("BoxMesh_jjcrd")
+surface_material_override/0 = ExtResource("10_ojdhb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D103" unique_id=1094898306]
+shape = SubResource("BoxShape3D_uj33p")
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]

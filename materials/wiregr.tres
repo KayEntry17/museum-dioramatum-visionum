@@ -1,6 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://dc3x6xwtb5my5"]
 
-[sub_resource type="Shader" id="Shader_0wj8b"]
+[sub_resource type="Shader" id="Shader_iwpwa"]
+resource_local_to_scene = true
 code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
 
 shader_type spatial;
@@ -40,7 +41,7 @@ void fragment() {
 [resource]
 resource_local_to_scene = true
 render_priority = 0
-shader = SubResource("Shader_0wj8b")
+shader = SubResource("Shader_iwpwa")
 shader_parameter/albedo = Color(0, 0, 0, 1)
 shader_parameter/albedo_texture_size = Vector2i(0, 0)
 shader_parameter/point_size = 1.0
@@ -52,5 +53,5 @@ shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/color = Color(2.7915835e-06, 0.53046185, 0.5789203, 1)
-shader_parameter/on = 1.0
+shader_parameter/color = Color(0.40392157, 0.4745098, 1, 1)
+shader_parameter/on = 0.0

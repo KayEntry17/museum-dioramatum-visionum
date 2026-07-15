@@ -107,9 +107,9 @@ script = ExtResource("7_xbc1s")
 shape = SubResource("BoxShape3D_3a4jo")
 
 [node name="Node3D2" parent="." unique_id=586612173 instance=ExtResource("8_8c2kg")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.1675272, -0.004227981, -0.41095853)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.1675272, -0.004227981, -0.861467)
 direction = Vector3(1, 0, 0)
-distance = 0.5
+distance = 1.0
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

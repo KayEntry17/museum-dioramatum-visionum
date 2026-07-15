@@ -31,9 +31,12 @@ func _process(delta: float) -> void:
 		$camcontroller.rotation_degrees.x=clamp($camcontroller.rotation_degrees.x, -35.0, 20.0)
 		if  Mouss.active and Input.is_action_just_pressed("mouseclick"):
 			var raycast=Cam.maincam.shoot_ray(1 << (7 - 1))
+			print(raycast)
 			if raycast=={}:
 				mouseposprev=Mouss.mousepos
 				mousemoving=true
+			else:
+				raycast["collider"].turn()
 		
 		if  Mouss.active and Input.is_action_pressed("mouseclick") and mousemoving:
 			
@@ -48,5 +51,6 @@ func _process(delta: float) -> void:
 	else:mousemoving=false
 	if mousemoving:
 		Mouss.inuse=true
+		#print("asddsssasdasasdasdadasd")
 	else:
 		Mouss.inuse=false

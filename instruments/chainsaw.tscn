@@ -84,12 +84,12 @@ visible = false
 height = 0.1
 
 [node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="." unique_id=441356676]
-transform = Transform3D(-0.9059819, 8.331311e-08, 0.42331645, 0.42331645, -1.850375e-08, 0.9059819, 8.331311e-08, 1, -1.850375e-08, -0.007281691, -7.015934e-09, 0.048771694)
+transform = Transform3D(-0.39189047, 6.0841465e-08, -0.9200119, -0.9200119, 4.0214996e-08, 0.39189047, 6.0841465e-08, 1, 4.0214996e-08, -0.007281691, -7.015934e-09, 0.048771694)
 mesh = SubResource("ArrayMesh_018k0")
 surface_material_override/0 = ExtResource("2_xw8vu")
 script = ExtResource("2_omlmd")
 axis = Vector3(1, 0, 0)
-speed = 200.0
+speed = 300.0
 
 [node name="Area3D" type="Area3D" parent="." unique_id=73027029]
 script = ExtResource("1_8gv8f")

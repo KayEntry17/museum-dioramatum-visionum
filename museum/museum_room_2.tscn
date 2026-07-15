@@ -244,6 +244,9 @@ visible = false
 [node name="Sphere_001" parent="." index="84" unique_id=270175583]
 visible = false
 
+[node name="Sphere_005" parent="." index="85" unique_id=44895735]
+visible = false
+
 [node name="SpotLight3D" type="SpotLight3D" parent="Sphere_006" parent_id_path=PackedInt32Array(1985927555) index="0" unique_id=761905681]
 transform = Transform3D(4.759005, 4.1574842e-07, 4.3176206e-07, -4.157485e-07, -0.17977667, 4.755608, 4.3176195e-07, -4.755608, -0.17977667, 0, 19.433727, 0)
 light_energy = 13.018

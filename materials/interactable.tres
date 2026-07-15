@@ -1,0 +1,88 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c0w50jxxb6vjn"]
+
+[ext_resource type="Shader" uid="uid://dxrlxps4tcjjh" path="res://materials/drawn.gdshader" id="1_ycp58"]
+[ext_resource type="Texture2D" uid="uid://bmh5s566x856e" path="res://materials/testmaterialwhite.png" id="2_dcjbm"]
+
+[sub_resource type="Gradient" id="Gradient_v6ykp"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.039130434, 0.07826087, 0.12608695, 0.16086957, 0.22173913, 0.26086956, 0.29782608, 0.33913043, 0.37391305, 0.40869564, 0.45217392, 0.4826087, 0.5195652, 0.5608696, 0.6086956, 0.65217394, 0.6956522, 0.7304348, 0.7826087, 0.82608694, 0.8695652, 0.9173913, 0.9695652, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eu5ca"]
+gradient = SubResource("Gradient_v6ykp")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aixjc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_ycp58")
+shader_parameter/draw_texture = SubResource("GradientTexture2D_eu5ca")
+shader_parameter/outline_threshold = 0.2
+shader_parameter/outline_color = Color(1, 0.95, 1, 1)
+shader_parameter/outline_width = 1.7
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/maxl = 2.705
+shader_parameter/invert = 11.3
+shader_parameter/mult = 1.6
+
+[sub_resource type="Shader" id="Shader_kfrld"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+	
+	vec4 albedo_tex = texture(texture_albedo, SCREEN_UV);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+}
+"
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_aixjc")
+shader = SubResource("Shader_kfrld")
+shader_parameter/albedo = Color(0.77, 1, 0.9655, 1)
+shader_parameter/texture_albedo = ExtResource("2_dcjbm")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
