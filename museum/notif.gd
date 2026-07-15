@@ -1,5 +1,5 @@
 extends Area3D
-@export var text:String
+@export_multiline var text:String
 @export var time:=1.5
 
 var used=false

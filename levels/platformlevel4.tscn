@@ -16,7 +16,7 @@ dof_blur_far_distance = 0.5
 dof_blur_amount = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
-size = Vector3(2.458374, 2.9693604, 2.675354)
+size = Vector3(2.458374, 2.9693604, 10.790314)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvulu"]
 render_priority = 1
@@ -58,8 +58,6 @@ player = NodePath("Node3D")
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
 transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, -1.3271794, -1.8840855)
 use_collision = true
-collision_layer = 65
-collision_mask = 65
 radius = 1.0
 height = 1.506
 sides = 20
@@ -98,7 +96,7 @@ attributes = SubResource("CameraAttributesPractical_og5as")
 fov = 44.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
-transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.7941384, 0.16729736, -1.9501663)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 2.2633362, 0.16729736, -1.9437171)
 shape = SubResource("BoxShape3D_umt7f")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2132722857]
@@ -154,7 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6237705, 0.093927175, -1.13
 script = ExtResource("5_216np")
 direction = Vector3(-1, 0, 0)
 distance = 1.3
-interval = 10.0
+interval = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D2" unique_id=846589704]
 mesh = SubResource("BoxMesh_va8qf")
@@ -168,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12480414, 0.093927175, -4.4
 script = ExtResource("5_216np")
 direction = Vector3(0, 0.5, -1)
 distance = 1.3
-interval = 10.0
+interval = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D4" unique_id=2097858237]
 mesh = SubResource("BoxMesh_va8qf")
@@ -182,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12480414, 1.40565, -7.44598
 script = ExtResource("5_216np")
 direction = Vector3(0, -0.5, 1)
 distance = 1.3
-interval = 10.0
+interval = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D5" unique_id=746107252]
 mesh = SubResource("BoxMesh_va8qf")
@@ -196,7 +194,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606732, 0.093927175, -2.09
 script = ExtResource("5_216np")
 direction = Vector3(1, 0, 0)
 distance = 1.3
-interval = 10.0
+interval = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D3" unique_id=1027550417]
 mesh = SubResource("BoxMesh_va8qf")

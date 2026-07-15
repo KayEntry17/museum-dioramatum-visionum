@@ -363,6 +363,56 @@ shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/color = Color(0, 1, 0, 1)
 shader_parameter/on = 0.0
 
+[sub_resource type="Curve3D" id="Curve3D_0icf4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 44.83079, 0.7980437, -47.427982, 0, 0, 0, 0, 0, 0, 46.933155, 0.73971033, -49.29938, 0, 0, 0, 0, 0, 0, 47.746384, 0.7397108, -48.839195, 0, 0, 0, 0, 0, 0, 48.898407, 0.73971033, -47.93269, 0, 0, 0, 0, 0, 0, 49.862854, 0.73971033, -47.734005, 0, 0, 0, 0, 0, 0, 50.90574, 0.73971033, -48.413383, 0, 0, 0, 0, 0, 0, 52.32305, 1.8735585, -48.947395, 0, 0, 0, 0, 0, 0, 53.568344, 3.018935, -47.72117, 0, 0, 0, 0, 0, 0, 53.679386, 3.1283157, -47.10354, 0, 0, 0, 0, 0, 0, 54.244766, 3.638867, -47.210773, 0, 0, 0, 0, 0, 0, 54.910923, 4.2353106, -47.695484, 0, 0, 0, 0, 0, 0, 54.865097, 4.176474, -48.910587, 0, 0, 0, 0, 0, 0, 54.969536, 4.2555313, -49.999954, 0, 0, 0, 0, 0, 0, 55.93505, 5.1312118, -49.916756, 0, 0, 0, 0, 0, 0, 56.145058, 5.332586, -49.134003, 0, 0, 0, 0, 0, 0, 58.35813, 5.21787, -49.13208, 0, 0, 0, 0, 0, 0, 59.94602, 5.181207, -48.6159, 0, 0, 0, 0, 0, 0, 62.11742, 5.181207, -47.955017, 0, 0, 0, 0, 0, 0, 63.142334, 5.1812067, -48.271187, 0, 0, 0, 0, 0, 0, 63.469654, 5.181207, -48.869034, 0, 0, 0, 0, 0, 0, 65.27644, 5.1812077, -49.828335, 0, 0, 0, 0, 0, 0, 66.060684, 5.1812077, -48.866123, 0, 0, 0, 0, 0, 0, 68.13857, 5.1812067, -48.60276, 0, 0, 0, 0, 0, 0, 69.35194, 5.181206, -48.858322, 0, 0, 0, 0, 0, 0, 71.64904, 5.1812067, -49.746086, 0, 0, 0, 0, 0, 0, 73.244545, 5.181206, -49.459843, 0, 0, 0, 0, 0, 0, 73.76912, 5.181207, -48.734074, 0, 0, 0, 0, 0, 0, 74.27514, 5.1812067, -48.218662, 0, 0, 0, 0, 0, 0, 75.20909, 5.1812067, -48.175343, 0, 0, 0, 0, 0, 0, 76.22573, 5.181207, -48.81055, 0, 0, 0, 0, 0, 0, 76.89456, 5.1812067, -49.639706, 0, 0, 0, 0, 0, 0, 77.82728, 5.1812067, -50.0769, 0, 0, 0, 0, 0, 0, 78.66411, 5.1812067, -49.87351, 0, 0, 0, 0, 0, 0, 81.04033, 5.1812077, -48.140984, 0, 0, 0, 0, 0, 0, 82.3058, 5.181207, -48.144165, 0, 0, 0, 0, 0, 0, 83.42228, 5.1812077, -48.470837, 0, 0, 0, 0, 0, 0, 84.24946, 5.181207, -48.969513, 0, 0, 0, 0, 0, 0, 85.27587, 5.181207, -49.691162, 0, 0, 0, 0, 0, 0, 86.5585, 5.1812077, -50.213753, 0, 0, 0, 0, 0, 0, 87.64785, 5.1812067, -50.398624, 0, 0, 0, 0, 0, 0, 88.12285, 5.181207, -50.13808, 0, 0, 0, 0, 0, 0, 88.66906, 5.181206, -49.776352, 0, 0, 0, 0, 0, 0, 90.02907, 5.1812067, -49.05724, 0, 0, 0, 0, 0, 0, 91.828514, 5.1812067, -48.65715, 0, 0, 0, 0, 0, 0, 93.659256, 5.1812077, -48.568535, 0, 0, 0, 0, 0, 0, 95.45723, 5.181207, -48.858166, 0, 0, 0, 0, 0, 0, 97.40257, 5.181206, -49.50573, 0, 0, 0, 0, 0, 0, 99.72762, 5.181207, -50.22947, 0, 0, 0, 0, 0, 0, 101.59271, 5.1812067, -48.726456, 0, 0, 0, 0, 0, 0, 103.45036, 5.1812077, -47.225544, 0, 0, 0, 0, 0, 0, 104.7838, 5.1812067, -47.105835, 0, 0, 0, 0, 0, 0, 106.89511, 5.181206, -47.104374, 0, 0, 0, 0, 0, 0, 110.2946, 5.1812067, -47.629017, 0, 0, 0, 0, 0, 0, 110.76047, 5.1812067, -48.345196, 0, 0, 0, 0, 0, 0, 112.96713, 5.1812067, -49.15268, 0, 0, 0, 0, 0, 0, 120.35873, 5.181207, -50.393982, 0, 0, 0, 0, 0, 0, 124.41847, 5.0783587, -49.583366, 0, 0, 0, 0, 0, 0, 125.98479, 5.2520185, -47.914356, 0, 0, 0, 0, 0, 0, 129.27849, 5.6171927, -46.777103, 0, 0, 0, 0, 0, 0, 131.95546, 5.636808, -47.027668, 0, 0, 0, 0, 0, 0, 134.57063, 5.636808, -46.89608, 0, 0, 0, 0, 0, 0, 135.83919, 5.6368084, -48.09862),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 62
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0kxq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_0wj8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0.71667784, 0.39178944, 1, 1)
+shader_parameter/on = 0.0
+
+[sub_resource type="Curve3D" id="Curve3D_ihtd6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 34.24197, 0.91200733, -47.69357, 0, 0, 0, 0, 0, 0, 33.605045, 0.73970985, -48.37869, 0, 0, 0, 0, 0, 0, 32.958397, 0.7397113, -49.640305, 0, 0, 0, 0, 0, 0, 31.828455, 0.73970985, -50.721912, 0, 0, 0, 0, 0, 0, 30.706408, 0.73971033, -50.935158, 0, 0, 0, 0, 0, 0, 29.371391, 0.73971033, -50.88841, 0, 0, 0, 0, 0, 0, 29.371391, 0.73971033, -50.88841, 0, 0, 0, 0, 0, 0, 28.93349, 0.73971033, -50.39395, 0, 0, 0, 0, 0, 0, 28.342873, 0.73971033, -50.355316, 0, 0, 0, 0, 0, 0, 27.798988, 0.73970985, -50.58513, 0, 0, 0, 0, 0, 0, 27.646675, 0.73970985, -50.258297, 0, 0, 0, 0, 0, 0, 26.901731, 0.7397108, -49.685066, 0, 0, 0, 0, 0, 0, 25.816128, 0.80167866, -49.553127, 0, 0, 0, 0, 0, 0, 24.746273, 1.735949, -49.097374, 0, 0, 0, 0, 0, 0, 23.144287, 3.13491, -49.60425, 0, 0, 0, 0, 0, 0, 22.625105, 3.5882924, -49.514088, 0, 0, 0, 0, 0, 0, 22.275562, 3.8935375, -49.384106, 0, 0, 0, 0, 0, 0, 21.767485, 4.337225, -49.013626, 0, 0, 0, 0, 0, 0, 21.520355, 4.553035, -48.803783, 0, 0, 0, 0, 0, 0, 20.974367, 5.0298285, -48.850376, 0, 0, 0, 0, 0, 0, 20.869278, 5.3978033, -48.958942, 0, 0, 0, 0, 0, 0, 20.051477, 5.092805, -48.859627, 0, 0, 0, 0, 0, 0, 18.665247, 5.0928054, -48.59822, 0, 0, 0, 0, 0, 0, 18.742132, 5.0928054, -48.493546, 0, 0, 0, 0, 0, 0, 16.359934, 5.0928054, -48.234848, 0, 0, 0, 0, 0, 0, 14.515756, 5.092806, -48.61609, 0, 0, 0, 0, 0, 0, 13.480011, 5.092806, -47.974606, 0, 0, 0, 0, 0, 0, 12.083917, 5.092805, -48.4199, 0, 0, 0, 0, 0, 0, 10.1095085, 5.092806, -49.183807, 0, 0, 0, 0, 0, 0, 8.451772, 5.0928054, -49.089806, 0, 0, 0, 0, 0, 0, 6.3386917, 5.0928054, -48.394363, 0, 0, 0, 0, 0, 0, 3.5742168, 5.0928054, -48.280697, 0, 0, 0, 0, 0, 0, 1.4368944, 5.092805, -49.192272, 0, 0, 0, 0, 0, 0, 0.06461573, 5.0928044, -49.09723, 0, 0, 0, 0, 0, 0, -0.4732213, 5.092805, -48.150047, 0, 0, 0, 0, 0, 0, -1.9361897, 5.092806, -47.356827, 0, 0, 0, 0, 0, 0, -3.033679, 5.092806, -47.674526, 0, 0, 0, 0, 0, 0, -4.127489, 5.092806, -48.48697, 0, 0, 0, 0, 0, 0, -8.123861, 5.092806, -49.00184, 0, 0, 0, 0, 0, 0, -12.441832, 5.0928054, -48.759056, 0, 0, 0, 0, 0, 0, -13.464117, 5.092805, -48.04926, 0, 0, 0, 0, 0, 0, -15.236353, 5.0928054, -48.215893, 0, 0, 0, 0, 0, 0, -16.012741, 5.092806, -48.79088, 0, 0, 0, 0, 0, 0, -16.537477, 5.092805, -48.778095, 0, 0, 0, 0, 0, 0, -17.424881, 5.092805, -48.5636, 0, 0, 0, 0, 0, 0, -17.963526, 5.0928054, -48.076355, 0, 0, 0, 0, 0, 0, -18.532055, 4.9639997, -48.27321, 0, 0, 0, 0, 0, 0, -19.13676, 4.742721, -48.04316, 0, 0, 0, 0, 0, 0, -19.09321, 4.7586575, -47.58489, 0, 0, 0, 0, 0, 0, -20.07948, 4.3977556, -47.568874, 0, 0, 0, 0, 0, 0, -21.104124, 4.022809, -48.064907, 0, 0, 0, 0, 0, 0, -22.418753, 3.67819, -48.791702, 0, 0, 0, 0, 0, 0, -24.526802, 3.6781898, -49.223034, 0, 0, 0, 0, 0, 0, -25.52781, 3.6781898, -49.25998, 0, 0, 0, 0, 0, 0, -26.135582, 3.67819, -48.369015, 0, 0, 0, 0, 0, 0, -28.408258, 3.6781902, -46.342175, 0, 0, 0, 0, 0, 0, -28.868673, 3.6781893, -48.65406, 0, 0, 0, 0, 0, 0, -30.322756, 3.6781902, -49.40719, 0, 0, 0, 0, 0, 0, -31.42722, 3.6781893, -48.148483, 0, 0, 0, 0, 0, 0, -32.26423, 3.6781893, -48.1206),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 60
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwpwa"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_0wj8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/color = Color(0.40491402, 0.4761759, 1, 1)
+shader_parameter/on = 0.0
+
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2127328153]
@@ -469,11 +519,55 @@ mouse_filter = 1
 [node name="Area3D" type="Area3D" parent="." unique_id=1445157449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.110725, 2.9779015, -10.561913)
 script = ExtResource("14_a7kr8")
-text = "waow this is so homestuck"
+text = "Press E or left button to interact"
 time = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=584539971]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17071533, -1.2246094, 0)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D3" type="Area3D" parent="." unique_id=503190879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.110725, 2.9779015, -10.561913)
+script = ExtResource("14_a7kr8")
+text = "You can drag camera view using the mouse 
+in dioramas"
+time = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" unique_id=1501406803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17071533, -1.2246094, 0)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D5" type="Area3D" parent="." unique_id=1349382951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.110725, 2.9779015, -10.561913)
+script = ExtResource("14_a7kr8")
+text = "Press Space or lower button 
+to jump"
+time = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D5" unique_id=1280796041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17071533, -1.2246094, 0)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D4" type="Area3D" parent="." unique_id=131214572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.110725, 2.9779015, -15.092286)
+script = ExtResource("14_a7kr8")
+text = "Beating dioramas activates wires 
+and other dioramas"
+time = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4" unique_id=1432291625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17071533, -1.2246094, -1.7256231)
+shape = SubResource("BoxShape3D_uvulu")
+
+[node name="Area3D6" type="Area3D" parent="." unique_id=158177007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.110725, 2.9779015, -15.092286)
+script = ExtResource("14_a7kr8")
+text = "You can exit using Enter
+or righ button"
+time = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D6" unique_id=1348173058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17071533, -1.2246094, -3.7919207)
 shape = SubResource("BoxShape3D_uvulu")
 
 [node name="Area3D2" type="Area3D" parent="." unique_id=1346821257]
@@ -489,7 +583,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.742188, 0, -30.463556)
 mesh = SubResource("BoxMesh_umt7f")
 
 [node name="museumROOM2" parent="." unique_id=372218756 instance=ExtResource("19_3mt8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008163452, 0.067985535, 5.0679855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1126709, 0.32110596, 5.256096)
 
 [node name="Path3D" parent="." unique_id=1821519437 instance=ExtResource("20_i81n1")]
 curve = SubResource("Curve3D_yte6f")
@@ -503,6 +597,18 @@ curve = SubResource("Curve3D_qn4qg")
 [node name="CSGPolygon3D" parent="Path3D2" index="0" unique_id=2010259952]
 material = SubResource("ShaderMaterial_0gu8v")
 
+[node name="Path3D3" parent="." unique_id=1749095193 instance=ExtResource("20_i81n1")]
+curve = SubResource("Curve3D_0icf4")
+
+[node name="CSGPolygon3D" parent="Path3D3" index="0" unique_id=2010259952]
+material = SubResource("ShaderMaterial_n0kxq")
+
+[node name="Path3D4" parent="." unique_id=588932674 instance=ExtResource("20_i81n1")]
+curve = SubResource("Curve3D_ihtd6")
+
+[node name="CSGPolygon3D" parent="Path3D4" index="0" unique_id=2010259952]
+material = SubResource("ShaderMaterial_iwpwa")
+
 [node name="platformlevel2" parent="." unique_id=1299227476 node_paths=PackedStringArray("prize") instance=ExtResource("21_yte6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.315544, 1.7927656, -26.704473)
 prize = NodePath("../general")
@@ -515,12 +621,23 @@ prize = NodePath("general2")
 script = ExtResource("12_w4wu2")
 turnlist = [NodePath("../../Path3D2"), NodePath("../../platformlevel4")]
 
-[node name="platformlevel4" parent="." unique_id=921284401 instance=ExtResource("23_0icf4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.462704, 2.5717251, -45.876793)
+[node name="platformlevel4" parent="." unique_id=921284401 node_paths=PackedStringArray("prize") instance=ExtResource("23_0icf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.11492, 2.5717251, -45.876793)
 activateable = false
+prize = NodePath("general2")
+
+[node name="general2" type="Node" parent="platformlevel4" unique_id=1805891082 node_paths=PackedStringArray("turnlist")]
+script = ExtResource("12_w4wu2")
+turnlist = [NodePath("../../Path3D4"), NodePath("../../Path3D3")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D3" to="Area3D3" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D5" to="Area3D5" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D4" to="Area3D4" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D6" to="Area3D6" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
 
 [editable path="Path3D"]
 [editable path="Path3D2"]
+[editable path="Path3D3"]
+[editable path="Path3D4"]

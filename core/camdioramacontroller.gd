@@ -17,8 +17,9 @@ func begin():
 func _process(delta: float) -> void:
 	if $"..".active:
 		if pathuse:
-			
-			self.global_position=path.global_position+path.curve.get_closest_point(player.global_position-path.global_position)
+			var local_pos = path.to_local(player.global_position)
+			var closest = path.curve.get_closest_point(local_pos)
+			global_position = path.to_global(closest)
 		var caminpdir
 		if !Input.is_action_pressed("mousetoggle"):
 			caminpdir=Input.get_vector("dioramaleft","dioramaright","camera_up","camera_down")
@@ -30,7 +31,7 @@ func _process(delta: float) -> void:
 		$camcontroller.rotation_degrees.x=clamp($camcontroller.rotation_degrees.x, -35.0, 20.0)
 		if  Mouss.active and Input.is_action_just_pressed("mouseclick"):
 			var raycast=Cam.maincam.shoot_ray(1 << (7 - 1))
-			if !raycast=={}:
+			if raycast=={}:
 				mouseposprev=Mouss.mousepos
 				mousemoving=true
 		

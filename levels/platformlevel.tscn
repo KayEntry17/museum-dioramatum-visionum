@@ -44,8 +44,6 @@ player = NodePath("Node3D")
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2570581, 0)
 use_collision = true
-collision_layer = 65
-collision_mask = 65
 radius = 1.0
 height = 2.4663281
 sides = 20
@@ -88,9 +86,9 @@ size = Vector3(0.2, 0.624, 0.2)
 material = ExtResource("2_m5tp4")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1187282603]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6401054, -0.21, 0.017031252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6401054, -0.21, -0.0033301115)
 use_collision = true
-size = Vector3(0.29487306, 0.624, 1.1859375)
+size = Vector3(0.29487306, 0.624, 1.1452148)
 material = ExtResource("2_m5tp4")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("4_bv07a")]
