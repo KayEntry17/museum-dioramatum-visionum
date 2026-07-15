@@ -13,9 +13,9 @@ shader_parameter/outline_threshold = 0.2
 shader_parameter/outline_color = Color(1, 0.95, 1, 1)
 shader_parameter/outline_width = 1.7
 shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/maxl = 1.525
+shader_parameter/maxl = 2.705
 shader_parameter/invert = 1.0
-shader_parameter/mult = 1.25
+shader_parameter/mult = 1.6
 
 [sub_resource type="Shader" id="Shader_kfrld"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.

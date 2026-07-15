@@ -16,5 +16,6 @@ func _process(delta: float) -> void:
 	#progress=0
 	progress+=delta/interval
 	progress=progress-int(progress)
-	position=basepos+distance*direction*sin(PI*progress*2)
+	position=basepos+distance*direction*(sin(PI*progress*2)+1)/2.0
 	#print(progress)
+	

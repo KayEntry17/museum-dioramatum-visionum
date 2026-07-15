@@ -3,7 +3,10 @@ extends Node3D
 var mouseposprev
 # Called when the node enters the scene tree for the first time.
 @export var selfcam:Node3D
+@export var path:Path3D
+@export var pathuse:bool=false
 var mousemoving:=false
+@export var player:Node3D
 func begin():
 	var mcpos=Vector2(Cam.maincam.global_position.x-global_position.x,Cam.maincam.global_position.z-global_position.z).angle()
 	self.global_rotation.y=-(mcpos- PI / 2)
@@ -13,6 +16,9 @@ func begin():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if $"..".active:
+		if pathuse:
+			
+			self.global_position=path.global_position+path.curve.get_closest_point(player.global_position-path.global_position)
 		var caminpdir
 		if !Input.is_action_pressed("mousetoggle"):
 			caminpdir=Input.get_vector("dioramaleft","dioramaright","camera_up","camera_down")

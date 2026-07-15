@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dl7iwchitb377" path="res://instruments/wirefast.tscn" id="20_i81n1"]
 [ext_resource type="PackedScene" uid="uid://hr6egodnfbpt" path="res://levels/platformlevel.tscn" id="21_yte6f"]
 [ext_resource type="PackedScene" uid="uid://dkhtcbrwyav3j" path="res://levels/platformlevel3.tscn" id="22_qn4qg"]
+[ext_resource type="PackedScene" uid="uid://bk7wscjtbpwan" path="res://levels/platformlevel4.tscn" id="23_0icf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mt8b"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -107,7 +108,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qn4qg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0icf4"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_w4wu2")
@@ -162,7 +163,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0icf4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihtd6"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_p1f42")
@@ -319,7 +320,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihtd6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_de2n8"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_0wj8b")
@@ -339,12 +340,12 @@ shader_parameter/on = 0.0
 
 [sub_resource type="Curve3D" id="Curve3D_qn4qg"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 38.808765, 0.7397108, -41.461174, 0, 0, 0, 0, 0, 0, 39.708614, 0.7397108, -42.487152, 0, 0, 0, 0, 0, 0, 39.43403, 0.73971033, -43.235653, 0, 0, 0, 0, 0, 0, 38.683914, 0.73971033, -44.047863, 0, 0, 0, 0, 0, 0, 38.85594, 0.73971033, -44.983738, 0, 0, 0, 0, 0, 0, 38.678738, 0.73971057, -45.701893, 0, 0, 0, 0, 0, 0, 39.0477, 0.73971033, -46.320484, 0, 0, 0, 0, 0, 0, 39.048088, 0.73970985, -46.923218),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 38.808765, 0.7397108, -41.461174, 0, 0, 0, 0, 0, 0, 39.708614, 0.7397108, -42.487152, 0, 0, 0, 0, 0, 0, 39.43403, 0.73971033, -43.235653, 0, 0, 0, 0, 0, 0, 38.683914, 0.73971033, -44.047863, 0, 0, 0, 0, 0, 0, 38.85594, 0.73971033, -44.983738, 0, 0, 0, 0, 0, 0, 38.678738, 0.73971057, -45.701893, 0, 0, 0, 0, 0, 0, 39.0477, 0.73971033, -46.320484, 0, 0, 0, 0, 0, 0, 39.25951, 1.1398982, -46.897118),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_de2n8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gu8v"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_0wj8b")
@@ -418,12 +419,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -
 
 [node name="BézierCurve_008" parent="." unique_id=19811220 instance=ExtResource("4_3walr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.322727, 1.2413305, -12.270446)
-surface_material_override/0 = SubResource("ShaderMaterial_qn4qg")
+surface_material_override/0 = SubResource("ShaderMaterial_0icf4")
 script = ExtResource("5_wcod2")
 
 [node name="BézierCurve_007" parent="." unique_id=644824418 instance=ExtResource("5_r7cxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25604, 1.2413305, -12.285494)
-surface_material_override/0 = SubResource("ShaderMaterial_0icf4")
+surface_material_override/0 = SubResource("ShaderMaterial_ihtd6")
 script = ExtResource("5_wcod2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
@@ -494,13 +495,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008163452, 0.067985535, 5.
 curve = SubResource("Curve3D_yte6f")
 
 [node name="CSGPolygon3D" parent="Path3D" index="0" unique_id=2010259952]
-material = SubResource("ShaderMaterial_ihtd6")
+material = SubResource("ShaderMaterial_de2n8")
 
 [node name="Path3D2" parent="." unique_id=344682577 instance=ExtResource("20_i81n1")]
 curve = SubResource("Curve3D_qn4qg")
 
 [node name="CSGPolygon3D" parent="Path3D2" index="0" unique_id=2010259952]
-material = SubResource("ShaderMaterial_de2n8")
+material = SubResource("ShaderMaterial_0gu8v")
 
 [node name="platformlevel2" parent="." unique_id=1299227476 node_paths=PackedStringArray("prize") instance=ExtResource("21_yte6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.315544, 1.7927656, -26.704473)
@@ -512,7 +513,11 @@ prize = NodePath("general2")
 
 [node name="general2" type="Node" parent="platformlevel3" unique_id=1317342416 node_paths=PackedStringArray("turnlist")]
 script = ExtResource("12_w4wu2")
-turnlist = [NodePath("../../Path3D2")]
+turnlist = [NodePath("../../Path3D2"), NodePath("../../platformlevel4")]
+
+[node name="platformlevel4" parent="." unique_id=921284401 instance=ExtResource("23_0icf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.462704, 2.5717251, -45.876793)
+activateable = false
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]

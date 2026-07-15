@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bk7wscjtbpwan"]
+[gd_scene format=3 uid="uid://bk7wscjtbpwan"]
 
 [ext_resource type="Script" uid="uid://cxgyt88jberx3" path="res://core/platformlevel.gd" id="1_15mnc"]
 [ext_resource type="Material" uid="uid://b2qm4540nqsvl" path="res://levels/hazarddrawn.tres" id="2_ajpi8"]
@@ -18,21 +18,6 @@ dof_blur_amount = 0.2
 [sub_resource type="BoxShape3D" id="BoxShape3D_umt7f"]
 size = Vector3(2.458374, 2.9693604, 2.675354)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iywii"]
-data = PackedVector3Array(-0.1, -0.312, 0.1, -0.1, -0.312, -0.1, -0.1, 0.312, -0.1, 0.1, -0.312, -0.1, -0.1, -0.312, -0.1, -0.1, -0.312, 0.1, -0.1, 0.312, -0.1, -0.1, -0.312, -0.1, 0.1, -0.312, -0.1, -0.1, 0.312, -0.1, -0.1, 0.312, 0.1, -0.1, -0.312, 0.1, -0.1, -0.312, 0.1, -0.1, 0.312, 0.1, 0.1, 0.312, 0.1, 0.1, 0.312, 0.1, -0.1, 0.312, 0.1, -0.1, 0.312, -0.1, -0.1, -0.312, 0.1, 0.1, -0.312, 0.1, 0.1, -0.312, -0.1, 0.1, 0.312, 0.1, 0.1, -0.312, 0.1, -0.1, -0.312, 0.1, 0.1, -0.312, -0.1, 0.1, -0.312, 0.1, 0.1, 0.312, 0.1, 0.1, -0.312, -0.1, 0.1, 0.312, -0.1, -0.1, 0.312, -0.1, -0.1, 0.312, -0.1, 0.1, 0.312, -0.1, 0.1, 0.312, 0.1, 0.1, 0.312, 0.1, 0.1, 0.312, -0.1, 0.1, -0.312, -0.1)
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_bltp1"]
-_surfaces = [{
-"aabb": AABB(-0.1, -0.312, -0.1, 0.2, 0.624, 0.2),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"material": ExtResource("4_sv4x0"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("zczMvXe+n77NzMw9zczMvXe+n77NzMy9zczMvXe+nz7NzMy9zczMPXe+n77NzMy9zczMvXe+n77NzMy9zczMvXe+n77NzMw9zczMvXe+nz7NzMy9zczMvXe+n77NzMy9zczMPXe+n77NzMy9zczMvXe+nz7NzMy9zczMvXe+nz7NzMw9zczMvXe+n77NzMw9zczMvXe+n77NzMw9zczMvXe+nz7NzMw9zczMPXe+nz7NzMw9zczMPXe+nz7NzMw9zczMvXe+nz7NzMw9zczMvXe+nz7NzMy9zczMvXe+n77NzMw9zczMPXe+n77NzMw9zczMPXe+n77NzMy9zczMPXe+nz7NzMw9zczMPXe+n77NzMw9zczMvXe+n77NzMw9zczMPXe+n77NzMy9zczMPXe+n77NzMw9zczMPXe+nz7NzMw9zczMPXe+n77NzMy9zczMPXe+nz7NzMy9zczMvXe+nz7NzMy9zczMvXe+nz7NzMy9zczMPXe+nz7NzMy9zczMPXe+nz7NzMw9zczMPXe+nz7NzMw9zczMPXe+nz7NzMy9zczMPXe+n77NzMy9AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
-}]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvulu"]
 render_priority = 1
 shader = ExtResource("8_fsdwq")
@@ -45,31 +30,63 @@ bottom_radius = 0.099121094
 height = 7.9819336
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvulu"]
-size = Vector3(0.23248291, 0.43624878, 0.2305336)
+size = Vector3(0.23248291, 8.726677, 0.2305336)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3a4jo"]
-size = Vector3(5, 1, 5)
+size = Vector3(5, 0.7918091, 12.942871)
+
+[sub_resource type="Curve3D" id="Curve3D_15mnc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.241, -8.686, 0, 0, 0, 0, 0, 0, 0, 1.276, -6.85, 0, 0, 0, 0, 0, 0, 0, -0.35899997, -4.0155325, 0, 0, 0, 0, 0, 0, 0, -0.359, 0.145),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_va8qf"]
+size = Vector3(0.4, 0.1, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vnv8u"]
+size = Vector3(0.4, 0.1, 0.4)
 
 [node name="platformlevel" type="Area3D" unique_id=1768093041 node_paths=PackedStringArray("camcontroller", "selfcam", "player")]
 script = ExtResource("1_15mnc")
 camcontroller = NodePath("camcontroller")
 selfcam = NodePath("camcontroller/camcontroller/Camera3D")
+activateable = true
 player = NodePath("Node3D")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=140938202]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5920153, 0)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, -1.3271794, -1.8840855)
 use_collision = true
 collision_layer = 65
 collision_mask = 65
 radius = 1.0
-height = 2.4663281
+height = 1.506
 sides = 20
 material = ExtResource("2_ajpi8")
 
-[node name="camcontroller" type="Node3D" parent="." unique_id=758807615]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D" unique_id=2137491472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05606079, 0.19250965, -4.1921234)
+size = Vector3(1.8311157, 1, 8.646698)
+material = ExtResource("2_ajpi8")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D" unique_id=1153849356]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -8.653477)
+use_collision = true
+collision_layer = 65
+collision_mask = 65
+radius = 1.0
+height = 1.506
+sides = 20
+material = ExtResource("2_ajpi8")
+
+[node name="camcontroller" type="Node3D" parent="." unique_id=758807615 node_paths=PackedStringArray("path", "player")]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, 0.8, -1.8840855)
 script = ExtResource("3_v30hs")
 rotspeed = 3.0
+path = NodePath("../Path3D")
+pathuse = true
+player = NodePath("../Node3D")
 
 [node name="camcontroller" type="SpringArm3D" parent="camcontroller" unique_id=57085880]
 collision_mask = 64
@@ -81,54 +98,32 @@ attributes = SubResource("CameraAttributesPractical_og5as")
 fov = 44.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1577774604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066223145, 0.16729736, -0.08950806)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.7941384, 0.16729736, -1.9501663)
 shape = SubResource("BoxShape3D_umt7f")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2132722857]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7931564, 0.14887905, -0.07768555)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 6.678449, -0.15195012, -1.824395)
 use_collision = true
-size = Vector3(0.2, 0.624, 0.3553711)
+size = Vector3(0.46, 0.624, 0.355)
 material = ExtResource("4_sv4x0")
 
-[node name="CSGBakedMeshInstance3D" type="AnimatableBody3D" parent="." unique_id=2132532946]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23575509, -0.020933926, 0.31869513)
-script = ExtResource("5_216np")
-direction = Vector3(0, 0, -1)
-distance = 0.25
-interval = 4.0
-
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D" unique_id=441696489]
-shape = SubResource("ConcavePolygonShape3D_iywii")
-
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D" unique_id=375544545]
-physics_interpolation_mode = 1
-mesh = SubResource("ArrayMesh_bltp1")
-
-[node name="CSGBakedMeshInstance3D2" type="AnimatableBody3D" parent="." unique_id=1018621741]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21960998, 0.093927175, -0.8532727)
-script = ExtResource("5_216np")
-direction = Vector3(0, 0, 1)
-distance = 0.25
-interval = 4.0
-
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="CSGBakedMeshInstance3D2" unique_id=204317411]
-shape = SubResource("ConcavePolygonShape3D_iywii")
-
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="CSGBakedMeshInstance3D2" unique_id=101184093]
-physics_interpolation_mode = 1
-mesh = SubResource("ArrayMesh_bltp1")
-
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1187282603]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646811, -0.23167664, 0.017031252)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.839694, -0.23167664, -1.8887855)
 use_collision = true
-size = Vector3(0.29487306, 0.624, 1.1859375)
+size = Vector3(1.578955, 0.624, 0.8840759)
+material = ExtResource("4_sv4x0")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=868848997]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 1.3040121, -0.23167664, -1.8837887)
+use_collision = true
+size = Vector3(1.578955, 0.624, 0.8840759)
 material = ExtResource("4_sv4x0")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("6_wlfhu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67392117, 0.14739126, -0.25437784)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.6293198, 0.14739126, -1.9178402)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=198090420 groups=["finish"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79629517, 0.77008975, -0.084068716)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, 6.6848283, 0.46926057, -1.821246)
 script = ExtResource("7_h2dol")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=301324198]
@@ -136,16 +131,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6830935, 0)
 mesh = SubResource("CylinderMesh_umt7f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=549476221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, -0.11733723, -0.009054184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, 4.027877, -0.009054184)
 shape = SubResource("BoxShape3D_uvulu")
 
 [node name="Area3D2" type="Area3D" parent="." unique_id=402936801 groups=["killzonesf"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.81463206, 0)
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, -0.81463206, -1.8840855)
 script = ExtResource("9_yobcq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=851871793]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015097737, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08899772, -3.9714355)
 shape = SubResource("BoxShape3D_3a4jo")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=2018557736]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, 1.1477658, -1.8840855)
+curve = SubResource("Curve3D_15mnc")
+
+[node name="Node3D2" type="Node3D" parent="." unique_id=1970212319]
+transform = Transform3D(-0.0015894605, 0, -0.99999875, 0, 1, 0, 0.99999875, 0, -0.0015894605, -1.8837516, 0, -1.8840855)
+
+[node name="CSGBakedMeshInstance3D2" type="AnimatableBody3D" parent="Node3D2" unique_id=1018621741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6237705, 0.093927175, -1.1349013)
+script = ExtResource("5_216np")
+direction = Vector3(-1, 0, 0)
+distance = 1.3
+interval = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D2" unique_id=846589704]
+mesh = SubResource("BoxMesh_va8qf")
+surface_material_override/0 = ExtResource("4_sv4x0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/CSGBakedMeshInstance3D2" unique_id=1466980281]
+shape = SubResource("BoxShape3D_vnv8u")
+
+[node name="CSGBakedMeshInstance3D4" type="AnimatableBody3D" parent="Node3D2" unique_id=1049030938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12480414, 0.093927175, -4.4201527)
+script = ExtResource("5_216np")
+direction = Vector3(0, 0.5, -1)
+distance = 1.3
+interval = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D4" unique_id=2097858237]
+mesh = SubResource("BoxMesh_va8qf")
+surface_material_override/0 = ExtResource("4_sv4x0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/CSGBakedMeshInstance3D4" unique_id=595166827]
+shape = SubResource("BoxShape3D_vnv8u")
+
+[node name="CSGBakedMeshInstance3D5" type="AnimatableBody3D" parent="Node3D2" unique_id=1987215794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12480414, 1.40565, -7.44598)
+script = ExtResource("5_216np")
+direction = Vector3(0, -0.5, 1)
+distance = 1.3
+interval = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D5" unique_id=746107252]
+mesh = SubResource("BoxMesh_va8qf")
+surface_material_override/0 = ExtResource("4_sv4x0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/CSGBakedMeshInstance3D5" unique_id=290116639]
+shape = SubResource("BoxShape3D_vnv8u")
+
+[node name="CSGBakedMeshInstance3D3" type="AnimatableBody3D" parent="Node3D2" unique_id=1507672139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606732, 0.093927175, -2.0972059)
+script = ExtResource("5_216np")
+direction = Vector3(1, 0, 0)
+distance = 1.3
+interval = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/CSGBakedMeshInstance3D3" unique_id=1027550417]
+mesh = SubResource("BoxMesh_va8qf")
+surface_material_override/0 = ExtResource("4_sv4x0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/CSGBakedMeshInstance3D3" unique_id=1452480623]
+shape = SubResource("BoxShape3D_vnv8u")
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
