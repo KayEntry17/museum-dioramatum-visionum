@@ -20,25 +20,16 @@
 [ext_resource type="AudioStream" uid="uid://bxp06ci1emxjg" path="res://audio/Ambient Nothingness Main.wav" id="17_u0d64"]
 [ext_resource type="PackedScene" uid="uid://b51tkmpkhwika" path="res://museum/museum_room_2.tscn" id="19_3mt8b"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0v3"]
-resource_name = "generic"
-cull_mode = 2
-albedo_texture = ExtResource("2_nenk8")
-uv1_scale = Vector3(0.235, 0.365, 0.235)
-uv1_triplanar = true
-texture_filter = 2
-metadata/_gltf_primary_texture_coord = 0
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6c2k"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mt8b"]
 sky_top_color = Color(1, 1, 1, 1)
 sky_horizon_color = Color(0.76078475, 0.7670211, 0.779489, 1)
 ground_bottom_color = Color(0.6665683, 0.66656893, 0.6665685, 1)
 ground_horizon_color = Color(0.7607843, 0.76862746, 0.78039217, 1)
 
 [sub_resource type="Sky" id="Sky_yiyty"]
-sky_material = SubResource("ProceduralSkyMaterial_k6c2k")
+sky_material = SubResource("ProceduralSkyMaterial_3mt8b")
 
-[sub_resource type="Environment" id="Environment_f3gim"]
+[sub_resource type="Environment" id="Environment_i81n1"]
 background_mode = 2
 sky = SubResource("Sky_yiyty")
 ambient_light_color = Color(1, 1, 1, 1)
@@ -52,11 +43,24 @@ ssao_detail = 2.58
 ssao_horizon = 0.08
 ssao_light_affect = 0.06
 ssao_ao_channel_affect = 0.09
+fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(1, 1, 1, 1)
+fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
-fog_depth_curve = 0.8122524
-fog_depth_end = 53.6
+fog_height = 22.0
+fog_height_density = -0.15
+fog_depth_curve = 0.27739266
+fog_depth_begin = 4000.0
+fog_depth_end = 4000.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0v3"]
+resource_name = "generic"
+cull_mode = 2
+albedo_texture = ExtResource("2_nenk8")
+uv1_scale = Vector3(0.235, 0.365, 0.235)
+uv1_triplanar = true
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3walr"]
 dof_blur_far_enabled = true
@@ -100,7 +104,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3mt8b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yte6f"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_w4wu2")
@@ -155,7 +159,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i81n1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qn4qg"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_p1f42")
@@ -270,6 +274,10 @@ size = Vector3(7.373535, 1, 2.6748047)
 
 [node name="Node3D" type="Node3D" unique_id=1353796469]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2127328153]
+environment = SubResource("Environment_i81n1")
+script = ExtResource("3_ki8hc")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1219698084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.54023, 0.083040714, -1.0206734)
 size = Vector3(6.8397827, 1.1671143, 3.0209503)
@@ -294,10 +302,6 @@ material = SubResource("StandardMaterial3D_5u0v3")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 36.674488, 0.77390605, -2.5111065)
 size = Vector3(0.35604477, 2.463623, 0.1344986)
 material = SubResource("StandardMaterial3D_5u0v3")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131965340]
-environment = SubResource("Environment_f3gim")
-script = ExtResource("3_ki8hc")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("1_f3gim")]
 transform = Transform3D(1, 0, -0.00020480156, 0, 1, 0, 0.00020480156, 0, 1, 38.24507, 1.673, -4.821681)
@@ -324,12 +328,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -
 
 [node name="BézierCurve_008" parent="." unique_id=19811220 instance=ExtResource("4_3walr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.322727, 1.2413305, -12.270446)
-surface_material_override/0 = SubResource("ShaderMaterial_3mt8b")
+surface_material_override/0 = SubResource("ShaderMaterial_yte6f")
 script = ExtResource("5_wcod2")
 
 [node name="BézierCurve_007" parent="." unique_id=644824418 instance=ExtResource("5_r7cxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25604, 1.2413305, -12.285494)
-surface_material_override/0 = SubResource("ShaderMaterial_i81n1")
+surface_material_override/0 = SubResource("ShaderMaterial_qn4qg")
 script = ExtResource("5_wcod2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
