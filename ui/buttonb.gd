@@ -6,6 +6,7 @@ extends TextureButton
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label.text=label
+	
 func switch_name(text):
 	$Label.text=text
 # Called every frame. 'delta' is the elapsed time since the previous frame.

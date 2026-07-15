@@ -24,7 +24,7 @@ func _on_button_2_pressed() -> void:
 	$"../AnimationPlayer".play_backwards("swap")
 	Save.settings["antialiasing"]=$Control/OptionButton2.selected
 	Save.settings["graphics"]=$Control/OptionButton.selected
-	
+	Save.apply()
 	Save.save_game()
 	$"../NewGame".grab_focus()
 	

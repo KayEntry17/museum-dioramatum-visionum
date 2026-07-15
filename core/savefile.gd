@@ -38,6 +38,17 @@ func save_game():
 	print(json_string)
 	save_game.store_line(json_string)
 # Called every frame. 'delta' is the elapsed time sinceyf the previous frame.
+func apply():
+	if settings["antialiasing"]==1:
+		get_viewport().use_taa=true
+	else:
+		get_viewport().use_taa=false
+	if settings["antialiasing"]==2:
+		get_viewport().msaa_3d=Viewport.MSAA_2X
+	elif settings["antialiasing"]==3:
+		get_viewport().msaa_3d=Viewport.MSAA_4X
+	else:
+		get_viewport().msaa_3d=Viewport.MSAA_DISABLED
 func load_game():
 	if not FileAccess.file_exists("user://museumlog.save"):
 		settings=defaultsettings

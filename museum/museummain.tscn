@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://d2j1a5w4jal6s" path="res://gltfs/materials/generic.tres" id="1_wcod2"]
 [ext_resource type="Texture2D" uid="uid://cysll6odc5v3s" path="res://gltfs/room1museum_concretede.png" id="2_nenk8"]
 [ext_resource type="Script" uid="uid://dlqyjv38i3a4p" path="res://core/maincam.gd" id="2_x8g85"]
+[ext_resource type="Script" uid="uid://cs50swh8ntchh" path="res://museum/world_environment.gd" id="3_ki8hc"]
 [ext_resource type="PackedScene" uid="uid://cypji5w10hmqq" path="res://museum/wire1.tscn" id="4_3walr"]
 [ext_resource type="PackedScene" uid="uid://bbxcqp1qpy7op" path="res://museum/wire2.tscn" id="5_r7cxb"]
 [ext_resource type="Script" uid="uid://c37vs4d03kqlq" path="res://museum/wire.gd" id="5_wcod2"]
@@ -36,8 +37,9 @@ sky_material = SubResource("ProceduralSkyMaterial_k6c2k")
 [sub_resource type="Environment" id="Environment_f3gim"]
 background_mode = 2
 sky = SubResource("Sky_yiyty")
-ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
 ssao_enabled = true
 ssao_radius = 0.53
 ssao_intensity = 4.3
@@ -94,7 +96,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7kr8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6j07"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_w4wu2")
@@ -149,7 +151,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ki8hc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0awf"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_p1f42")
@@ -288,6 +290,7 @@ material = SubResource("StandardMaterial3D_5u0v3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2131965340]
 environment = SubResource("Environment_f3gim")
+script = ExtResource("3_ki8hc")
 
 [node name="Node3D" parent="." unique_id=906936805 instance=ExtResource("1_f3gim")]
 transform = Transform3D(1, 0, -0.00020480156, 0, 1, 0, 0.00020480156, 0, 1, 38.24507, 1.673, -4.821681)
@@ -314,12 +317,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12568986, 1.1920929e-07, -
 
 [node name="BézierCurve_008" parent="." unique_id=19811220 instance=ExtResource("4_3walr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.322727, 1.2413305, -12.270446)
-surface_material_override/0 = SubResource("ShaderMaterial_a7kr8")
+surface_material_override/0 = SubResource("ShaderMaterial_a6j07")
 script = ExtResource("5_wcod2")
 
 [node name="BézierCurve_007" parent="." unique_id=644824418 instance=ExtResource("5_r7cxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25604, 1.2413305, -12.285494)
-surface_material_override/0 = SubResource("ShaderMaterial_ki8hc")
+surface_material_override/0 = SubResource("ShaderMaterial_r0awf")
 script = ExtResource("5_wcod2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1748102833]
